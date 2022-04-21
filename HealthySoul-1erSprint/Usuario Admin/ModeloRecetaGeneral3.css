@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rokkitt:wght@800&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: black;
+    font-size: 20px;
+}
+
+body {
+    min-height: 100vh;
+    background: url(Assets/madera.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: 'Roboto', serif;
+}
+
+
+/*header negrito */
+
+.nombre_empresa {
+    font-family: 'Roboto', sans-serif;
+    font-size: 26.5px;
+    color: #fff;
+    margin: 0;
+    height: auto;
+    width: auto;
+}
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 20;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    padding-left: 20px;
+    height: 42.5px;
+    padding-right: 10px;
+    z-index: 101;
+}
+
+.nav1 {
+    background-color: #7C3C21;
+    height: 70px;
+    padding-right: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+}
+
+.nav1.active {
+    background: #7C3C21;
+    height: 50px;
+}
+
+.barramenu.active {
+    top: 50px;
+}
+
+.menu {
+    display: flex;
+    padding-left: 0;
+    align-items: center;
+}
+
+.menu li {
+    list-style: none;
+    margin: 7px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s ease;
+}
+
+.menu li a:hover {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 2.8px;
+    background: #F9E4D4;
+    border-radius: 10px;
+    color: #000;
+}
+
+.scrol {
+    height: 100px;
+}
+
+.barramenu {
+    background: #DA723C;
+    top: 70px;
+    position: fixed;
+    height: 30px;
+    left: 0;
+    right: 0;
+    align-items: center;
+    display: flex;
+    z-index: 100;
+    justify-content: center;
+}
+
+
+/*header negrito */
+
+
+/*parte arriba*/
+
+h1 {
+    color: black;
+}
+
+
+/*h1:hover{
+ color:#f7ffac ;
+
+}*/
+
+.titleBack {
+    margin-top: -20px;
+}
+
+.PhotoAndDesc {
+    margin-top: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+    width: 100%;
+    height: 40%;
+    display: grid;
+    grid-template-columns: 40% 1% 59%;
+}
+
+.linea {
+    background: #7C3C21;
+}
+
+.PhotoIzq {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 756px;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.iconProfile {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 100%;
+    height: 756px;
+    object-fit: cover;
+    border-radius: 0px 10px 10px 0px;
+    /*parte arriba*/
+    /*letras*/
+}
+
+.let3 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.let {
+    font-size: 24px;
+    text-align: center;
+}
+
+.let2 {
+    font-family: 'Roboto', serif;
+    text-align: center;
+    font-size: 24px;
+}
+
+.tit {
+    cursor: default;
+    text-align: center;
+    font-size: 44px;
+    margin-top: -50px;
+    text-shadow: -2px -2px 2px #FFF, 2px 2px 2px #FFF, -2px 2px 2px #FFF, 2px -2px 2px #FFF;
+    font-family: 'Roboto', serif;
+    text-transform: uppercase;
+}
+
+.bordero {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.valor2 {
+    font-size: 20px;
+}
+
+
+/*letras*/
+
+
+/*titulo boton*/
+
+.butt {
+    margin-top: 10px;
+    margin-left: 35px;
+    background: black;
+    border: none;
+    cursor: pointer;
+    transition: 100ms transform;
+    place-items: center;
+    border: 2px solid black;
+    border-radius: 19%;
+    height: 39px;
+    z-index: 1;
+}
+
+.butt:hover {
+    transform: scale(1.2);
+}
+
+.buttonbackimage {
+    position: absolute;
+    place-items: center;
+    z-index: 10;
+}
+
+.buttonbackimage2 {
+    z-index: 11;
+    place-items: center;
+}
+
+.buttonbackimage:hover {
+    opacity: 0;
+    transition: opacity 1.5s
+}
+
+
+/*titulo boton*/
+
+
+/*receta inferior*/
+
+.bajo {
+    margin: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.mix {
+    /*hoja */
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.Preparacion,
+.Nutricional {
+    padding-left: 50px;
+    background: white;
+    padding-right: 35px;
+    font-family: 'Roboto', serif;
+    position: relative;
+}
+
+.Preparacion {
+    height: 700px; ;
+    width: 450px;
+    background: url(Assets/pagina.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+
+.Nutricional {
+    margin-left: auto;
+    width: 450px;
+    height: 700px;
+    margin-top: -725px;
+    background: url(Assets/pagina.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+
+.let2 {
+    padding-top: 23%;
+}
+
+.let3 {
+    padding-top: 16%;
+}
+
+.let {
+    display: flex;
+    padding-top: 24%;
+    position: relative;
+    left: 24%;
+}
+
+.ingredientesDer {
+    margin: 0px;
+    background: url(Assets/pagina.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 10px 0px 0px 10px;
+    padding-left: 50px;
+    position: relative;
+    height: 756px;
+    padding-right: 35px;
+    /*background-image:url(Assets/nota.png);*/
+}
+
+.ingreajuste {
+    margin-right: 25px;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: 65%;
+}
+
+
+/*footer*/
+
+footer {
+    background-color: #7C3C21;
+    font-size: 20px;
+    margin-top: 60px;
+    height: 135.6px;
+}
+
+.container-logo {
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.logo2 {
+    width: 79px;
+    height: 43px;
+}
+
+.container-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: #F9E4D4;
+}
+
+a:active {
+    color: #F9E4D4;
+}
+
+a:visited {
+    color: #F9E4D4;
+}
+
+.contacto {
+    display: flex;
+    justify-content: end;
+    cursor: default;
+    color: #F9E4D4;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    cursor: default;
+    color: #F9E4D4;
+}
+
+.texto{
+    height: 65%;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.texto2{
+    height: 65%;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+
+}
+
+
+/*.valor{
+    color: green;
+}*/
+
+
+/*footer*/

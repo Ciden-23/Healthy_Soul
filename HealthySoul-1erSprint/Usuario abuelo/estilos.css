@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    /*Anchura, ocupamos el 100%*/
+    min-height: 100vh;
+    /*Especificar la fuente */
+    font-family: 'Roboto', sans-serif;
+    /*Espacio entre las letras*/
+    letter-spacing: 0.05em;
+    /*Establecer el interlineado de las lineas de texto*/
+    line-height: 1.6;
+    background-image: url("madera.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+
+/*header negrito */
+
+.nombre_empresa {
+    font-family: 'Roboto', sans-serif;
+    font-size: 26.5px;
+    color: white;
+    margin: 0;
+    height: auto;
+    width: auto;
+    justify-content: center;
+}
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    letter-spacing: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    padding-left: 20px;
+    height: 42.5px;
+    padding-right: 10px;
+}
+
+.nav1 {
+    background: #7C3C21;
+    height: 70px;
+    padding-right: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 1000ms transform;
+}
+
+.nav1.active {
+    height: 50px;
+}
+
+.barramenu.active {
+    top: 50px;
+}
+
+.menu {
+    display: flex;
+    padding-left: 0;
+}
+
+.menu li {
+    list-style: none;
+    margin: 15px;
+}
+
+.menu li a {
+    color: #2D2424;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s ease;
+    font-size: 20px;
+    color: #fff;
+}
+
+.menu li a:hover {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 2.8px;
+    background: #fff;
+    border-radius: 10px;
+    color: #000;
+}
+
+.barramenu {
+    background: #DA723C;
+    top: 70px;
+    position: fixed;
+    height: 30px;
+    left: 0;
+    right: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.scrol {
+    height: 100px;
+}
+
+
+/*header negrito */
+
+
+/*Eliminar todos los padding y los margin que vienen por defecto, por eso colocamos 0*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    /* z-index: -1;
+     /*flex-wrap: wrap indica que puede haber cambio de linea.  Los elementos flex aparecen colocados en varias lineas*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: wrap;
+    /*para que los elementos aparezcan agrupados al centro */
+    justify-content: center;
+    /* 0px de margen vertical, centrado horizontalmente */
+    margin: auto;
+}
+
+.contenedor .tarjeta {
+    display: flex; 
+    flex-wrap: wrap;
+    /*crea cajas que son de bloque y en linea de forma simultanea*/
+    display: inline-block;
+    /*Anchura de la tarjeta*/
+    width: 350px;
+    max-width: 28%;
+    /*Altura de la tarjeta*/
+    height: 500px;
+    max-height: auto;
+    /*redondear las esquinas de la tarjeta 8px*/
+    border-radius: 0.500em;
+    /*para proyectar una sombra difuminada*/
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    /*Controla lo que sucede con el contenido que es demasiado grande, auto: agrega barras de desplazamiento solo cuando es necesario*/
+    /*para el margen*/
+    margin: 20px;
+    /*alineacion del texto*/
+    text-align: center;
+    /*Todas las propiedades obtendran un efecto de transicion*/
+    transition: all 0.25s;
+    /*color de la tarjeta*/
+    background: #EDCFA9;
+    /* borde de receta */
+    border: 2px solid white;
+    align-items: center;
+}
+
+.contenedor .tarjeta:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor .tarjeta img {
+    display: flex;
+    /*Anchura de la imagen*/
+    width: 300px;
+    /*Altura de la imagen*/
+    height: 300px;
+    /*Colocar en forma circular la imagen*/
+    border-radius: 50%;
+    margin: 1rem auto;
+    border: 5px solid white;
+}
+
+.contenedor .tarjeta h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* sacamos la linea de abajo del texto */
+    text-decoration: none;
+    /* Color de texxto */
+    color: #000;
+    /*Establecer el peso (negrita) de la fuente*/
+    font-weight: 700;
+    /*Tamaño de la fuente*/
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem 1rem;
+    width: auto;
+    height: auto;
+    /*Para romper una palabra*/
+    word-wrap: break-word;
+}
+
+.iconProfile {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 200;
+}
+
+
+/*media queries*/
+
+@media screen and (max-width:1200px) {
+    .contenedor {
+        justify-content: center;
+        height: auto;
+    }
+    .contenedor .tarjeta h3 {
+        padding: 1rem;
+    }
+    .contenedor .tarjeta img {
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+
+/*footer*/
+
+footer {
+    background-color: #7C3C21;
+    font-size: 20px;
+    margin-top: 60px;
+    position: relative;
+    display: none;
+    height: 135.6px;
+    line-height: 1.2;
+    
+}
+
+.container-logo {
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.logo2 {
+    width: 79px;
+    height: 43px;
+}
+
+.container-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    text-shadow: none;
+}
+
+a:link {
+    color: #F9E4D4;
+}
+
+a:active {
+    color: #F9E4D4;
+}
+
+a:visited {
+    color: #F9E4D4;
+}
+
+.contacto {
+    display: flex;
+    justify-content: end;
+    cursor: default;
+    color: #F9E4D4;
+    text-shadow: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    cursor: default;
+    color: #F9E4D4;
+    text-shadow: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}

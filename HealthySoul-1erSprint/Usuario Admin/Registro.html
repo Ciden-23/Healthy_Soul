@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registroEstilos.css">
+    <title>Healthy Soul</title>
+    <!-- para el icono de subir imagen -->
+    <link rel="icon" href="Assets/logo7.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- comienzo header -->
+    <header class="Cabecera">
+        <nav class="nav1">
+            <div class="logo">
+                <img src="./Assets/logo7.png" alt="Logo de la pagina">
+                <h2 class="nombre_empresa">HEALTHY SOUL</h2>
+            </div>
+        </nav>
+    </header>
+    <div class="barramenu">
+        <ul class="menu">
+            <li><a href="index.html">Recetas</a></li>
+            <li><a href="Registro.html">Registrar Receta</a></li>
+        </ul>
+    </div>
+
+    <div class="scrol"></div>
+    <!-- ---------- -->
+
+    <div class="titulo">Registrar Receta</div>
+    <div class="container">
+        <div class="cont-columna">
+            <div class="columna">Nombre <br>
+                <input class="ingresoTexto" id="titulo" placeholder="Título de la receta" />
+            </div>
+            <div class="columna">
+                <div>Porciones<br>
+                    <input class="porciones" id="porciones" onkeydown="filtro()" placeholder="#" type="number" min="1" max="30" />
+                    <script>
+                        function filtro()
+                        {
+                        var tecla = event.key;
+                        if (['.','e','+',',','-','E'].includes(tecla))
+                           event.preventDefault()
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
+        <div class="categoria"> Categoría
+            <!-- CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
+            <label class="espacio"><input type="radio" name="categoria" value="Desayunos" required> Desayuno</label>
+            <label class="espacio"><input type="radio" name="categoria" value="Almuerzos"> Almuerzo</label>
+            <label class="espacio"><input type="radio" name="categoria" value="Cenas"> Cena</label>
+            <label class="espacio"><input type="radio" name="categoria" value="Ensaladas"> Ensalada</label>
+            <label class="espacio"><input type="radio" name="categoria" value="Meriendas"> Merienda</label>
+            <label class="espacio"><input type="radio" name="categoria" value="Jugos"> Bebida</label>
+        </div>
+
+
+        <div class="cont-columna">
+            <div class="columna">
+                <div id="añadir">Ingredientes<br>
+                    <input class="ingresoTexto" id="1" placeholder="Ingrese ingrediente" /> 
+                    <input class="ingresoTexto" id="2" placeholder="Ingrese ingrediente" /> 
+                </div>
+                <input type="button" class="botonAdd" onclick="aniadirIngredientes();" value="Añadir ingrediente" />
+                <input type="button" class="botonAdd" onclick="eliminarIngrediente();" value="Eliminar ingrediente" />
+                <div>Valor Nutricional
+                    <div id="valor">
+                        <input class="ingresoTexto" id="101" placeholder="Ingrese valor nutricional" /> 
+                        <input class="ingresoTexto" id="102" placeholder="Ingrese valor nutricional" /> 
+                    </div>
+                    <input type="button" class="botonAdd" onclick="aniadirValor();" value="Añadir valor nutricional" />
+                    <input type="button" class="botonAdd" onclick="eliminarValor();" value="Eliminar valor" />
+
+                </div>
+            </div>
+            <div class="columna">
+                <div>
+                    <form class="seccion">Preparación <br>
+                        <div id="preparacion">
+                            <input class="ingresoTexto" id="51" placeholder="Ingrese paso" /> 
+                            <input class="ingresoTexto" id="52" placeholder="Ingrese paso" /> 
+                        </div>
+                        <input type="button" class="botonAdd" onclick="aniadirPasos();" value="Añadir paso" />
+                        <input type="button" class="botonAdd" onclick="eliminarPaso();" value="Eliminar paso"/>
+
+                    </form>
+                </div>
+                <div>Imagen
+                    <input type="file" id="file" accept=".jpg,.png,.jpeg" value="upload" onchange="revisarArchivo(this)">
+
+                    <label class="subirImagen" for="file">
+                        <i class="material-icons">
+                            add_photo_alternate
+                        </i>
+                        &nbsp;&nbsp;Sube una fotografía de la receta
+
+                    </label>
+                    <img id="img" src="" width="" height="">
+                </div>
+            </div>
+
+        </div>
+        <div class="final">
+            <input id="botonReg" type="button" class="botonRegistrar" onclick="testTitulo()" value="Registrar" />
+        </div>
+    </div>
+
+    <footer>
+        <div class="container-body">
+            <div class="container-logo">
+                <img src="logo7.png" class="logo2">
+            </div>
+            <div>
+                <p class="contacto">
+                    <a href="https://wa.me/59160721303" target="blank">Contáctenos</a>
+                </p>
+            </div>
+        </div>
+        <div class="container-footer">
+            <p class="copyright">
+                © Healthy-Soul 2022
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+<!--Scripts necesarios para la base de datos-->
+<!--<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>-->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+<!--Scripts para el funcionamiento-->
+<script src="base.js"></script>
+<script src="guardarRegistro.js"></script>
+<!-- <script src="menu.js"></script> -->
+
+</html>
