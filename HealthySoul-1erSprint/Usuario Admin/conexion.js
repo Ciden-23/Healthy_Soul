@@ -39,17 +39,34 @@ for (let i = 0; i < categorias.length; i++) {
                 //para generar un HTML de la receta)
             var ide = data[i].id
             var img = data[i].Imagen
-            console.log("nombre de la receta", nom);
-            console.log("id de la receta", ide);
-            console.log("imga", img);
-            console.log("categoria", categ);
-            imagen.innerHTML += `<a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'"><div class="tarjeta">
-                      <img src="${img}">
-                      <h3>${nom} </h3>
-                  </div></a>`;
+            //console.log("nombre de la receta", nom);
+            //console.log("id de la receta", ide);
+            //console.log("imga", img);
+            //console.log("categoria", categ);
+            imagen.innerHTML +=
+            `<div class="tarjeta">
+            <a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'">
+            <img src="${img}">
+           <div> <h3>${nom}</h3> </div>
+        </a>
+        <div>
+        <input type = "button"  id="abrir"  value="Borrar" nombre="${ide}" onclick="borrarReceta('${ide}','${categ}','${nom}')"/>
+        </div>
+        </div>`;
         }
     })
+    
 }
+
+function borrarReceta(ide, categor,nomm) {
+    db.collection(categor).doc(ide).delete().then(() => {
+        console.log("Documento borrado exitosamente!");
+        location.reload();
+    }).catch((error) => {
+        console.error("Error removing document: ", error);
+    });
+}
+
 
 
 function aa() {
