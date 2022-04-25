@@ -87,16 +87,13 @@ header {
 }
 
 .menu li a:hover {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 3px;
-    padding-bottom: 2.8px;
+    padding: 3px 5px;
     background: #fff;
     border-radius: 10px;
     color: #000;
 }
 
-.barramenu {
+/*.barramenu {
     background: #DA723C;
     top: 70px;
     position: fixed;
@@ -107,7 +104,7 @@ header {
     display: flex;
     justify-content: center;
     z-index: 10;
-}
+}*/
 
 .scrol {
     height: 100px;
@@ -146,7 +143,7 @@ body {
     width: 350px;
     max-width: 28%;
     /*Altura de la tarjeta*/
-    height: 500px;
+    height: 515px;
     max-height: auto;
     /*redondear las esquinas de la tarjeta 8px*/
     border-radius: 0.500em;
@@ -203,6 +200,47 @@ body {
     /*Para romper una palabra*/
     word-wrap: break-word;
 }
+/*------------BORRAR RECETA------*/
+.modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    /*top: 0;
+    left: 0;*/
+    height: 100vh;
+    width: 100vh;
+}
+.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal {
+    background-color: #fff;
+    width: 600px;
+    max-width: 100%;
+    /*padding: 30px 50px;*/
+    border-radius: 5px;
+    box-shadow: 0 2px 4px #000;
+    text-align: center;
+}
+
+.equisd {
+    background-color: #fff;
+    border-color: #fff;
+    text-align: right;
+}
+ 
+.linea {
+        border-top: 1px solid black;
+        height: 2px;
+        padding: 0;
+        margin: 0;
+}
+
 
 .iconProfile {
     position: absolute;

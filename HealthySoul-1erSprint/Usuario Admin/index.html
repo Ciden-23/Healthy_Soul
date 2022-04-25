@@ -23,14 +23,13 @@
                 <img src="Assets/logo7.png" alt="Logo de la pagina">
                 <h2 class="nombre_empresa">HEALTHY SOUL</h2>
             </div>
+            <ul class="menu">
+                <li><a href="index.html">Recetas</a></li>
+                <li><a href="Registro.html">Registrar Receta</a></li>
+            </ul>
         </nav>
     </header>
-    <div class="barramenu">
-        <ul class="menu">
-            <li><a href="index.html">Recetas</a></li>
-            <li><a href="Registro.html">Registrar Receta</a></li>
-        </ul>
-    </div>
+   
     <div class="scrol">
 
     </div>
@@ -44,7 +43,15 @@
     <div class="contenedor" align="center">
 
         <div id="imagen">
-
+            
+        </div>
+        <div class="modal-container" id="modal-container">
+            <div class="modal">
+                <button class="equisd" id="equis" >X</button>
+                <p>¿Esta seguro de borrar las receta?</p>
+                <button id="aceptar" >Aceptar</button>
+                <button id="cancelar" >Cancelar</button>
+            </div>
         </div>
 
     </div>
@@ -79,6 +86,5 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 <!-- Direccion del archivo js -->
 <script src="conexion.js"></script>
-<!-- <script src="menu.js"></script> -->
-
+<script src="menu.js"></script>
 </html>

@@ -10,6 +10,11 @@ firebase.initializeApp({
 let cam = 0;
 //variable que se puede declarar en cada archivo que necesite la bd
 var db = firebase.firestore();
+//Variables que capturan el id y nombre para borrar receta
+var ideBorrar;
+var categBorrar;
+var nom;
+
 let bandera = true;
 disableS();
 //Arreglo con el nombre de las categorias
@@ -33,32 +38,39 @@ for (let i = 0; i < categorias.length; i++) {
             id: doc.id,
             ...doc.data(),
         }))
+        console.log(data, "datos")
         for (var i = 0; i < data.length; i++) {
             var nom = data[i].Nombre
                 //OBTIENE EL ID DE CADA RECETA DE UNA COLEECION (Aqui deberia verificarse que receta fue elegida por el nombre, y obtener su ID 
                 //para generar un HTML de la receta)
             var ide = data[i].id
             var img = data[i].Imagen
-            //console.log("nombre de la receta", nom);
-            //console.log("id de la receta", ide);
-            //console.log("imga", img);
-            //console.log("categoria", categ);
-            imagen.innerHTML +=
-            `<div class="tarjeta">
-            <a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'">
-            <img src="${img}">
-           <div> <h3>${nom}</h3> </div>
-        </a>
-        <div>
-        <input type = "button"  id="abrir"  value="Borrar" nombre="${ide}" onclick="borrarReceta('${ide}','${categ}','${nom}')"/>
-        </div>
-        </div>`;
+            console.log("nombre de la receta", nom);
+            console.log("id de la receta", ide);
+            console.log("imga", img);
+            console.log("categoria", categ);
+            imagen.innerHTML += `<div class="tarjeta"><a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'">
+                      <img src="${img}">
+                      <div><h3>${nom}</h3></div>
+                  </a>
+                  <div>
+                  <input type = "button" class="botonBorrar" id="abrir" nombre="${ide}" onclick="borrar('${ide}','${categ}','${nom}');" value="Borrar"/>
+                  </div>
+                  </div>`;
         }
     })
-    
 }
 
-function borrarReceta(ide, categor,nomm) {
+function borrar(ide, categor,nomm) {
+    ideBorrar=ide;
+    categBorrar=categor;
+    nom=nomm;
+    //console.log(ideBorrar,categBorrar,nom)
+    const modalContainer = document.getElementById("modal-container");
+        modalContainer.classList.add('show');
+   }
+
+   function borrarReceta(ide, categor,nomm) {
     db.collection(categor).doc(ide).delete().then(() => {
         console.log("Documento borrado exitosamente!");
         location.reload();
@@ -66,8 +78,6 @@ function borrarReceta(ide, categor,nomm) {
         console.error("Error removing document: ", error);
     });
 }
-
-
 
 function aa() {
     const no = document.querySelector(".iconProfile");
