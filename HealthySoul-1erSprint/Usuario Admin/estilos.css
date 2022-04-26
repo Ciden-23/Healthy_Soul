@@ -217,7 +217,7 @@ body {
     pointer-events: auto;
     opacity: 1;
 }
-
+ 
 .modal {
     background-color: #fff;
     width: 600px;
@@ -241,6 +241,9 @@ body {
         margin: 0;
 }
 
+.tamaño {
+    height: 125px;
+}
 
 .iconProfile {
     position: absolute;

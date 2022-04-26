@@ -51,7 +51,7 @@ for (let i = 0; i < categorias.length; i++) {
             console.log("categoria", categ);
             imagen.innerHTML += `<div class="tarjeta"><a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'">
                       <img src="${img}">
-                      <div><h3>${nom}</h3></div>
+                      <div class="tamaño"><h3>${nom}</h3></div>
                   </a>
                   <div>
                   <input type = "button" class="botonBorrar" id="abrir" nombre="${ide}" onclick="borrar('${ide}','${categ}','${nom}');" value="Borrar"/>
@@ -63,20 +63,35 @@ for (let i = 0; i < categorias.length; i++) {
 
 function borrar(ide, categor,nomm) {
     ideBorrar=ide;
-    categBorrar=categor;
+    categBorrar=categor; 
     nom=nomm;
     //console.log(ideBorrar,categBorrar,nom)
     const modalContainer = document.getElementById("modal-container");
         modalContainer.classList.add('show');
    }
+function cancelar(){
+    const modalContainer = document.getElementById("modal-container");
+    modalContainer.classList.remove('show');
+    ideBorrar="";
+    categBorrar="";
+    nom="";
+    //console.log(ideBorrar,categBorrar,nom, "eliminadas")
+}
 
-   function borrarReceta(ide, categor,nomm) {
-    db.collection(categor).doc(ide).delete().then(() => {
-        console.log("Documento borrado exitosamente!");
-        location.reload();
-    }).catch((error) => {
-        console.error("Error removing document: ", error);
-    });
+function borrarReceta(){
+    const modalContainer = document.getElementById("modal-container");
+   // alert("Borrar")
+   db.collection(categBorrar).doc(ideBorrar).delete().then(() => {
+    console.log("Documento borrado exitosamente!");
+    modalContainer.classList.remove('show');
+    ideBorrar="";
+    categBorrar="";
+    nom="";
+    //console.log(ideBorrar,categBorrar,nom, "eliminadas")
+    location.reload();
+}).catch((error) => {
+    console.error("Error removing document: ", error);
+});
 }
 
 function aa() {
