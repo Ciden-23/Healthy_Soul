@@ -68,12 +68,14 @@ header {
 }
 
 .menu {
-    display: flex;
+    /*display: flex;*/
     padding-left: 0;
 }
 
-.menu li {
+.menu > li {
+    position: relative;
     list-style: none;
+    display: inline-block;
     margin: 15px;
 }
 
@@ -86,13 +88,49 @@ header {
     color: #fff;
 }
 
-.menu li a:hover {
+.menu > li > a:hover {
     padding: 3px 5px;
     background: #fff;
     border-radius: 10px;
     color: #000;
 }
 
+/*-----SUBMENU--------*/
+
+.desplegable{
+    position: absolute;
+    background-color: #7C3C21;
+    padding: 0;
+    margin: 0;
+    padding-top: 18px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+}
+ 
+.desplegable > li {
+    list-style: none;
+    margin: 5px;
+    /*border-bottom: 1px solid #000;*/
+}
+
+.desplegable li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu li:hover .desplegable{
+    visibility: visible;
+    opacity: 1;
+}
+
+.cateMenu :hover {
+    background-color: #fff;
+    border-radius: 5px;
+    color:#000
+}
 /*.barramenu {
     background: #DA723C;
     top: 70px;
@@ -200,6 +238,9 @@ body {
     /*Para romper una palabra*/
     word-wrap: break-word;
 }
+
+
+
 /*------------BORRAR RECETA------*/
 .modal-container {
     display: flex;

@@ -61,6 +61,10 @@ for (let i = 0; i < categorias.length; i++) {
     })
 }
 
+function alerta(){
+    alert("Funciona");
+}
+
 function borrar(ide, categor,nomm) {
     ideBorrar=ide;
     categBorrar=categor; 
