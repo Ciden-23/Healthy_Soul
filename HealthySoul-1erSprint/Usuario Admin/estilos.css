@@ -144,10 +144,10 @@ body {
     display: inline-block;
     /*Anchura de la tarjeta*/
     width: 350px;
-    max-width: 28%;
+    /*max-width: 30%;
     /*Altura de la tarjeta*/
     height: 500px;
-    max-height: auto;
+    /*max-height: auto;
     /*redondear las esquinas de la tarjeta 8px*/
     border-radius: 0.500em;
     /*para proyectar una sombra difuminada*/
@@ -214,13 +214,18 @@ body {
 
 /*media queries*/
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1000px) {
     .contenedor {
         justify-content: center;
         height: auto;
     }
+    .contenedor .tarjeta{
+        max-width: 30%;
+        
+    }
     .contenedor .tarjeta h3 {
         padding: 1rem;
+
     }
     .contenedor .tarjeta img {
         max-width: 90%;
@@ -228,6 +233,49 @@ body {
     }
 }
 
+/*
+@media screen and (max-width:720px) {
+    .contenedor {
+        justify-content: center;
+        height: auto;
+    }
+    .contenedor .tarjeta{
+        max-width: 30%;
+        height: auto;
+    }
+    .contenedor .tarjeta h3 {
+        padding: 1rem;
+
+    }
+    .contenedor .tarjeta img {
+        max-width: 90%;
+        height: auto;
+    }
+}
+*/
+
+@media screen and (max-width:576px) {
+    .contenedor {
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .contenedor .tarjeta{
+        max-width: 50%;
+        /*Verificar el alto despues del responsive*/
+        height: auto;
+    }
+    .contenedor .tarjeta h3 {
+        padding: 1rem;
+        width: auto;
+        min-height: auto;
+    
+    }
+    .contenedor .tarjeta img {
+        max-width: 90%;
+        height: auto;
+    }
+}
 
 /*footer*/
 
