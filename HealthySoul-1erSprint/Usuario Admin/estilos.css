@@ -208,8 +208,8 @@ body {
     position: fixed;
     pointer-events: none;
     opacity: 0;
-    /*top: 0;
-    left: 0;*/
+    top: 0;
+    /*left: 0;*/
     height: 100vh;
     width: 100vh;
 }
@@ -222,8 +222,8 @@ body {
     background-color: #fff;
     width: 600px;
     max-width: 100%;
-    /*padding: 30px 50px;*/
-    border-radius: 5px;
+    padding: 10px 0px;
+    border-radius: 1px;
     box-shadow: 0 2px 4px #000;
     text-align: center;
 }
@@ -231,12 +231,22 @@ body {
 .equisd {
     background-color: #fff;
     border-color: #fff;
-    text-align: right;
+    border: none;
 }
- 
+ .separador {
+    height: 10px;
+ }
+
+.Xalinear :hover {
+    background-color:#EDCFA9;
+}
+
+.Xalinear {
+    text-align: right;
+    padding: 0px 15px;
+}
 .linea {
-        border-top: 1px solid black;
-        height: 2px;
+        border-top: 1px solid #2c2826;
         padding: 0;
         margin: 0;
 }
@@ -245,6 +255,44 @@ body {
     height: 125px;
 }
 
+.pregunta  {
+    padding: 15px 0px;
+}
+.alineado {
+    text-align: center;
+    padding: 0px 15px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.aceptar {
+    background-color: #fff;
+    border: 1px solid #7C3C21;
+    border-radius: 3px;
+    color: #7C3C21;
+    width: 75px;
+    height: 25px;
+}
+
+.aceptar:hover {
+    background-color: #EDCFA9;
+}
+
+.cancelar {
+    background-color: #7C3C21;
+    border: 1px solid #7C3C21;
+    border-radius: 3px;
+    color: #fff;
+    width: 75px;
+    height: 25px;
+}
+
+
+.cancelar:hover {
+    background-color: #EDCFA9;
+    border-color: #7C3C21;
+    color: #000;
+}
 
 .iconProfile {
     position: absolute;
