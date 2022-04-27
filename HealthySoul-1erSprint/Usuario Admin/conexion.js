@@ -54,7 +54,7 @@ for (let i = 0; i < categorias.length; i++) {
                       <div class="tamaño"><h3>${nom}</h3></div>
                   </a>
                   <div>
-                  <input type = "button" class="botonBorrar" id="abrir" nombre="${ide}" onclick="borrar('${ide}','${categ}','${nom}');" value="Borrar"/>
+                  <input type = "button" class="botonBorrar" id="abrir" nombre="${ide}" onclick="borrar('${ide}','${categ}','${nom}');" value="Borrar" style="float: right;"/>
                   </div>
                   </div>`;
         }

@@ -245,6 +245,7 @@ body {
     height: 125px;
 }
 
+
 .iconProfile {
     position: absolute;
     width: 100%;
@@ -252,6 +253,22 @@ body {
     z-index: 200;
 }
 
+
+.contenedor .tarjeta .botonBorrar {
+    margin-right: 15px;
+    /*border-radius: 10%;*/
+    border-radius: 5px;
+    border: 1px solid #7C3C21;
+    text-align: center;
+    color: #7C3C21;
+    width: 80px;
+    height: 35px;
+    background: white;
+}
+ 
+.contenedor .tarjeta .botonBorrar:hover {
+    background-color: #EDCFA9;
+}
 
 /*media queries*/
 
