@@ -179,7 +179,7 @@ body {
     display: inline-block;
     /*Anchura de la tarjeta*/
     width: 350px;
-    max-width: 28%;
+    /*max-width: 28%;*/
     /*Altura de la tarjeta*/
     height: 515px;
     max-height: auto;

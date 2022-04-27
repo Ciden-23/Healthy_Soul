@@ -26,12 +26,12 @@
             <ul class="menu">
                 <li ><a href="#">Menú</a>
                     <ul class="desplegable">
-                        <li class="cateMenu" onclick="alerta();"><a href="#">Almuerzos</a></li>
-                        <li class="cateMenu" onclick="alerta();"><a href="#">Cenas</a></li>
-                        <li class="cateMenu" onclick="alerta();"><a href="#">Desayunos</a></li>
-                        <li class="cateMenu" onclick="alerta();"><a href="#">Ensaladas</a></li>
-                        <li class="cateMenu" onclick="alerta();"><a href="#">Jugos</a></li>
-                        <li class="cateMenu" onclick="alerta();"><a href="#">Meriendas</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Almuerzos');" ><a href="#">Almuerzos</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Cenas');"><a href="#">Cenas</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Desayunos');"><a href="#">Desayunos</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Ensaladas');"><a href="#">Ensaladas</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Jugos');"><a href="#">Bebidas</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Meriendas');"><a href="#">Meriendas</a></li>
                     </ul>
                 </li>
                 <li><a href="index.html">Recetas</a></li>
@@ -101,6 +101,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 <!-- Direccion del archivo js -->
+<script src="base.js"></script>
 <script src="conexion.js"></script>
 <script src="menu.js"></script>
 </html>

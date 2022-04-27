@@ -1,13 +1,3 @@
-// Initialize Cloud Firestore through Firebase
-firebase.initializeApp({
-    apiKey: "AIzaSyDPKylT8Mizp2qRkeHVdzdmDAdRC4vyagQ",
-    authDomain: "healthy-soul-db.firebaseapp.com",
-    projectId: "healthy-soul-db",
-    storageBucket: "healthy-soul-db.appspot.com",
-    messagingSenderId: "368826998840",
-    appId: "1:368826998840:web:d97a765e96b27dfeb106cd",
-});
-let cam = 0;
 //variable que se puede declarar en cada archivo que necesite la bd
 var db = firebase.firestore();
 //Variables que capturan el id y nombre para borrar receta
@@ -15,7 +5,6 @@ var ideBorrar;
 var categBorrar;
 var nom;
 
-let bandera = true;
 disableS();
 //Arreglo con el nombre de las categorias
 let categorias = [
@@ -26,39 +15,39 @@ let categorias = [
     "Jugos",
     "Meriendas",
 ];
-//Usar un for para recorrer los elementos de la lista
-for (let i = 0; i < categorias.length; i++) {
-    //Guardar en una variable el nombre de la categoria
-    const categ = categorias[i];
 
-    const categRef = db.collection(categ);
+window.onload = inicializar;
+function inicializar(){
+    //Usar un for para recorrer los elementos de la lista
+    for (let i = 0; i < categorias.length; i++) {
+        //Guardar en una variable el nombre de la categoria
+        const categ = categorias[i];
 
-    categRef.get().then((results) => {
-        const data = results.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-        }))
-        console.log(data, "datos")
-        for (var i = 0; i < data.length; i++) {
-            var nom = data[i].Nombre
-                //OBTIENE EL ID DE CADA RECETA DE UNA COLEECION (Aqui deberia verificarse que receta fue elegida por el nombre, y obtener su ID 
-                //para generar un HTML de la receta)
-            var ide = data[i].id
-            var img = data[i].Imagen
-            console.log("nombre de la receta", nom);
-            console.log("id de la receta", ide);
-            console.log("imga", img);
-            console.log("categoria", categ);
-            imagen.innerHTML += `<div class="tarjeta"><a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'">
-                      <img src="${img}">
-                      <div class="tamaño"><h3>${nom}</h3></div>
-                  </a>
-                  <div>
-                  <input type = "button" class="botonBorrar" id="abrir" nombre="${ide}" onclick="borrar('${ide}','${categ}','${nom}');" value="Borrar" style="float: right;"/>
-                  </div>
-                  </div>`;
-        }
-    })
+        const categRef = db.collection(categ);
+
+        categRef.get().then((results) => {
+            const data = results.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }))
+            //console.log(data, "datos")
+            for (var i = 0; i < data.length; i++) {
+                var nom = data[i].Nombre
+                    //OBTIENE EL ID DE CADA RECETA DE UNA COLEECION (Aqui deberia verificarse que receta fue elegida por el nombre, y obtener su ID 
+                    //para generar un HTML de la receta)
+                var ide = data[i].id
+                var img = data[i].Imagen
+                imagen.innerHTML += `<div class="tarjeta" id="tarjeta"><a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'">
+                        <img src="${img}">
+                        <div class="tamaño"><h3>${nom}</h3></div>
+                    </a>
+                    <div>
+                    <input type = "button" class="botonBorrar" id="abrir" nombre="${ide}" onclick="borrar('${ide}','${categ}','${nom}');" value="Borrar" style="float: right;"/>
+                    </div>
+                    </div>`;
+            }
+        })
+    }
 }
 
 function alerta(){
@@ -97,6 +86,45 @@ function borrarReceta(){
     console.error("Error removing document: ", error);
 });
 }
+
+function clasificarCat7(categoria){
+    var container = document.getElementById('imagen');
+    let tarj = Array.prototype.slice.call(document.getElementsByClassName("tarjeta"), 0);
+    for(element of tarj){
+        element.remove();
+    }  
+    mostrarCat(categoria);
+}
+
+function clasificarCat(categ){
+    var container = document.getElementById('imagen');
+    let tarj = Array.prototype.slice.call(document.getElementsByClassName("tarjeta"), 0);
+    for(element of tarj){
+        element.remove();
+    }
+    const categRef = db.collection(categ);
+    categRef.get().then((results) => {
+        const data = results.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+        }))
+        for (var i = 0; i < data.length; i++) {
+            var nom = data[i].Nombre
+            var ide = data[i].id
+            var img = data[i].Imagen
+            imagen.innerHTML += `<div class="tarjeta"><a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'">
+                      <img src="${img}">
+                      <div class="tamaño"><h3>${nom}</h3></div>
+                  </a>
+                  <div>
+                  <input type = "button" class="botonBorrar" id="abrir" nombre="${ide}" onclick="borrar('${ide}','${categ}','${nom}');" value="Borrar" style="float: right;"/>
+                  </div>
+                  </div>`;
+        }
+    })
+
+}
+
 
 function aa() {
     const no = document.querySelector(".iconProfile");
