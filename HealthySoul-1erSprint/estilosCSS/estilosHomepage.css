@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,400;1,800&display=swap');
 
 html,
 body {
     margin: 0;
     padding: 0;
     /*Descomentar  para el responsive*/
-    /*max-width: 100% !important;
-    overflow-x: hidden !important;*/
+    max-width: 100% !important;
+    overflow-x: hidden !important;
 }
 
 
@@ -25,9 +26,10 @@ body {
  /*width:100%;
 height: 100%;
  margin:0 ;
- padding:0;*/
-
+ padding:0;
  background-image: url("../Assets/madera.jpg");
+    color: ;*/
+    background-color:#fff ;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -97,13 +99,16 @@ header {
 .imgHome {
     display: flex;
     width: 100%;
-    height: 500px;
+    height: 600px;
     margin:0%;
    
-    /*Megatron*/
- background: #C6FFDD;  /* fallback for old browsers */
- background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
- background: linear-gradient(to left, hsla(358, 89%, 72%, 0.795), hsla(42, 94%, 75%, 0.76), hsla(144, 100%, 89%, 0.774)), url(../Assets/fondoSaludable2.png) ; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
+ 
+ background: #659999;  /* fallback for old browsers */
+ background: -webkit-linear-gradient(to right, #f4791f, #659999);  /* Chrome 10-25, Safari 5.1-6 */
+
+ background: linear-gradient(to right, hsl(25deg 91% 54% / 68%), hsl(180deg 20% 50% / 74%)), url(../Assets/fondoSaludable4.png);
+ 
 
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -119,23 +124,100 @@ header {
  object-fit: contain;
 }*/
 
+.imgHome .textoHomepage{
+    
+    width: 100%;
+    
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 25rem;
+}
+
 .imgHome .textoHomepage h1{
+     /*margin-top: 50%;
+    margin-bottom: auto;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+  
     font-weight: bolder;
-    display: block;
-    /*margin-top: 1.8%;*/
-    margin-left: 60%;
-    margin-right: 10%;
-    font-size: 1.563em;
+    display: flex;
+   margin-top: 1.8%;
+    margin-left: 10%;
+    margin-right: 60%;*/
+    font-size: 2.188rem;
     padding: 0.5em;
     align-items: center;
     align-content: center;
-    color: black;
-    font-family: 'Secular one', sans-serif;
-    /*color: white;*/
-  /*   -webkit-text-stroke: 0.02px white;
-font-family: Roboto; color:black ;*/
+    /*color: black;
+    font-weight: bolder;
+    font-style: bold ;
+   /* font-family: 'Secular one', sans-serif;
+    color: white;
+    -webkit-text-stroke: 0.002px white;
+font-family: Roboto;*/
+font-family: 'Nunito', sans-serif; color:black ;
 
 }
+
+.imgHome .textoHomepage h2{
+    margin-top: auto;
+    margin-bottom: auto;
+
+    left: 50%;
+  position: absolute;
+  top: 75%;
+
+  transform: translate(-50%, -10%);
+    font-weight: bolder;
+    display: flex;
+    /*margin-top: 1.8%;
+    margin-left: 10%;
+    margin-right: 60%;*/
+    font-size: 35px;
+    padding: 0.5em;
+    align-items: center;
+    align-content: center;
+    /*color: black;
+    font-weight: bolder;
+    font-style: bold ;
+   /* font-family: 'Secular one', sans-serif;
+    color: white;
+    -webkit-text-stroke: 0.002px white;
+font-family: Roboto;*/
+font-family: 'Nunito', sans-serif; color:black ;
+
+}
+
+ .botonVerMas {
+    background-color: #DA723C;
+    width: 250px;
+    height: 40px;
+    display: flex;
+    border-radius: 5px;
+    border-width: 2px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    /*margin-left: 55px;*/
+    align-items: center;
+    
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+
+    justify-content: center;
+    
+    margin-left: 20%;
+    text-shadow: none;
+}
+
+.botonVer{
+    align-items: center;
+    justify-content: center;
+
+}
+
 
 .Invitados {
     align-items: center;
@@ -173,6 +255,7 @@ font-family: Roboto; color:black ;*/
     justify-content: center;
     /* 0px de margen vertical, centrado horizontalmente */
     margin: auto;
+    
 }
 
 .contenedor .tarjeta {
@@ -251,10 +334,13 @@ footer {
     background-color: #7C3C21;
     font-size: 20px;
     margin-top: 60px;
-    position: relative;
+    /*position: relative;*/
     display: none;
     height: 135.6px;
     line-height: 1.2;
+    position: absolute;
+    right: 0;
+    bottom: 0;
     
 }
 
@@ -314,3 +400,81 @@ a:visited {
     padding: 0;
     border: 0;
 }
+
+
+/*medias*/
+
+/*media queries*/
+
+
+
+@media screen and (max-width:1200px) {
+    .imgHome {
+        justify-content: center;
+        max-height: auto;
+        width: 100%;
+
+    }
+    .imgHome .textoHomepage h1{
+        font-weight: bolder;
+    }
+    .contenedor {
+        justify-content: center;
+        height: auto;
+    }
+    .contenedor .tarjeta{
+        max-width: 30%;
+        
+    }
+    .contenedor .tarjeta h3 {
+        padding: 1rem;
+
+    }
+    .contenedor .tarjeta img {
+        max-width: 90%;
+        height: auto;
+    }
+    
+}
+
+@media screen and (max-width:576px) {
+    .imgHome {
+        max-width: 100%;
+        justify-content: center;
+        min-height: auto;
+        height: 30%;
+       
+    }
+    
+    .imgHome .textoHomepage h1{
+        font-weight: bolder;
+        /*Aca cambia la letra a 25 px */
+        /*Revisalo si se ve bien porfa :'v*/
+        font-size: 1.563rem;
+        
+    }
+
+    .contenedor {
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .contenedor .tarjeta{
+        max-width: 50%;
+        /*Verificar el alto despues del responsive*/
+        height: auto;
+    }
+    .contenedor .tarjeta h3 {
+        padding: 1rem;
+        width: auto;
+        min-height: auto;
+
+    }
+    .contenedor .tarjeta img {
+        max-width: 90%;
+        height: auto;
+    }
+
+
+}
+    
