@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body>
+<div>
 
     <!-- comienzo header -->
     <header class="Cabecera">
@@ -34,86 +34,142 @@
     <!-- ---------- -->
 
     <div class="titulo">Registrar Receta</div>
-    <div class="container">
-        <div class="cont-columna">
-            <div class="columna">Nombre <br>
-                <input class="ingresoTexto" id="titulo" placeholder="Título de la receta" />
+
+
+
+
+
+    <div class="fila">
+        <div class="bloque">
+            <div class="cent">
+                <div class="eti">Nombre<br></div>
             </div>
-            <div class="columna">
-                <div>Porciones<br>
-                    <input class="porciones" id="porciones" onkeydown="filtro()" placeholder="#" type="number" min="1" max="30" />
-                    <script>
-                        function filtro()
-                        {
+            <input class="ingresoTexto" id="titulo" placeholder="Título de la receta" />
+        </div>
+
+        <div class="bloque">
+
+            <div>
+                <div class="cent2">
+                    <div class="eti">Porciones<br></div>
+                </div>
+                <input class="porciones" id="porciones" onkeydown="filtro()" placeholder="#" type="number" min="1"
+                    max="30" />
+                <script>
+                    function filtro() {
                         var tecla = event.key;
-                        if (['.','e','+',',','-','E'].includes(tecla))
-                           event.preventDefault()
-                        }
-                    </script>
-                </div>
+                        if (['.', 'e', '+', ',', '-', 'E'].includes(tecla))
+                            event.preventDefault()
+                    }
+                </script>
             </div>
-        </div>
-        <!-- CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
-        <div class="categoria"> Categoría
-            <!-- CAMBIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
-            <label class="espacio"><input type="radio" name="categoria" value="Desayunos" required> Desayuno</label>
-            <label class="espacio"><input type="radio" name="categoria" value="Almuerzos"> Almuerzo</label>
-            <label class="espacio"><input type="radio" name="categoria" value="Cenas"> Cena</label>
-            <label class="espacio"><input type="radio" name="categoria" value="Ensaladas"> Ensalada</label>
-            <label class="espacio"><input type="radio" name="categoria" value="Meriendas"> Merienda</label>
-            <label class="espacio"><input type="radio" name="categoria" value="Jugos"> Bebida</label>
-        </div>
-
-
-        <div class="cont-columna">
-            <div class="columna">
-                <div id="añadir">Ingredientes<br>
-                    <input class="ingresoTexto" id="1" placeholder="Ingrese ingrediente" /> 
-                    <input class="ingresoTexto" id="2" placeholder="Ingrese ingrediente" /> 
-                </div>
-                <input type="button" class="botonAdd" onclick="aniadirIngredientes();" value="Añadir ingrediente" />
-                <input type="button" class="botonAdd" onclick="eliminarIngrediente();" value="Eliminar ingrediente" />
-                <div>Valor Nutricional
-                    <div id="valor">
-                        <input class="ingresoTexto" id="101" placeholder="Ingrese valor nutricional" /> 
-                        <input class="ingresoTexto" id="102" placeholder="Ingrese valor nutricional" /> 
-                    </div>
-                    <input type="button" class="botonAdd" onclick="aniadirValor();" value="Añadir valor nutricional" />
-                    <input type="button" class="botonAdd" onclick="eliminarValor();" value="Eliminar valor" />
-
-                </div>
-            </div>
-            <div class="columna">
-                <div>
-                    <form class="seccion">Preparación <br>
-                        <div id="preparacion">
-                            <input class="ingresoTexto" id="51" placeholder="Ingrese paso" /> 
-                            <input class="ingresoTexto" id="52" placeholder="Ingrese paso" /> 
-                        </div>
-                        <input type="button" class="botonAdd" onclick="aniadirPasos();" value="Añadir paso" />
-                        <input type="button" class="botonAdd" onclick="eliminarPaso();" value="Eliminar paso"/>
-
-                    </form>
-                </div>
-                <div>Imagen
-                    <input type="file" id="file" accept=".jpg,.png,.jpeg" value="upload" onchange="revisarArchivo(this)">
-
-                    <label class="subirImagen" for="file">
-                        <i class="material-icons">
-                            add_photo_alternate
-                        </i>
-                        &nbsp;&nbsp;Sube una fotografía de la receta
-
-                    </label>
-                    <img id="img" src="" width="" height="">
-                </div>
-            </div>
-
-        </div>
-        <div class="final">
-            <input id="botonReg" type="button" class="botonRegistrar" onclick="testTitulo()" value="Registrar" />
         </div>
     </div>
+
+    <div class="fila">
+        <div class="categoria">
+            <div class="cent2">
+                <div class="eti2">Categoría </div>
+                <label class="espacio"><input type="radio" name="categoria" value="Desayunos"> Desayuno</label>
+                <label class="espacio"><input type="radio" name="categoria" value="Almuerzos"> Almuerzo</label>
+                <label class="espacio"><input type="radio" name="categoria" value="Cenas"> Cena</label>
+                <label class="espacio"><input type="radio" name="categoria" value="Ensaladas"> Ensalada</label>
+                <label class="espacio"><input type="radio" name="categoria" value="Meriendas"> Merienda</label>
+                <label class="espacio"><input type="radio" name="categoria" value="Jugos"> Bebida</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="fila">
+        <div class="bloque">
+            <div id="añadir">
+                <div class="cent">
+                    <div class="eti">Ingredientes<br></div>
+                </div>
+                <input class="ingresoTexto" id="1" placeholder="Ingrese ingrediente" />
+                <input class="ingresoTexto" id="2" placeholder="Ingrese ingrediente" />
+            </div>
+            <div class="cent">
+                <div class="contBoton">
+                    <input type="button" class="botonAdd" onclick="aniadirIngredientes();" value="Añadir ingrediente" />
+                    <input type="button" class="botonAdd" onclick="eliminarIngrediente();"
+                        value="Eliminar ingrediente" />
+                </div>
+            </div>
+        </div>
+
+        <div class="bloque">
+            <form class="seccion">
+                <div class="cent">
+                    <div class="eti">Preparación<br></div>
+                </div>
+                <div id="preparacion">
+                    <input class="ingresoTexto" id="51" placeholder="Ingrese paso" />
+                    <input class="ingresoTexto" id="52" placeholder="Ingrese paso" />
+                </div>
+                <div class="cent">
+                    <div class="contBoton">
+                        <input type="button" class="botonAdd" onclick="aniadirPasos();" value="Añadir paso" />
+                        <input type="button" class="botonAdd" onclick="eliminarPaso();" value="Eliminar paso" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="fila">
+
+
+
+        <div class="bloque">
+            <div class="cent">
+                <div class="eti">Valor Nutricional<br></div>
+            </div>
+            <div id="valor">
+                <input class="ingresoTexto" id="101" placeholder="Ingrese valor nutricional" />
+                <input class="ingresoTexto" id="102" placeholder="Ingrese valor nutricional" />
+            </div>
+            <div class="cent">
+                <div class="contBoton">
+                    <input type="button" class="botonAdd" onclick="aniadirValor();" value="Añadir valor nutricional" />
+                    <input type="button" class="botonAdd" onclick="eliminarValor();" value="Eliminar valor" />
+                </div>
+            </div>
+        </div>
+
+        <div class="bloque">
+
+            <div>Imagen
+                <input type="file" id="file" accept=".jpg,.png,.jpeg" value="upload" onchange="revisarArchivo(this)">
+                <div class="cent">
+                    <div class="contBoton">
+                        <label class="subirImagen" for="file">
+                            <i class="material-icons">
+                                add_photo_alternate
+                            </i>
+                            &nbsp;&nbsp;Sube una fotografía de la receta
+
+                        </label>
+                    </div>
+                </div>
+                <img id="img" src="" width="" height="">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="fila">
+        <input id="botonReg" type="button" class="botonRegistrar" onclick="testTitulo()" value="Registrar" />
+    </div>
+
+
+
+
+
+
+
+
 
     <footer>
         <div class="container-body">
@@ -133,16 +189,16 @@
         </div>
     </footer>
 
-</body>
+    </body>
 
-<!--Scripts necesarios para la base de datos-->
-<!--<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>-->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-<!--Scripts para el funcionamiento-->
-<script src="base.js"></script>
-<script src="guardarRegistro.js"></script>
-<!-- <script src="menu.js"></script> -->
+    <!--Scripts necesarios para la base de datos-->
+    <!--<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <!--Scripts para el funcionamiento-->
+    <script src="base.js"></script>
+    <script src="guardarRegistro.js"></script>
+    <!-- <script src="menu.js"></script> -->
 
 </html>
