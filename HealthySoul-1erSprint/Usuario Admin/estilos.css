@@ -182,7 +182,7 @@ body {
     /*max-width: 28%;*/
     /*Altura de la tarjeta*/
     height: 515px;
-    max-height: auto;
+    max-height: auto;/*comentado pao*/
     /*redondear las esquinas de la tarjeta 8px*/
     border-radius: 0.500em;
     /*para proyectar una sombra difuminada*/
@@ -361,11 +361,17 @@ body {
 
 /*media queries*/
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1000px) {/*combio de 1200 a 1000 pao*/
     .contenedor {
         justify-content: center;
         height: auto;
     }
+
+    .contenedor .tarjeta{/*agrego pao*/
+        max-width: 30%;
+        
+    }
+    
     .contenedor .tarjeta h3 {
         padding: 1rem;
     }
@@ -373,8 +379,58 @@ body {
         max-width: 90%;
         height: auto;
     }
+    .modal-container {
+        width: 80vh;
+    }
+    .modal {
+        width: 400px;
+    }
+    
 }
 
+@media screen and (max-width:576px) {/*agrego pao*/
+    .contenedor {
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .contenedor .tarjeta{
+        max-width: 50%;
+        /*Verificar el alto despues del responsive*/
+        /*height: auto;*/
+    }
+    .contenedor .tarjeta h3 {
+        padding: 1rem;
+        width: auto;
+        min-height: auto;
+    
+    }
+    .contenedor .tarjeta img {
+        max-width: 90%;
+        height: auto;
+    }
+    .modal-container {
+        width: 80vh;
+    }
+    .modal {
+        width: 300px;
+        height: 130px;
+        padding-top: 3px;
+    }
+    .separador {
+        height: 0px;
+     }
+     .pregunta  {
+        padding: 5px 1px;
+        margin: 5px;
+    }
+    .alineado {
+        padding-top: 4px;
+    }
+    .Xalinear {
+        height: ;
+    }
+}
 
 /*footer*/
 
