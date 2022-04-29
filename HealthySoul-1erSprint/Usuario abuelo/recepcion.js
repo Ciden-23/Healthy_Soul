@@ -71,7 +71,7 @@ function obtenerValor(sParametroNombre){
                 </p>`;
                 const nutri =document.querySelector(".nutrici");
                 nutri.innerHTML +=  `<p class="valor">  
-      ${saltoPorSeparador2(doc.data().ValorNutricional)}
+      ${saltoPorSeparador(doc.data().ValorNutricional)}
       </p>`;
                 
               } else {

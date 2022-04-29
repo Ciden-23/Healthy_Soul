@@ -23,14 +23,24 @@
                 <img src="Assets/logo7.png" alt="Logo de la pagina">
                 <h2 class="nombre_empresa">HEALTHY SOUL</h2>
             </div>
+            <ul class="menu">
+                <li ><a href="#">Menú</a>
+                    <ul class="desplegable">
+                        <li class="cateMenu" onclick="clasificarCat('Almuerzos');" ><a href="#">Almuerzos</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Cenas');"><a href="#">Cenas</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Desayunos');"><a href="#">Desayunos</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Ensaladas');"><a href="#">Ensaladas</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Jugos');"><a href="#">Bebidas</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Meriendas');"><a href="#">Meriendas</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html">Recetas</a></li>
+                <li><a href="Registro.html">Registrar Receta</a></li>
+                <li><a>Cerrar Sesión</a></li>
+            </ul>
         </nav>
     </header>
-    <div class="barramenu">
-        <ul class="menu">
-            <li><a href="index.html">Recetas</a></li>
-            <li><a href="Registro.html">Registrar Receta</a></li>
-        </ul>
-    </div>
+   
     <div class="scrol">
 
     </div>
@@ -38,13 +48,26 @@
     <!-- ver recetas -->
 
     <!-- con link -->
-
+ 
 
 
     <div class="contenedor" align="center">
 
         <div id="imagen">
-
+            
+        </div>
+        <div class="modal-container" id="modal-container">
+            <div class="modal">
+                <div class="Xalinear"><input type="button" class="equisd" id="equis" onclick="cancelar()"; value="X" align="right"/></div>
+                <div class="separador"></div>
+                <hr class="linea">
+                <p class ="pregunta">¿Esta seguro de que desea eliminar la receta?</p>
+                <hr class="linea">
+                <div class = "alineado" style="float: right;">
+                    <button class="aceptar" id="aceptar" onclick="borrarReceta();">Aceptar</button>
+                    <button class="cancelar" id="cancelar" onclick="cancelar();">Cancelar</button>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -78,7 +101,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 <!-- Direccion del archivo js -->
+<script src="base.js"></script>
 <script src="conexion.js"></script>
-<!-- <script src="menu.js"></script> -->
-
+<script src="menu.js"></script>
 </html>

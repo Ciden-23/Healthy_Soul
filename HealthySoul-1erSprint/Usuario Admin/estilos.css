@@ -68,12 +68,14 @@ header {
 }
 
 .menu {
-    display: flex;
+    /*display: flex;*/
     padding-left: 0;
 }
 
-.menu li {
+.menu > li {
+    position: relative;
     list-style: none;
+    display: inline-block;
     margin: 15px;
 }
 
@@ -86,17 +88,50 @@ header {
     color: #fff;
 }
 
-.menu li a:hover {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 3px;
-    padding-bottom: 2.8px;
+.menu > li > a:hover {
+    padding: 3px 5px;
     background: #fff;
     border-radius: 10px;
     color: #000;
 }
 
-.barramenu {
+/*-----SUBMENU--------*/
+
+.desplegable{
+    position: absolute;
+    background-color: #7C3C21;
+    padding: 0;
+    margin: 0;
+    padding-top: 18px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+}
+ 
+.desplegable > li {
+    list-style: none;
+    margin: 5px;
+    /*border-bottom: 1px solid #000;*/
+}
+
+.desplegable li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu li:hover .desplegable{
+    visibility: visible;
+    opacity: 1;
+}
+
+.cateMenu :hover {
+    background-color: #fff;
+    border-radius: 5px;
+    color:#000
+}
+/*.barramenu {
     background: #DA723C;
     top: 70px;
     position: fixed;
@@ -107,7 +142,7 @@ header {
     display: flex;
     justify-content: center;
     z-index: 10;
-}
+}*/
 
 .scrol {
     height: 100px;
@@ -144,10 +179,10 @@ body {
     display: inline-block;
     /*Anchura de la tarjeta*/
     width: 350px;
-    /*max-width: 30%;
+    /*max-width: 28%;*/
     /*Altura de la tarjeta*/
-    height: 500px;
-    /*max-height: auto;
+    height: 515px;
+    max-height: auto;/*comentado pao*/
     /*redondear las esquinas de la tarjeta 8px*/
     border-radius: 0.500em;
     /*para proyectar una sombra difuminada*/
@@ -204,6 +239,102 @@ body {
     word-wrap: break-word;
 }
 
+
+
+/*------------BORRAR RECETA------*/
+.modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    /*left: 0;*/
+    height: 100vh;
+    width: 100vh;
+}
+.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+ 
+.modal {
+    background-color: #fff;
+    width: 600px;
+    max-width: 100%;
+    padding: 10px 0px;
+    border-radius: 1px;
+    box-shadow: 0 2px 4px #000;
+    text-align: center;
+}
+
+.equisd {
+    background-color: #fff;
+    border-color: #fff;
+    border: none;
+}
+ .separador {
+    height: 10px;
+ }
+
+.Xalinear :hover {
+    background-color:#EDCFA9;
+}
+
+.Xalinear {
+    text-align: right;
+    padding: 0px 15px;
+}
+.linea {
+        border-top: 1px solid #2c2826;
+        padding: 0;
+        margin: 0;
+}
+
+.tamaño {
+    height: 125px;
+}
+
+.pregunta  {
+    padding: 15px 0px;
+}
+.alineado {
+    text-align: center;
+    padding: 0px 15px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.aceptar {
+    background-color: #fff;
+    border: 1px solid #7C3C21;
+    border-radius: 3px;
+    color: #7C3C21;
+    width: 75px;
+    height: 25px;
+}
+
+.aceptar:hover {
+    background-color: #EDCFA9;
+}
+
+.cancelar {
+    background-color: #7C3C21;
+    border: 1px solid #7C3C21;
+    border-radius: 3px;
+    color: #fff;
+    width: 75px;
+    height: 25px;
+}
+
+
+.cancelar:hover {
+    background-color: #EDCFA9;
+    border-color: #7C3C21;
+    color: #000;
+}
+
 .iconProfile {
     position: absolute;
     width: 100%;
@@ -212,49 +343,52 @@ body {
 }
 
 
+.contenedor .tarjeta .botonBorrar {
+    margin-right: 15px;
+    /*border-radius: 10%;*/
+    border-radius: 5px;
+    border: 1px solid #7C3C21;
+    text-align: center;
+    color: #7C3C21;
+    width: 80px;
+    height: 35px;
+    background: white;
+}
+ 
+.contenedor .tarjeta .botonBorrar:hover {
+    background-color: #EDCFA9;
+}
+
 /*media queries*/
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1000px) {/*combio de 1200 a 1000 pao*/
     .contenedor {
         justify-content: center;
         height: auto;
     }
-    .contenedor .tarjeta{
+
+    .contenedor .tarjeta{/*agrego pao*/
         max-width: 30%;
         
     }
+    
     .contenedor .tarjeta h3 {
         padding: 1rem;
-
     }
     .contenedor .tarjeta img {
         max-width: 90%;
         height: auto;
     }
+    .modal-container {
+        width: 80vh;
+    }
+    .modal {
+        width: 400px;
+    }
+    
 }
 
-/*
-@media screen and (max-width:720px) {
-    .contenedor {
-        justify-content: center;
-        height: auto;
-    }
-    .contenedor .tarjeta{
-        max-width: 30%;
-        height: auto;
-    }
-    .contenedor .tarjeta h3 {
-        padding: 1rem;
-
-    }
-    .contenedor .tarjeta img {
-        max-width: 90%;
-        height: auto;
-    }
-}
-*/
-
-@media screen and (max-width:576px) {
+@media screen and (max-width:576px) {/*agrego pao*/
     .contenedor {
         justify-content: center;
         align-items: center;
@@ -263,7 +397,7 @@ body {
     .contenedor .tarjeta{
         max-width: 50%;
         /*Verificar el alto despues del responsive*/
-        height: auto;
+        /*height: auto;*/
     }
     .contenedor .tarjeta h3 {
         padding: 1rem;
@@ -274,6 +408,27 @@ body {
     .contenedor .tarjeta img {
         max-width: 90%;
         height: auto;
+    }
+    .modal-container {
+        width: 80vh;
+    }
+    .modal {
+        width: 300px;
+        height: 130px;
+        padding-top: 3px;
+    }
+    .separador {
+        height: 0px;
+     }
+     .pregunta  {
+        padding: 5px 1px;
+        margin: 5px;
+    }
+    .alineado {
+        padding-top: 4px;
+    }
+    .Xalinear {
+        height: ;
     }
 }
 
