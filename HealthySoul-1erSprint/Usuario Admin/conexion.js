@@ -16,7 +16,34 @@ let categorias = [
     "Meriendas",
 ];
 
-window.onload = inicializar;
+window.onload = param;
+
+function param(){
+    var val=obtenerValor('cat');
+    console.log("lo que se obtiene del met", val);
+    if(val === null){
+        console.log("estamos en el index")
+        inicializar();
+    }else{
+        console.log("estamos volviendo de una categoria");
+        volver(val);
+    }
+
+}
+
+function obtenerValor(sParametroNombre){
+    var sPaginaURL=window.location.search.substring(1);
+    var sURLVariables= sPaginaURL.split('&');
+    for(var i = 0;i<sURLVariables.length ;i++){
+        var sParametro=sURLVariables[i].split('=');
+
+        if(sParametro[0]==sParametroNombre){
+          return sParametro[1];
+        }
+    }
+    return null;
+}
+
 function inicializar(){
     //Usar un for para recorrer los elementos de la lista
     for (let i = 0; i < categorias.length; i++) {
@@ -49,6 +76,7 @@ function inicializar(){
         })
     }
 }
+
 
 function alerta(){
     alert("Funciona");
@@ -87,13 +115,27 @@ function borrarReceta(){
 });
 }
 
-function clasificarCat7(categoria){
-    var container = document.getElementById('imagen');
-    let tarj = Array.prototype.slice.call(document.getElementsByClassName("tarjeta"), 0);
-    for(element of tarj){
-        element.remove();
-    }  
-    mostrarCat(categoria);
+function volver(categ){
+    const categRef = db.collection(categ);
+    categRef.get().then((results) => {
+        const data = results.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+        }))
+        for (var i = 0; i < data.length; i++) {
+            var nom = data[i].Nombre
+            var ide = data[i].id
+            var img = data[i].Imagen
+            imagen.innerHTML += `<div class="tarjeta"><a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'">
+                      <img src="${img}">
+                      <div class="tamaño"><h3>${nom}</h3></div>
+                  </a>
+                  <div>
+                  <input type = "button" class="botonBorrar" id="abrir" nombre="${ide}" onclick="borrar('${ide}','${categ}','${nom}');" value="Borrar" style="float: right;"/>
+                  </div>
+                  </div>`;
+        }
+    })
 }
 
 function clasificarCat(categ){
