@@ -4,9 +4,6 @@
  margin: 0;
  
 }  
-input::placeholder{
-    font-size: 20px;
-}
 
 body{
     
@@ -93,11 +90,10 @@ body{
     
 }
 .error{
-    display: none;
-    color: red;
+    margin-left: 15px;
 }
 .botonEn{
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 60px;
     width: 75px;
     color: white;
@@ -137,7 +133,6 @@ body{
     border-radius: 19%;
     height: 39px;
     z-index: 1;
-    
 }
 
 .butt:hover {
@@ -145,12 +140,14 @@ body{
 }
 
 .buttonbackimage {
+    
     position: absolute;
     place-items: center;
     z-index: 10;
 }
 
 .buttonbackimage2 {
+    
     z-index: 11;
     place-items: center;
 }
@@ -221,7 +218,3 @@ body{
         margin-bottom: 0;
     }
 }
-/*
-@media (min-width:1700px)
-*/
-
