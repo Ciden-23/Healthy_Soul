@@ -1,10 +1,12 @@
 //variable que se puede declarar en cada archivo que necesite la bd
+
+
 var db = firebase.firestore();
 //Variables que capturan el id y nombre para borrar receta
 var ideBorrar;
 var categBorrar;
 var nom;
-
+var state="0";
 disableS();
 //Arreglo con el nombre de las categorias
 let categorias = [
@@ -19,14 +21,18 @@ let categorias = [
 window.onload = param;
 
 function param(){
-    var val=obtenerValor('cat');
+    var val=obtenerValor('state');
+    var cat=obtenerValor('clase');
     console.log("lo que se obtiene del met", val);
-    if(val === null){
-        console.log("estamos en el index")
+    console.log(cat);
+    console.log(val);
+    if(val == null || val == "0"){
+        console.log("estamos en el index");
+       
         inicializar();
     }else{
         console.log("estamos volviendo de una categoria");
-        volver(val);
+        volver(cat);
     }
 
 }
@@ -64,7 +70,7 @@ function inicializar(){
                     //para generar un HTML de la receta)
                 var ide = data[i].id
                 var img = data[i].Imagen
-                imagen.innerHTML += `<div class="tarjeta" id="tarjeta"><a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'">
+                imagen.innerHTML += `<div class="tarjeta" id="tarjeta"><a class="refer" href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'&state='${state}'">
                         <img src="${img}">
                         <div class="tamaño"><h3>${nom}</h3></div>
                     </a>
@@ -126,7 +132,7 @@ function volver(categ){
             var nom = data[i].Nombre
             var ide = data[i].id
             var img = data[i].Imagen
-            imagen.innerHTML += `<div class="tarjeta"><a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'">
+            imagen.innerHTML += `<div class="tarjeta" id="tarjeta"><a class="refer" href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'&state='${state}'">
                       <img src="${img}">
                       <div class="tamaño"><h3>${nom}</h3></div>
                   </a>
@@ -144,6 +150,7 @@ function clasificarCat(categ){
     for(element of tarj){
         element.remove();
     }
+    state="1";
     const categRef = db.collection(categ);
     categRef.get().then((results) => {
         const data = results.docs.map((doc) => ({
@@ -154,7 +161,7 @@ function clasificarCat(categ){
             var nom = data[i].Nombre
             var ide = data[i].id
             var img = data[i].Imagen
-            imagen.innerHTML += `<div class="tarjeta"><a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'">
+            imagen.innerHTML += `<div class="tarjeta" id="tarjeta"><a class="refer" href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'&state='${state}'">
                       <img src="${img}">
                       <div class="tamaño"><h3>${nom}</h3></div>
                   </a>
@@ -192,3 +199,8 @@ function enableS() {
     window.onscroll = function() {};
 }
 setTimeout(aa, 3000);
+
+function remplaaa( parama){
+    history.pushState({}, null, "ListaRecetas.html?state=1&clase="+parama);
+
+}
