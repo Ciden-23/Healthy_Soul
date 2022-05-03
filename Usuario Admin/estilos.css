@@ -503,10 +503,134 @@ body {
         margin-top: 121px;
      }
 }
+@media screen and (max-width: 375px){
+    .modal-container {
+        width: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        text-align: center;
+    }
+    .modal {
+        width: 250px;
+        height: 110px;
+        padding-top: 3px;
+    }
+    .separador {
+        height: 0px;
+     }
+     .pregunta  {
+        width: 238px;
+        height: 40px;
+        padding: 3px 0px;
+        font-size: 13px;
+    }
+    .aceptar {
+        width: 65px;
+        height: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .cancelar {
+        width: 65px;
+        height: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .alineado{
+        padding: 0px 8px;
+        padding-top: 6px;
+    }
+}
 @media screen and (max-width: 350px){
     .contenedor .tarjeta .botonBorrar{
         margin-top: 123px;
      }
+}
+@media screen and (max-width: 300px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 123px;
+     }
+     .modal-container {
+        width: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        text-align: center;
+    }
+    .modal {
+        width: 190px;
+        height: 100px;
+        padding-top: 3px;
+    }
+    .separador {
+        height: 0px;
+     }
+     .pregunta  {
+        width: 185px;
+        height: 35px;
+        padding: 2px 0px;
+        font-size: 10px;
+    }
+    .aceptar {
+        width: 50px;
+        height: 17px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 10px;
+    }
+    .cancelar {
+        width: 50px;
+        height: 17px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 10px;
+    }
+    .alineado{
+        padding: 0px 5px;
+        padding-top: 1.5px;
+    }
+}
+@media screen and (max-width: 200px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 123px;
+     }
+     .modal-container {
+        width: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        text-align: center;
+    }
+    .modal {
+        width: 190px;
+        height: 100px;
+        padding-top: 3px;
+    }
+    .separador {
+        height: 0px;
+     }
+     .pregunta  {
+        width: 185px;
+        height: 35px;
+        padding: 2px 0px;
+        font-size: 10px;
+    }
+    .aceptar {
+        width: 50px;
+        height: 17px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 10px;
+    }
+    .cancelar {
+        width: 50px;
+        height: 17px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 10px;
+    }
+    .alineado{
+        padding: 0px 5px;
+        padding-top: 1.5px;
+    }
 }
 
 /*footer*/
