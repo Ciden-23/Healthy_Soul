@@ -307,6 +307,7 @@ body {
     color: #470D21;
     width: 75px;
     height: 25px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .aceptar:hover {
@@ -322,6 +323,7 @@ body {
     color: #fff;
     width: 75px;
     height: 25px;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -349,6 +351,7 @@ body {
     width: 80px;
     height: 35px;
     background: #DA723C;
+    font-family: 'Roboto', sans-serif;
 }
  
 .contenedor .tarjeta .botonBorrar:hover {
