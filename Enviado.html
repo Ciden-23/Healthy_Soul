@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Soul</title>
+    <link rel="icon" href="Assets/logo7.png">
+    <link rel="stylesheet" href="./estilosCSS/Enviado.css">
+</head>
+
+<body>
+    <div class="buttonback"><button class="butt">
+        <a class="x" href="RecuperarContraseña.html">
+         <img src="Assets/botonencendido.png"height="35" alt="comida :3" width="75" class="buttonbackimage" >
+         <img src="Assets/botonapagado-png.png"height="35" alt="comida :3" width="75" class="buttonbackimage2" >
+       </a>
+    </div>
+       </button>
+    <div class="recta"> 
+       
+        <div class="SirCuad">
+            <div class="logoC">
+                <img class="logo" src="./Assets/logo7.png" alt="Logo de la pagina">
+               
+               
+            <h2>RESTABLECER CONTRASEÑA</h2>
+               
+                   
+
+            </div>
+        </div>
+        <div class="SirCuad2">
+            <div>
+                
+                
+                    <div align="center" class="textoBoton">
+                       <b><span class="Ingrese">Se ha enviado un correo a su cuenta.Por favor sigue los pasos indicados.</span></b>
+                       
+                    </div>
+
+                    <br>
+                    <span class="error">volver al menu principal</span>
+                    <br>
+                    <input onclick="redi()" class="botonEn" type="button" value="Volver" >
+                          
+                
+            </div>
+        </div>
+        
+  </div>
+      
+    
+
+</body>
+<script> 
+    mov();
+    function mov(){
+        let ca =document.querySelector(".butt");
+         ca.style.marginTop="44px";
+    }
+    </script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="Recuperar.js"></script>
+
+</html>

@@ -68,12 +68,14 @@ header {
 }
 
 .menu {
-    display: flex;
+    /*display: flex;*/
     padding-left: 0;
 }
 
-.menu li {
+.menu > li {
+    position: relative;
     list-style: none;
+    display: inline-block;
     margin: 15px;
 }
 
@@ -86,27 +88,48 @@ header {
     color: #fff;
 }
 
-.menu li a:hover {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 3px;
-    padding-bottom: 2.8px;
+.menu > li > a:hover {
+    padding: 3px 5px;
     background: #fff;
     border-radius: 10px;
     color: #000;
 }
 
-.barramenu {
-    background: #DA723C;
-    top: 70px;
-    position: fixed;
-    height: 30px;
-    left: 0;
-    right: 0;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    z-index: 10;
+
+/*-----SUBMENU--------*/
+.desplegable{
+    position: absolute;
+    background-color: #7C3C21;
+    padding: 0;
+    margin: 0;
+    padding-top: 18px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+}
+ 
+.desplegable > li {
+    list-style: none;
+    margin: 5px;
+    /*border-bottom: 1px solid #000;*/
+}
+
+.desplegable li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu li:hover .desplegable{
+    visibility: visible;
+    opacity: 1;
+}
+
+.cateMenu :hover {
+    background-color: #fff;
+    border-radius: 5px;
+    color:#000
 }
 
 .scrol {
@@ -124,7 +147,10 @@ body {
     margin: 0;
     padding: 0;
 }
+.cateMenu{
+    cursor:pointer;
 
+}
 .contenedor {
     /* z-index: -1;
      /*flex-wrap: wrap indica que puede haber cambio de linea.  Los elementos flex aparecen colocados en varias lineas*/
@@ -138,15 +164,15 @@ body {
 }
 
 .contenedor .tarjeta {
-    display: flex;
+    display: flex; 
     flex-wrap: wrap;
     /*crea cajas que son de bloque y en linea de forma simultanea*/
     display: inline-block;
     /*Anchura de la tarjeta*/
     width: 350px;
-    max-width: 28%;
+    /*max-width: 28%;*/
     /*Altura de la tarjeta*/
-    height: 500px;
+    height: 510px;
     max-height: auto;
     /*redondear las esquinas de la tarjeta 8px*/
     border-radius: 0.500em;
@@ -167,8 +193,10 @@ body {
 }
 
 .contenedor .tarjeta:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    border: 6px solid #470D21;
+    text-decoration-line: underline;
+    text-decoration-color: #000;
+    color:#000;
 }
 
 .contenedor .tarjeta img {
@@ -239,6 +267,7 @@ footer {
     display: none;
     height: 135.6px;
     line-height: 1.2;
+    
 }
 
 .container-logo {
@@ -275,7 +304,11 @@ a:active {
 a:visited {
     color: #F9E4D4;
 }
-
+a:hover{
+    text-decoration-line: underline;
+    text-decoration-color: #000;
+    color:#000;
+ }
 .contacto {
     display: flex;
     justify-content: end;
@@ -297,3 +330,89 @@ a:visited {
     padding: 0;
     border: 0;
 }
+
+/*-----responsive header--------*/
+@media all and (max-width: 1020px){
+
+    .nav1{
+        padding-right: 30px;
+        height: 50px;
+    }
+    .logo{
+        width: 100%;
+        max-width: 205px;
+        min-width: 70px;
+        
+    }
+
+    .logo img{
+        width: 25%;
+        height: auto;
+        padding-left: 10px;
+        padding-right: 5px;
+    }
+    .nombre_empresa{
+        font-size: 100%;
+        max-width: 133.42px;
+        width: 100%;
+    }
+    .menu{
+        max-width: 375px;
+        min-width: 200px;
+        width: auto;
+    }
+    .menu li{
+        width: auto;
+        margin: 5px;
+
+    }
+    .menu li a{
+        font-size: 100%;
+    }
+    .menu li a:hover {
+        padding: 0.5px 1.5px;
+        border-radius: 5px;
+    }
+    .nav1.active {
+        height: 40px;
+    }
+}
+
+@media all and (max-width: 605px){
+    
+    .nav1{
+        padding-right: 10px;
+    }
+
+    .nombre_empresa{
+        display: none;
+    }
+    .logo{
+        width: 100%;
+        max-width: 66.25px;   
+    }
+    .logo img{
+       height: 27px;
+       width: auto;
+    }
+
+    .menu{
+        max-width: 375px;
+        min-width: 200px;
+        width: auto;
+    }
+    .menu li{
+        width: auto;
+        margin: 5px;
+
+    }
+    .menu li a{
+        font-size: 78%;
+    }
+    .menu li a:hover {
+        padding: 0.5px 1.5px;
+        border-radius: 5px;
+    }
+    
+}
+/*-----responsive header--------*/
