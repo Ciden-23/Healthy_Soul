@@ -13,9 +13,8 @@ body {
 
 
 body {
-    /*Anchura, ocupamos el 100%*/
-    min-height: 100vh;
-    
+    /*Anchura, ocupamos el 100%
+    min-height: 100vh;*/
     /*Especificar la fuente */
     font-family: 'Roboto', sans-serif;
     /*Espacio entre las letras*/
@@ -23,12 +22,8 @@ body {
     /*Establecer el interlineado de las lineas de texto*/
     line-height: 1.6;
     text-align:center;
- /*width:100%;
-height: 100%;
- margin:0 ;
- padding:0;
- background-image: url("../Assets/madera.jpg");
-    color: ;*/
+ /*
+ background-image: url("../Assets/madera.jpg");*/
     background-color:#fff ;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -67,9 +62,16 @@ header {
 }
 
 .logo img {
-    padding-left: 20px;
-    height: 42.5px;
-    padding-right: 10px;
+    margin-left: 20px;
+    width: 79px;
+    height: 43px;
+    margin-right: 10px;
+}
+
+.textoInferior{
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .nav1 {
@@ -83,159 +85,100 @@ header {
     transition: 1000ms transform;
 }
 
-
-
 .scrol {
     height: 70px;
 }
 
-
 /*header negrito */
 
-
-/*Eliminar todos los padding y los margin que vienen por defecto, por eso colocamos 0*/
-
-
-.imgHome {
-    display: flex;
-    width: 100%;
-    height: 600px;
-    margin:0%;
-   
- 
- 
- background: #659999;  /* fallback for old browsers */
- background: -webkit-linear-gradient(to right, #f4791f, #659999);  /* Chrome 10-25, Safari 5.1-6 */
-
- background: linear-gradient(to right, hsl(25deg 91% 54% / 68%), hsl(180deg 20% 50% / 74%)), url(../Assets/fondoSaludable4.png);
- 
-
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    /*background: #e1eec3;  /* fallback for old browsers */
-/*background: -webkit-linear-gradient(to right, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
-/*background: linear-gradient(to right, hsla(359, 84%, 63%, 0.671), hsla(78, 56%, 85%, 0.555)), url(Assets/fondoSaludable2.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+.menu > li {
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    margin: 15px;
 }
-/*
-.imgHome img{
-    height: 100%;
- width: 100%;
- object-fit: contain;
-}*/
 
-.imgHome .textoHomepage{
-    
+.menu li a {
+    color: #2D2424;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s ease;
+    font-size: 20px;
+    color: #fff;
+}
+
+.menu > li > a:hover {
+    padding: 3px 5px;
+    background: #fff;
+    border-radius: 10px;
+    color: #000;
+}
+
+.ali{
+    display: flex;
+    justify-content: center;
     width: 100%;
-    
-    text-align: center;
-    align-items: center;
-    align-content: center;
-    margin-top: 25rem;
 }
 
 .imgHome .textoHomepage h1{
-     /*margin-top: 50%;
-    margin-bottom: auto;
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    vertical-align: middle;
-  
-    font-weight: bolder;
-    display: flex;
-   margin-top: 1.8%;
-    margin-left: 10%;
-    margin-right: 60%;*/
-    font-size: 2.188rem;
-    padding: 0.5em;
-    align-items: center;
-    align-content: center;
-    /*color: black;
-    font-weight: bolder;
-    font-style: bold ;
-   /* font-family: 'Secular one', sans-serif;
-    color: white;
-    -webkit-text-stroke: 0.002px white;
-font-family: Roboto;*/
-font-family: 'Nunito', sans-serif; color:black ;
-
-}
-
-.imgHome .textoHomepage h2{
-    margin-top: auto;
-    margin-bottom: auto;
-
-    left: 50%;
-  position: absolute;
-  top: 75%;
-
-  transform: translate(-50%, -10%);
-    font-weight: bolder;
-    display: flex;
-    /*margin-top: 1.8%;
-    margin-left: 10%;
-    margin-right: 60%;*/
+     
+    /* font-size: 2.188rem; */
     font-size: 35px;
     padding: 0.5em;
     align-items: center;
     align-content: center;
-    /*color: black;
-    font-weight: bolder;
-    font-style: bold ;
-   /* font-family: 'Secular one', sans-serif;
-    color: white;
-    -webkit-text-stroke: 0.002px white;
-font-family: Roboto;*/
-font-family: 'Nunito', sans-serif; color:black ;
-
+    
+    font-family: 'Nunito', sans-serif; color:black ;
+    padding-bottom: 70px;
 }
 
- .botonVerMas {
+
+
+.botonVerMas {
     background-color: #DA723C;
     width: 250px;
     height: 40px;
     display: flex;
+    align-items: center;
     border-radius: 5px;
     border-width: 2px;
     margin-top: 5px;
     margin-bottom: 20px;
-    /*margin-left: 55px;*/
     align-items: center;
     
     color: rgb(255, 255, 255);
     font-size: 20px;
 
     justify-content: center;
-    
-    margin-left: 20%;
     text-shadow: none;
 }
 
-.botonVer{
-    align-items: center;
-    justify-content: center;
-
+.ali .botonVerMas:hover{
+    background-color: #470D21;
 }
 
 
-.Invitados {
-    align-items: center;
+.imgHome {
     display: flex;
-    margin: 0;
-    background:#470D21 ;
-    width:100%;
-    font-size: 17px;
-    height: 50px;
-}
-
-.Invitados h1{
-    justify-content: center;
-    margin: auto;
-    color:white;
+    width: 100% ;
+    height: 600px;
+    margin:0%;
+    background: #659999;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f4791f, #659999);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, hsl(25deg 91% 54% / 68%), hsl(180deg 20% 50% / 74%)), url(../Assets/fondoSaludable4.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 
+.imgHome .textoHomepage{
+    
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 25rem;
+}
 
 .imgHome img{
     display: flex;
@@ -243,6 +186,12 @@ font-family: 'Nunito', sans-serif; color:black ;
     height: 500px;
 }
 
+.iconProfile {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 200;
+}
 
 
 .contenedor {
@@ -288,8 +237,13 @@ font-family: 'Nunito', sans-serif; color:black ;
 }
 
 .contenedor .tarjeta:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    /*transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);*/
+    border: 6px solid #470D21;
+    text-decoration-line: underline;
+    text-decoration-color: #000;
+    color:#000;
+
 }
 
 .contenedor .tarjeta img {
@@ -303,6 +257,8 @@ font-family: 'Nunito', sans-serif; color:black ;
     margin: 1rem auto;
     border: 5px solid white;
 }
+
+
 
 .contenedor .tarjeta h3 {
     display: flex;
@@ -325,9 +281,6 @@ font-family: 'Nunito', sans-serif; color:black ;
     word-wrap: break-word;
 }
 
-
-
-
 /*footer*/
 
 footer {
@@ -335,14 +288,17 @@ footer {
     font-size: 20px;
     margin-top: 60px;
     /*position: relative;*/
-    display: none;
-    height: 135.6px;
+    
+    height: 136px;
     line-height: 1.2;
-    position: absolute;
+   
     right: 0;
     bottom: 0;
+    width: 101%;
     
+  
 }
+
 
 .container-logo {
     align-items: center;
@@ -378,6 +334,17 @@ a:active {
 a:visited {
     color: #F9E4D4;
 }
+a:hover{
+    text-decoration-line: underline;
+    text-decoration-color: #000;
+    color:#000;
+ }
+ .botonVerMas:hover{
+    text-decoration-line: underline;
+    text-decoration-color: white;
+    color:white;
+
+ }
 
 .contacto {
     display: flex;
@@ -406,15 +373,17 @@ a:visited {
 
 /*media queries*/
 
-
-
 @media screen and (max-width:1200px) {
     .imgHome {
         justify-content: center;
         max-height: auto;
         width: 100%;
-
     }
+
+    .textoInferior{
+        font-size: 16px;
+    }
+
     .imgHome .textoHomepage h1{
         font-weight: bolder;
     }
@@ -437,20 +406,68 @@ a:visited {
     
 }
 
-@media screen and (max-width:576px) {
+@media screen and (max-width:1160px) {
+    .botonVerMas {
+        width: 200px;
+        height: 40px;
+        margin-top: 3px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .botonVerMas {
+        width: 160px;
+        height: 30px;
+        margin-top: 3px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .textoInferior{
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width:600px) {
     .imgHome {
         max-width: 100%;
         justify-content: center;
         min-height: auto;
-        height: 30%;
+        height: 20%;
        
     }
     
+    
+    .menu li a {
+        font-size: 14px;
+    }
+
+    .nav1 {
+        background: #7C3C21;
+        height: 70px;
+        padding-right: 10px;
+        width: 100%;
+    }
+
+    .logo img {
+        padding-left: 10px;
+        height: 32.5px;
+        padding-right: 5px;
+    }
+
+    .nombre_empresa {
+        font-size: 20.5px;
+        
+    }
+
     .imgHome .textoHomepage h1{
         font-weight: bolder;
         /*Aca cambia la letra a 25 px */
-        /*Revisalo si se ve bien porfa :'v*/
-        font-size: 1.563rem;
+        /* font-size: 1.563rem; */
+        font-size: 30px;
         
     }
 
@@ -474,7 +491,11 @@ a:visited {
         max-width: 90%;
         height: auto;
     }
-
-
 }
     
+@media screen and (max-width:600px) {
+    .imgHome .textoHomepage h1{
+        font-size: 25px;
+        
+    }
+}

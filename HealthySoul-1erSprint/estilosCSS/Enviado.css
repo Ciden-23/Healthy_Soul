@@ -3,11 +3,7 @@
 *{
  margin: 0;
  
- 
 }  
-input::placeholder{
-    font-size: 20px;
-}
 
 body{
     
@@ -16,7 +12,6 @@ body{
     background-attachment: fixed;
     background-size: 100% 100%;
     font-family: 'Roboto', serif;
-    height: 100vh;
 }
 
 .recta{
@@ -40,7 +35,7 @@ body{
 
 .SirCuad {
     
-   
+
     max-height: 342px;
     max-width:239px;
     background-color: #DA723C;
@@ -64,6 +59,7 @@ body{
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     
+
     
 }
 .logoC{
@@ -81,8 +77,10 @@ body{
     padding-right: 5%;
 }
 .Ingrese{
-    
+    position:relative;
+    right: 20px;
     font-size: 18px;
+    
 }
 .inputC{
     margin-top: 10px;
@@ -93,11 +91,10 @@ body{
     
 }
 .error{
-    display: none;
-    color: red;
+    margin-left: 15px;
 }
 .botonEn{
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 60px;
     width: 75px;
     color: white;
@@ -109,12 +106,6 @@ body{
     border-radius: 19%;
     height: 39px;
     z-index: 1;
-}
-.envi{
-   color: white;
-   text-decoration: none;
-   font-family: 'Roboto', serif;
-
 }
 
 .botonEn:hover {
@@ -128,7 +119,8 @@ body{
      
 }
 .butt {
-    top: 35px;
+
+    top:35px;
     padding-top: 1px;
     padding-bottom: 0;
     padding-left: 1px;
@@ -144,7 +136,6 @@ body{
     border-radius: 19%;
     height: 39px;
     z-index: 1;
-    
 }
 
 .butt:hover {
@@ -152,12 +143,14 @@ body{
 }
 
 .buttonbackimage {
+    
     position: absolute;
     place-items: center;
     z-index: 10;
 }
 
 .buttonbackimage2 {
+    
     z-index: 11;
     place-items: center;
 }
@@ -186,7 +179,10 @@ body{
         
         
     }
-   
+   .error{
+       margin-left: 85px;
+       
+   }
     .SirCuad{
         position:relative;
         top:35px;
@@ -211,6 +207,7 @@ body{
         min-width: 406px;
         border-right: 1px solid black;
         border-bottom: 1px solid black;
+        
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         padding-top:  16%;
@@ -222,8 +219,13 @@ body{
         
     }
     .botonEn{
-        margin-top: 25px;
-        margin-left: 200px;
+        
+        
+        margin-left: 135px;
+        
+    }
+    .Ingrese{
+        right: 30px;
     }
     .logo{
         margin-bottom: 0;
@@ -255,6 +257,7 @@ body{
         height:35px;
         width: 236px;
         font-size: 20px;
+        margin-left: 120px;
     }
     .SirCuad2{
         padding-top: 30%;
@@ -264,9 +267,11 @@ body{
         border-bottom: 1px solid black;
         border-right: 2px solid black;
 
+     
+    }
+    .error{
+       margin-left: 120px;
+       font-size: 20px;
+
     }
 }
-/*
-@media (min-width:1700px)
-*/
-
