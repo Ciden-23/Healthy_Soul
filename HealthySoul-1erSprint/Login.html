@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="Assets/logo7.png">
+    <link rel="stylesheet" href="estilosCSS/estilosLogin.css">
+</head>
+
+<body>
+
+    <div class="buttonback"><button class="butt">
+        <a class="x" href="index.html">
+         <img src="Assets/botonencendido.png"height="35" alt="comida :3" width="75" class="buttonbackimage" >
+         <img src="Assets/botonapagado-png.png"height="35" alt="comida :3" width="75" class="buttonbackimage2" >
+       </a>
+       </button>
+    </div>
+
+    <div class="contenedor">
+        <div class="cont_centreado">
+            <div class="cont_logo">
+                <div class="logo">
+                    <img src="Assets/logo7.png" alt="LogoPagina">
+                </div>
+                <h2 class="cab_izquierda">Bienvenido</h2>
+            </div>
+
+            <div class="cont_login">
+                <div class="titulo">
+                    <h2 class="cabecera">Iniciar Sesión</h2>
+                </div>
+
+                <div>
+                    <label for="correoElectronico">Correo Electrónico</label>
+                    <input type="text" id="1" placeholder="Ingrese su correo" required>
+                    <label for="contraseña">Contraseña</label>
+                    <input type="password" id="2" placeholder="Ingrese su contraseña" required autocomplete="off">
+                    <div class="boton">
+                        <button title="Ingresar" onclick="acceso()" name="Ingresar">Ingresar</button>
+                    </div>
+                    <div class="olvido">
+                        <a href="RecuperarContraseña.html">¿Olvidó su contraseña?</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!--Scripts necesarios para la base de datos-->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<!--Scripts para el funcionamiento-->
+<script src="verificar.js"></script>
+
+</html>

@@ -7,20 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthy Soul</title>
     <link rel="icon" href="Assets/logo7.png">
-    <link rel="stylesheet" href="./estilosCSS/RecuperarContraseña.css">
-
+    <link rel="stylesheet" href="./estilosCSS/Enviado.css">
 </head>
 
 <body>
-    
     <div class="buttonback"><button class="butt">
-        <a class="x" href="Login.html">
+        <a class="x" href="RecuperarContraseña.html">
          <img src="Assets/botonencendido.png"height="35" alt="comida :3" width="75" class="buttonbackimage" >
          <img src="Assets/botonapagado-png.png"height="35" alt="comida :3" width="75" class="buttonbackimage2" >
        </a>
-       </button>
     </div>
-
+       </button>
     <div class="recta"> 
        
         <div class="SirCuad">
@@ -37,17 +34,18 @@
         <div class="SirCuad2">
             <div>
                 
-                <form>
-                    <div class="textoBoton">
-                       <b><label class="Ingrese">Correo Electrónico</label></b>
-                        <input class="inputC" placeholder="Ingrese Su Correo">
-                        <br>
-                        <br>
-                        <span class="error" id="prr"> El campo no puede estar vacío. </span> 
+                
+                    <div align="center" class="textoBoton">
+                       <b><span class="Ingrese">Se ha enviado un correo a su cuenta.Por favor sigue los pasos indicados.</span></b>
+                       
                     </div>
+
                     <br>
-                    <input onclick="recoverPass()" class="botonEn" type="button" value="Enviar" >
-                </form>
+                    <span class="error">volver al menu principal</span>
+                    <br>
+                    <input onclick="redi()" class="botonEn" type="button" value="Volver" >
+                          
+                
             </div>
         </div>
         
@@ -57,15 +55,16 @@
 
 </body>
 <script> 
-mov();
-function mov(){
-    let ca =document.querySelector(".butt");
-     ca.style.marginTop="44px";
-}
-</script>
+    mov();
+    function mov(){
+        let ca =document.querySelector(".butt");
+         ca.style.marginTop="44px";
+    }
+    </script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <script src="Recuperar.js"></script>
+
 </html>

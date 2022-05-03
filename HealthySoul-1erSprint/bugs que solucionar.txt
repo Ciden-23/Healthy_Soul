@@ -1,0 +1,26 @@
+Usuario Admin /Registrar Receta footer arriba de 1075 se sube 
+Usuario Admin /Registrar Receta responsive llega hasta 400 px 
+Usuario Admin /Registrar Receta boton imagen tiene borde en la
+ letra interior 
+Usuario Admin /Registrar Receta subir imagen falta el mayor o igual
+Usuario Admin /Registrar Receta anexos faltantes
+Usuario Admin /Registrar Receta falta el archivo
+guardarRegistro.js //mentirita toy ciego xdxd
+Usuario admin/index boton borrar se sobrepone 
+en el responsive 
+Usuario admin /index las tarjetas siguen
+levantandose y no se hace el bordeado de la pagina
+
+Login/ falta el logo 
+-------------
+Home page /detalle receta el boton al 
+hacer responsive se baja mucho
+
+Home page /detalle receta el boton al 
+esta sobre el header 
+
+Home page /detalle receta no es responsive 
+
+Observaciones
+Usuario Admin /boton receta sobra
+footer All /inicio con text decoritio underline
