@@ -1,0 +1,735 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rokkitt:wght@800&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: black;
+    font-size: 20px;
+}
+
+body {
+   
+    background: url(Assets/madera.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: 'Roboto', serif;
+}
+.general{
+ width: 100%;
+
+margin: 0 auto;
+
+}
+
+/*header negrito */
+
+.nombre_empresa {
+    font-family: 'Roboto', sans-serif;
+    font-size: 26.5px;
+    color: white;
+    margin: 0;
+    height: auto;
+    width: auto;
+}
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+   
+    position: fixed;
+    z-index: 100;
+    letter-spacing: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    padding-left: 20px;
+    height: 42.5px;
+    padding-right: 10px;
+}
+
+.nav1 {
+    background: #7C3C21;
+    height: 70px;
+    padding-right: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 1000ms transform;
+}
+
+.nav1.active {
+    height: 50px;
+}
+
+.barramenu.active {
+    top: 50px;
+}
+
+.menu {
+    display: flex;
+    padding-left: 0;
+}
+
+.menu li {
+    list-style: none;
+    margin: 15px;
+}
+
+.menu li a {
+    color: #2D2424;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s ease;
+    font-size: 20px;
+    color: #fff;
+}
+
+.menu li a:hover {
+    padding: 3px 5px;
+    background: #fff;
+    border-radius: 10px;
+    color: #000;
+}
+
+/*-----SUBMENU--------*/
+
+.desplegable{
+    position: absolute;
+    background-color: #7C3C21;
+    padding: 0;
+    margin: 0;
+    padding-top: 18px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+}
+ 
+.desplegable > li {
+    list-style: none;
+    margin: 5px;
+    /*border-bottom: 1px solid #000;*/
+}
+
+.desplegable li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu li:hover .desplegable{
+    visibility: visible;
+    opacity: 1;
+}
+
+.cateMenu :hover {
+    background-color: #fff;
+    border-radius: 5px;
+    color:#000
+}
+
+
+
+/*header negrito */
+
+
+/*parte arriba*/
+
+h1 {
+    color: black;
+}
+
+
+/*h1:hover{
+ color:#f7ffac ;
+
+}*/
+
+.titleBack {
+    margin-top: 50px;
+}
+
+.PhotoAndDesc {
+   
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+  margin-bottom: 50px;
+   height: 756px;
+    display: grid;
+    grid-template-columns:  minmax(10px,1.4fr)  minmax(20px,2fr);
+
+}
+
+
+.linea {
+    background: #7C3C21;
+}
+
+.iconProfile{
+    height: 100%;
+    width: 100%; 
+}
+
+.PhotoIzq {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.iconProfile {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 100%;
+    
+    object-fit: cover;
+    border-radius: 0px 10px 10px 0px;
+  
+}
+
+  /*parte arriba*/
+    /*letras*/
+.let3 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.let {
+    font-size: 24px;
+    text-align: center;
+}
+
+.let2 {
+    font-family: 'Roboto', serif;
+    text-align: center;
+    font-size: 24px;
+}
+
+.tit {
+    cursor: default;
+    text-align: center;
+    font-size: 44px;
+   
+    text-shadow: -2px -2px 2px #FFF, 2px 2px 2px #FFF, -2px 2px 2px #FFF, 2px -2px 2px #FFF;
+    font-family: 'Roboto', serif;
+    text-transform: uppercase;
+}
+
+.bordero {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.valor2 {
+    font-size: 20px;
+}
+
+
+/*letras*/
+
+
+/*titulo boton*/
+
+.butt {
+    margin-top: 10px;
+    margin-left: 35px;
+    background: black;
+    border: none;
+    cursor: pointer;
+    transition: 100ms transform;
+    place-items: center;
+    border: 2px solid black;
+    border-radius: 19%;
+    height: 39px;
+    z-index: 1;
+}
+
+.butt:hover {
+    transform: scale(1.2);
+}
+
+.buttonbackimage {
+    position: absolute;
+    place-items: center;
+    z-index: 10;
+}
+
+.buttonbackimage2 {
+    z-index: 11;
+    place-items: center;
+}
+
+.buttonbackimage:hover {
+    opacity: 0;
+    transition: opacity 1.5s
+}
+
+
+/*titulo boton*/
+
+
+/*receta inferior*/
+
+
+
+.mix {
+   
+    /*hoja */
+    margin-top: 50px;
+    margin-left: 125px;
+    margin-right: 125px;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    
+    gap: 25px;
+
+}
+
+
+.Preparacion,
+.Nutricional {
+    height: 500px;
+    padding-left: 50px;
+    background: white;
+    padding-right: 35px;
+    font-family: 'Roboto', serif;
+    
+}
+
+.Preparacion {
+
+    background: url(Assets/pagina.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+
+.Nutricional {
+
+
+    background: url(Assets/pagina.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+
+.let2 {
+    padding-top: 60px;
+}
+
+.let3 {
+    padding-top: 60px;
+}
+
+.let {
+
+    padding-top: 90px;
+}
+.ingredientesDer {
+ width: 100%;
+  height: 100%; 
+
+}
+
+.ingredientesDer {
+    margin: 0px;
+    background: url(Assets/pagina.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 10px 0px 0px 10px;
+    padding-left: 50px;
+ 
+    padding-right: 35px;
+
+}
+
+.ingreajuste {
+    margin-right: 25px;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: 65%;
+}
+
+
+/*receta inferior*/
+
+
+/*footer*/
+
+footer {
+    background-color: #7C3C21;
+    font-size: 20px;
+    margin-top: 60px;
+    height: 135.6px;
+  
+    
+}
+
+.container-logo {
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.logo2 {
+    width: 79px;
+    height: 43px;
+}
+
+.container-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: #F9E4D4;
+}
+
+a:active {
+    color: #F9E4D4;
+}
+
+a:visited {
+    color: #F9E4D4;
+}
+a:hover{
+    text-decoration-line: underline;
+    text-decoration-color: #000;
+    color:#000;
+ }
+
+.contacto {
+    display: flex;
+    justify-content: end;
+    cursor: default;
+    color: #F9E4D4;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    cursor: default;
+    color: #F9E4D4;
+}
+.texto{
+    height: 65%;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+
+}
+.texto2{
+    height: 65%;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+   padding-right:100px;
+}
+
+/*.valor{
+    color: green;
+}*/
+
+
+/*footer*/
+
+.PhotoIzq{
+    height: 756px;
+}
+.ingredientesDer{
+    height: 756px;
+}
+@media (max-width: 1083px) {/*para arreglar un bug de info nutri*/
+    .texto2{
+        margin-top: -26px;
+    }
+
+}
+
+
+
+@media (max-width: 974px) {
+    .texto2{/*para arreglar un bug de info nutri*/
+        margin-top: 0px;
+    }
+
+    .let , .let2 ,.let3{
+        padding-top: 60px;
+        margin-left: -14px;
+    }
+    .butt{
+        height: 29px;
+      }
+      .buttonbackimage{
+          width: 60px;
+          height: 25px;
+      }
+      .buttonbackimage2{
+        width: 60px;
+        height: 25px;
+    }
+    .bordero{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    .PhotoAndDesc {
+        margin-left: 25px;
+        margin-right: 25px;
+      grid-template-columns: 100%;
+     
+ 
+    }
+    .iconProfile{
+        border-radius: 10px 10px 0px 0px;
+    }
+    .PhotoIzq{
+ 
+        order: -1;
+        height: 300px;
+      
+    }
+    .ingredientesDer{
+        border-radius: 0px 0px 10px 10px;
+        height: 500px;
+    }
+    .ingreajuste{
+        height: 300px;
+    }
+
+    .mix{
+        margin-top: 70px;
+        margin-left: 25px;
+        margin-right: 25px;
+        grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+    }
+    .tit{
+        font-size: 34px;
+    }
+    
+
+  }
+  @media (max-width: 680px) {
+    .bordero{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .tit{
+        font-size: 29px;
+    }
+
+  }
+  @media (max-width: 499px) { 
+    li{
+        font-size: 15px;
+      }
+      
+      .menu li{
+          font-size: 20px;
+      }
+      
+      .let,.let2,.let3{
+          font-size: 19px;
+          padding-top: 47px;
+ 
+      }
+    .butt{
+        height: 24px;
+      }
+      .buttonbackimage{
+          width: 50px;
+          height: 20px;
+      }
+      .buttonbackimage2{
+        width: 50px;
+        height: 20px;
+    }
+    .bordero{
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+    .tit{
+        font-size: 24px;
+    }
+      .mix{
+        grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+        margin-top: 25px;
+       
+      }
+      .Nutricional, .Preparacion{
+        height: 420px;
+    }
+ 
+    .ingredientesDer{
+    
+        height: 420px;
+    }
+    .ingreajuste{
+        height: 65%;
+    }
+    .PhotoAndDesc{
+        margin: 25px;
+        margin-left: 25px;
+        margin-right: 25px;
+        height: 720px;
+    }
+ 
+     
+  
+ 
+    }
+    @media (max-width: 390px) {
+      
+        *{
+          font-size: 10px;
+        }
+        a, p{
+            font-size: 20px;
+          }
+        .let,.let2,.let3{
+            font-size: 14px;
+            padding-top: 35px;
+        }
+      
+        .bordero{
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+        .tit{
+            font-size: 19px;
+        }
+        .mix{
+            margin-top: 25px;
+          grid-template-columns: repeat(auto-fill,minmax(170px,1fr));
+          
+        }
+        .Nutricional, .Preparacion{
+            height: 300px;
+        }
+     
+        .ingredientesDer{
+        
+            height: 300px;
+        }
+        .PhotoAndDesc{
+            margin: 25px;
+            margin-left: 25px;
+            margin-right: 25px;
+            height: 600px;
+        }
+     
+      }
+ /* @media screen and (max-width:1300px) {
+    .PhotoAndDesc {
+        padding-left: 90px;
+        padding-right: 0px;
+      }
+    }
+*/
+
+/*-------------responsive header---------------*/
+@media all and (max-width: 1020px){
+
+    .nav1{
+        padding-right: 30px;
+        height: 50px;
+    }
+    .logo{
+        width: 100%;
+        max-width: 205px;
+        min-width: 70px;
+        
+    }
+
+    .logo img{
+        width: 25%;
+        height: auto;
+        padding-left: 10px;
+        padding-right: 5px;
+    }
+    .nombre_empresa{
+        font-size: 90%;
+        max-width: 133.42px;
+        width: 100%;
+    }
+    .menu{
+        max-width: 450px;
+        min-width: 200px;
+        width: auto;
+    }
+    .menu li{
+        width: auto;
+        margin: 5px;
+
+    }
+    .menu li a{
+        font-size: 20px;
+        font-size: 90%;
+    }
+    .menu li a:hover {
+        padding: 0.5px 1.5px;
+        border-radius: 5px;
+    }
+    .nav1.active {
+        height: 40px;
+    }
+}
+
+@media all and (max-width: 623px){
+    
+    .nav1{
+        padding-right: 10px;
+    }
+
+    .nombre_empresa{
+        display: none;
+    }
+    .logo{
+        width: 100%;
+        max-width: 66.25px;   
+    }
+    .logo img{
+       height: 27px;
+       width: auto;
+    }
+
+    .menu{
+        max-width: 375px;
+        min-width: 200px;
+        width: auto;
+    }
+    .menu li{
+        width: auto;
+        margin: 5px;
+
+    }
+    .menu li a{
+        font-size: 80%;
+    }
+    .menu li a:hover {
+        padding: 0.5px 1.5px;
+        border-radius: 5px;
+    }
+    
+}

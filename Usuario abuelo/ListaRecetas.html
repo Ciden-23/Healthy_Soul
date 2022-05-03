@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Titulo -->
+    <title>Healthy Soul</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRUEBA_CARDS</title>
+    <!-- link a los estilos -->
+    <link rel="icon" href="Assets/logo7.png">
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body style="overflow:hidden">
+    <img src="https://acegif.com/wp-content/uploads/loading-93.gif" alt="Icon" class="iconProfile">
+    <header class="Cabecera">
+        <nav class="nav1">
+            <div class="logo">
+                <img src="Assets/logo7.png" alt="Logo de la pagina">
+                <h2 class="nombre_empresa">HEALTHY SOUL</h2>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Menú</a>
+                    <ul class="desplegable">
+                        <li class="cateMenu" onclick="clasificarCat('Almuerzos');"><a  onclick="remplaaa('Almuerzos')" >Almuerzos</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Cenas');"><a  onclick="remplaaa('Cenas')" >Cenas</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Desayunos');"><a onclick="remplaaa('Desayunos')" >Desayunos</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Ensaladas');"><a  onclick="remplaaa('Ensaladas')" >Ensaladas</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Jugos');"><a  onclick="remplaaa('Jugos')" >Bebidas</a></li>
+                        <li class="cateMenu" onclick="clasificarCat('Meriendas');"><a  onclick="remplaaa('Meriendas')">Meriendas</a></li>
+                    </ul>
+                </li>
+                <li><a href="ListaRecetas.html">Recetas</a></li>
+                <li onclick="logout()"><a href="../index.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="scrol">
+
+    </div>
+
+    <!-- ver recetas -->
+
+    <!-- con link -->
+
+
+
+    <div class="contenedor" align="center">
+
+        <div id="imagen">
+
+        </div>
+
+    </div>
+
+
+
+    <footer class="fo">
+        <div class="container-body">
+            <div class="container-logo">
+                <img src="./Assets/logo7.png" class="logo2">
+            </div>
+            <div>
+                <p class="contacto">
+                    <a href="https://wa.me/59160721303" target="blank">Contáctenos</a>
+                </p>
+            </div>
+        </div>
+        <div class="container-footer">
+            <p class="copyright">
+                © Healthy-Soul 2022
+            </p>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<!-- Direccion del archivo js -->
+<script src="conexion.js"></script>
+<!--<script src="menu.js"></script>-->
+
+</html>

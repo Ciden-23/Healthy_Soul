@@ -1,0 +1,666 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+    /*Anchura, ocupamos el 100%*/
+    min-height: 100vh;
+    /*Especificar la fuente */
+    font-family: 'Roboto', sans-serif;
+    /*Espacio entre las letras*/
+    letter-spacing: 0.05em;
+    /*Establecer el interlineado de las lineas de texto*/
+    line-height: 1.6;
+    background-image: url("madera.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+
+/*header negrito */
+
+.nombre_empresa {
+    font-family: 'Roboto', sans-serif;
+    font-size: 26.5px;
+    color: white;
+    margin: 0;
+    height: auto;
+    width: auto;
+}
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    letter-spacing: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    padding-left: 20px;
+    height: 42.5px;
+    padding-right: 10px;
+}
+
+.nav1 {
+    background: #7C3C21;
+    height: 70px;
+    padding-right: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 1000ms transform;
+}
+
+.nav1.active {
+    height: 50px;
+}
+
+.barramenu.active {
+    top: 50px;
+}
+
+.menu {
+    /*display: flex;*/
+    padding-left: 0;
+}
+
+.menu > li {
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    margin: 15px;
+}
+
+.menu li a {
+    color: #2D2424;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.5s ease;
+    font-size: 20px;
+    color: #fff;
+}
+
+.menu > li > a:hover {
+    padding: 3px 5px;
+    background: #fff;
+    border-radius: 10px;
+    color: #000;
+}
+
+
+/*-----SUBMENU--------*/
+.desplegable{
+    position: absolute;
+    background-color: #7C3C21;
+    padding: 0;
+    margin: 0;
+    padding-top: 18px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+}
+ 
+.desplegable > li {
+    list-style: none;
+    margin: 5px;
+    /*border-bottom: 1px solid #000;*/
+}
+
+.desplegable li a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu li:hover .desplegable{
+    visibility: visible;
+    opacity: 1;
+}
+
+.cateMenu :hover {
+    background-color: #fff;
+    border-radius: 5px;
+    color:#000
+}
+
+.scrol {
+    height: 100px;
+}
+
+
+/*header negrito */
+
+
+/*Eliminar todos los padding y los margin que vienen por defecto, por eso colocamos 0*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    /* z-index: -1;
+     /*flex-wrap: wrap indica que puede haber cambio de linea.  Los elementos flex aparecen colocados en varias lineas*/
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: wrap;
+    /*para que los elementos aparezcan agrupados al centro */
+    justify-content: center;
+    /* 0px de margen vertical, centrado horizontalmente */
+    margin: auto;
+}
+
+.contenedor .tarjeta {
+    display: flex;
+    flex-wrap: wrap;
+    /*crea cajas que son de bloque y en linea de forma simultanea*/
+    display: inline-block;
+    /*Anchura de la tarjeta*/
+    width: 350px;
+    /*max-width: 28%;*/
+    /*Altura de la tarjeta*/
+    height: 515px;
+    max-height: auto;/*comentado pao*/
+    /*redondear las esquinas de la tarjeta 8px*/
+    border-radius: 0.500em;
+    /*para proyectar una sombra difuminada*/
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    /*Controla lo que sucede con el contenido que es demasiado grande, auto: agrega barras de desplazamiento solo cuando es necesario*/
+    /*para el margen*/
+    margin: 20px;
+    /*alineacion del texto*/
+    text-align: center;
+    /*Todas las propiedades obtendran un efecto de transicion*/
+    transition: all 0.25s;
+    /*color de la tarjeta*/
+    background: #EDCFA9;
+    /* borde de receta */
+    border: 2px solid white;
+    align-items: center;
+}
+
+.contenedor .tarjeta:hover {
+    /*transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    */
+    border: 6px solid #470D21;
+}
+
+.contenedor .tarjeta img {
+    display: flex;
+    /*Anchura de la imagen*/
+    width: 300px;
+    /*Altura de la imagen*/
+    height: 300px;
+    /*Colocar en forma circular la imagen*/
+    border-radius: 50%;
+    margin: 1rem auto;
+    border: 5px solid white;
+}
+
+.contenedor .tarjeta h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* sacamos la linea de abajo del texto */
+    text-decoration: none;
+    /* Color de texxto */
+    color: #000;
+    /*Establecer el peso (negrita) de la fuente*/
+    font-weight: 700;
+    /*Tamaño de la fuente*/
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem 1rem;
+    width: auto;
+    height: auto;
+    /*Para romper una palabra*/
+    word-wrap: break-word;
+}
+
+
+
+/*------------BORRAR RECETA------*/
+.modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    /*left: 0;*/
+    height: 100vh;
+    width: 100vh;
+}
+.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+ 
+.modal {
+    background-color: #fff;
+    width: 600px;
+    max-width: 100%;
+    padding: 10px 0px;
+    border-radius: 1px;
+    border: 2px solid #000;
+    text-align: center;
+}
+
+.equisd {
+    background-color: #fff;
+    border-color: #fff;
+    border: none;
+}
+ .separador {
+    height: 10px;
+ }
+
+.Xalinear :hover {
+    background-color:#470D21;
+    color: #fff;
+}
+
+.Xalinear {
+    text-align: right;
+    padding: 0px 15px;
+}
+.linea {
+        border: 0.3px solid #000;
+    /* border-top: 1px solid #000;*/
+        padding: 0;
+        margin: 0;
+}
+.cateMenu{
+    cursor: pointer;
+}
+.tamaño {
+    height: 125px;
+}
+
+.pregunta  {
+    padding: 15px 0px;
+}
+.alineado {
+    text-align: center;
+    padding: 0px 15px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.aceptar {
+    background-color: #DA723C;
+    border: 1px solid #DA723C;
+    border-radius: 3px;
+    color: #470D21;
+    width: 75px;
+    height: 25px;
+}
+
+.aceptar:hover {
+    background-color: #7C3C21;
+    border: 1px solid #7C3C21;
+    color: #fff;
+}
+
+.cancelar {
+    background-color: #470D21;
+    border: 1px solid #470D21;
+    border-radius: 3px;
+    color: #fff;
+    width: 75px;
+    height: 25px;
+}
+
+
+.cancelar:hover {
+    background-color: #7C3C21;
+    border-color: #7C3C21;
+    color: #fff;
+}
+
+.iconProfile {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 200;
+}
+
+
+.contenedor .tarjeta .botonBorrar {
+    margin-right: 15px;
+    /*border-radius: 10%;*/
+    border-radius: 5px;
+    border: 1px solid #DA723C;
+    text-align: center;
+    color: #470D21;
+    width: 80px;
+    height: 35px;
+    background: #DA723C;
+}
+ 
+.contenedor .tarjeta .botonBorrar:hover {
+    background-color: #470D21;
+    border: 1px solid #470D21;
+    color: #fff;
+}
+
+/*media queries*/
+
+@media screen and (max-width:1000px) {/*combio de 1200 a 1000 pao*/
+    .contenedor {
+        justify-content: center;
+        height: auto;
+    }
+
+    .contenedor .tarjeta{/*agrego pao*/
+        max-width: 30%;
+        
+    }
+    
+    .contenedor .tarjeta h3 {
+        padding: 1rem;
+    }
+    .contenedor .tarjeta img {
+        max-width: 90%;
+        height: auto;
+    }
+    .modal-container {
+        width: 80vh;
+    }
+    .modal {
+        width: 400px;
+    }
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 33px;
+     }
+}
+
+@media screen and (max-width:576px) {/*agrego pao*/
+    .contenedor {
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .contenedor .tarjeta{
+        max-width: 50%;
+        /*Verificar el alto despues del responsive*/
+        /*height: auto;*/
+    }
+    .contenedor .tarjeta h3 {
+        padding: 1rem;
+        width: auto;
+        min-height: auto;
+    
+    }
+    .contenedor .tarjeta img {
+        max-width: 90%;
+        height: auto;
+    }
+    .modal-container {
+        width: 80vh;
+    }
+    .modal {
+        width: 300px;
+        height: 130px;
+        padding-top: 3px;
+    }
+    .separador {
+        height: 0px;
+     }
+     .pregunta  {
+        padding: 5px 1px;
+        margin: 5px;
+    }
+    .alineado {
+        padding-top: 4px;
+    }
+  
+}
+
+/*Boton borrar responsive*/
+
+@media screen and (max-width:940px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 52px;
+     }
+}
+
+@media screen and (max-width: 880px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 52px;
+     }
+}
+@media screen and (max-width: 830px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 72px;
+     }
+}
+
+@media screen and (max-width: 780px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 93px;
+     }
+}
+
+@media screen and (max-width: 700px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 107px;
+     }
+}
+
+@media screen and (max-width: 675px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 125px;
+     }
+}
+
+@media screen and (max-width: 645px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 122px;
+     }
+}
+@media screen and (max-width: 550px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 60px;
+     }
+}
+
+@media screen and (max-width:576px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 46px;
+     }
+}
+
+@media screen and (max-width: 500px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 79px;
+     }
+}
+
+@media screen and (max-width: 450px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 104px;
+     }
+}
+@media screen and (max-width: 410px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 121px;
+     }
+}
+@media screen and (max-width: 350px){
+    .contenedor .tarjeta .botonBorrar{
+        margin-top: 123px;
+     }
+}
+
+/*footer*/
+
+footer {
+    background-color: #7C3C21;
+    font-size: 20px;
+    margin-top: 60px;
+    position: relative;
+    display: none;
+    height: 135.6px;
+    line-height: 1.2;
+}
+
+.container-logo {
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.logo2 {
+    width: 79px;
+    height: 43px;
+}
+
+.container-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    text-shadow: none;
+}
+
+a:link {
+    color: #F9E4D4;
+}
+
+a:active {
+    color: #F9E4D4;
+}
+
+a:visited {
+    color: #F9E4D4;
+}
+a:hover{
+    text-decoration-line: underline;
+    text-decoration-color: #000;
+    color:#000;
+ }
+.contacto {
+    display: flex;
+    justify-content: end;
+    cursor: default;
+    color: #F9E4D4;
+    text-shadow: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    cursor: default;
+    color: #F9E4D4;
+    text-shadow: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/*-----responsive header--------*/
+@media all and (max-width: 1020px){
+
+    .nav1{
+        padding-right: 30px;
+        height: 50px;
+    }
+    .logo{
+        width: 100%;
+        max-width: 205px;
+        min-width: 70px;
+        
+    }
+
+    .logo img{
+        width: 25%;
+        height: auto;
+        padding-left: 10px;
+        padding-right: 5px;
+    }
+    .nombre_empresa{
+        font-size: 100%;
+        max-width: 133.42px;
+        width: 100%;
+    }
+    .menu{
+        max-width: 375px;
+        min-width: 200px;
+        width: auto;
+    }
+    .menu li{
+        width: auto;
+        margin: 5px;
+
+    }
+    .menu li a{
+        font-size: 100%;
+    }
+    .menu li a:hover {
+        padding: 0.5px 1.5px;
+        border-radius: 5px;
+    }
+    .nav1.active {
+        height: 40px;
+    }
+}
+
+@media all and (max-width: 605px){
+    
+    .nav1{
+        padding-right: 10px;
+    }
+
+    .nombre_empresa{
+        display: none;
+    }
+    .logo{
+        width: 100%;
+        max-width: 66.25px;   
+    }
+    .logo img{
+       height: 27px;
+       width: auto;
+    }
+
+    .menu{
+        max-width: 375px;
+        min-width: 200px;
+        width: auto;
+    }
+    .menu li{
+        width: auto;
+        margin: 5px;
+
+    }
+    .menu li a{
+        font-size: 78%;
+    }
+    .menu li a:hover {
+        padding: 0.5px 1.5px;
+        border-radius: 5px;
+    }
+    
+}
+/*-----responsive header--------*/
