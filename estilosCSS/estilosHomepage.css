@@ -518,18 +518,3 @@ a:hover{
     }
 }
     
-@media screen and (max-width:600px) {
-    .contenedorIMG .imgHome .textoHomepage h1{
-        font-size: 1.75rem;
-        padding-bottom: auto;
-    }
-
-    .contenedorIMG  .imgHome .textoHomepage{
-    
-        width: 100%;
-        text-align: center;
-        align-items: center;
-        align-content: center;
-        margin-top: 18.75rem;
-    }
-}
