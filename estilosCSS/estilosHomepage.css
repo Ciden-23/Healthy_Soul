@@ -73,7 +73,8 @@ header {
     margin-left: 20px;
     margin-right: 20px;
     font-weight: bolder;
-    
+    margin-top: 10px;
+    margin-bottom: 10px;
     background-color: #fff;
 
 }
@@ -401,6 +402,7 @@ a:hover{
 
     .textoInferior{
         font-size: 16px;
+       
     }
 
     .contenedorIMG  .imgHome .textoHomepage h1{
