@@ -7,7 +7,7 @@ firebase.initializeApp({
     messagingSenderId: "368826998840",
     appId: "1:368826998840:web:d97a765e96b27dfeb106cd",
 });
-let cam = 0;
+
 //variable que se puede declarar en cada archivo que necesite la bd
 var db = firebase.firestore();
 
@@ -40,10 +40,12 @@ for (let i = 0; i < categorias.length; i++) {
             console.log("id de la receta", ide);
             console.log("imga", img);
             console.log("categoria", categ);
-            imagen.innerHTML += `<a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'"><div class="tarjeta">
+            imagen.innerHTML += `<a href="detalleRecetas.html?tipo='${categ}'&id='${ide}'"><div class="tarjeta">
                       <img src="${img}">
                       <h3>${nom} </h3>
                   </div></a>`;
         
     })
 }
+
+

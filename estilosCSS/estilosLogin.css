@@ -1,0 +1,218 @@
+body {
+    background-image: url("../Assets/madera.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+}
+
+.cont_centreado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    min-width: 550px;
+    max-width: 900px;
+    width: 50%;
+    height: 400px;
+    border-radius: 20px;
+    background: #DA723C;
+    border: 1px solid #000;
+}
+
+.cab_izquierda {
+    font-size: 30px;
+    color: #fff;
+}
+
+.cont_logo {
+    text-align: center;
+    width: 100%;
+    min-width: 250px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 96%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: auto;
+    width: 100%;
+}
+
+.cont_login {
+    padding: 30px;
+    background: #EDCFA9;
+    width: 150%;
+    min-width: 300px;
+    top: 0;
+    border-radius: 20px;
+    height: 400px;
+    box-sizing: border-box;
+    border-left: 1px solid #000;
+}
+
+.cont_login .titulo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cabecera {
+    font-size: 30px;
+}
+
+.cont_login label {
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.cont_login input {
+    font-size: 100%;
+    display: block;
+    width: 96%;
+    height: 25px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.cont_login .ejemplo {
+    display: block;
+    text-align: center;
+}
+
+.cont_login button {
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    background-color: #DA723C;
+    border: none;
+    height: 35px;
+    border-radius: 20px;
+    width: 50%;
+}
+
+.cont_login .olvido {
+    text-align: center;
+}
+
+.boton {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.cont_login button:hover {
+    background-color: #470D21;
+}
+
+.cont_login a {
+    color: #000;
+    text-decoration: none;
+}
+
+.cont_login a:hover {
+    color: #fff;
+    text-decoration: underline;
+
+}
+
+
+/* Codigo del boton de retroceso */
+
+.butt {
+    top: 35px;
+    position: fixed;
+    margin-top: 10px;
+    margin-left: 35px;
+    background: black;
+    border: none;
+    cursor: pointer;
+    transition: 100ms transform;
+    place-items: center;
+    border: 2px solid black;
+    border-radius: 19%;
+    height: 39px;
+    z-index: 1;
+    padding: 0px 1px;
+}
+
+.butt:hover {
+    transform: scale(1.2);
+}
+
+.buttonbackimage {
+    position: absolute;
+    place-items: center;
+    z-index: 10;
+}
+
+.buttonbackimage2 {
+    z-index: 11;
+    place-items: center;
+}
+
+.buttonbackimage:hover {
+    opacity: 0;
+    transition: opacity 1.5s
+}
+
+@media all and (max-width: 775px) {
+    body {
+        background-size: 150% 100%;
+    }
+    .contenedor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        min-width: 100vw;
+        min-height: 100vh;
+        width: 100%;
+        height: 100%;
+    }
+    .cont_centreado {
+        display: block;
+        min-width: 290px;
+        max-width: 700px;
+        min-height: 500px;
+        max-height: 700px;
+    }
+    .cont_login {
+        width: 100%;
+        min-width: 290px;
+        height: 75%;
+        padding: 20px;
+    }
+    .cont_logo {
+        width: 100%;
+        min-width: 290px;
+        padding: 20px;
+    }
+    .logo img {
+        width: 40%;
+    }
+    .cab_izquierda {
+        margin: 0;
+    }
+}

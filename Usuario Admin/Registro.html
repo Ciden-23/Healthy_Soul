@@ -21,14 +21,15 @@
                 <img src="./Assets/logo7.png" alt="Logo de la pagina">
                 <h2 class="nombre_empresa">HEALTHY SOUL</h2>
             </div>
+            <ul class="menu">
+                
+                <li><a href="ListaRecetas.html">Recetas</a></li>
+                <li><a href="Registro.html">Registrar Receta</a></li>
+                <li onclick="logout()"><a href="../index.html">Cerrar Sesión</a></li>
+            </ul>
         </nav>
     </header>
-    <div class="barramenu">
-        <ul class="menu">
-            <li><a href="index.html">Recetas</a></li>
-            <li><a href="Registro.html">Registrar Receta</a></li>
-        </ul>
-    </div>
+
 
     <div class="scrol"></div>
     <!-- ---------- -->
@@ -148,9 +149,10 @@
                             <i class="material-icons">
                                 add_photo_alternate
                             </i>
-                            &nbsp;&nbsp;Sube una fotografía de la receta
+                            <div class="text">Sube una fotografía de la receta</div>
 
                         </label>
+                        (Subir imagen mayor o igual a 600x600px, de dimensiones iguales)
                     </div>
                 </div>
                 <img id="img" src="" width="" height="">
