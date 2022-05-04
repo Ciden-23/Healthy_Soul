@@ -158,6 +158,8 @@ body {
     justify-content: center;
     /* 0px de margen vertical, centrado horizontalmente */
     margin: auto;
+    width: 100%;
+    
 }
 
 .contenedor .tarjeta {
@@ -193,7 +195,7 @@ body {
     /*transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
     */
-    border: 6px solid #470D21;
+    border: 2px solid #470D21;
 }
 
 .contenedor .tarjeta img {
@@ -365,6 +367,7 @@ body {
 @media screen and (max-width:1000px) {/*combio de 1200 a 1000 pao*/
     .contenedor {
         justify-content: center;
+        
         height: auto;
     }
 
@@ -394,8 +397,9 @@ body {
 @media screen and (max-width:576px) {/*agrego pao*/
     .contenedor {
         justify-content: center;
-        align-items: center;
+        display: block;
         height: auto;
+
     }
     .contenedor .tarjeta{
         max-width: 50%;
@@ -406,6 +410,7 @@ body {
         padding: 1rem;
         width: auto;
         min-height: auto;
+        
     
     }
     .contenedor .tarjeta img {
@@ -590,6 +595,7 @@ body {
     }
 }
 @media screen and (max-width: 200px){
+
     .contenedor .tarjeta .botonBorrar{
         margin-top: 123px;
      }
@@ -643,6 +649,7 @@ footer {
     display: none;
     height: 135.6px;
     line-height: 1.2;
+    
 }
 
 .container-logo {
