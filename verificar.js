@@ -64,6 +64,9 @@ function acceso() {
                         let errorMessage = msg(errorCode);
                         console.log(errorMessage);
                         alert(errorMessage);
+                        if (errorCode == "auth/wrong-password") {
+                            document.getElementById("2").value = "";;
+                        }
                     });
             }
         }
@@ -90,7 +93,7 @@ function msg(errorCode) {
             msg = "El campo de correo no puede estar vacío";
             break;
         case "3":
-            msg = "El correo electrónico es inválido";
+            msg = "Error: El correo electrónico es inválido";
             break;
         case "4":
             msg = 'La contraseña es obligatoria';
