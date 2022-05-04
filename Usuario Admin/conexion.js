@@ -88,7 +88,19 @@ function alerta(){
     alert("Funciona");
 }
 
+  function disableScroll(){  
+    var x = window.scrollX;
+    var y = window.scrollY;
+    window.onscroll = function(){ window.scrollTo(x, y) };
+}
+
+function enableScroll(){  
+    window.onscroll = function() {};
+}
+
 function borrar(ide, categor,nomm) {
+    //window.addEventListener('scroll', disableScroll);
+    disableScroll();
     ideBorrar=ide;
     categBorrar=categor; 
     nom=nomm;
@@ -97,15 +109,19 @@ function borrar(ide, categor,nomm) {
         modalContainer.classList.add('show');
    }
 function cancelar(){
+   // window.addEventListener('scroll', enableScroll);
+   enableScroll();
     const modalContainer = document.getElementById("modal-container");
     modalContainer.classList.remove('show');
     ideBorrar="";
-    categBorrar="";
+    categBorrar=""; 
     nom="";
     //console.log(ideBorrar,categBorrar,nom, "eliminadas")
 }
 
 function borrarReceta(){
+    //window.addEventListener('scroll', enableScroll);  
+    enableScroll();
     const modalContainer = document.getElementById("modal-container");
    // alert("Borrar")
    db.collection(categBorrar).doc(ideBorrar).delete().then(() => {
