@@ -138,6 +138,7 @@ function borrarReceta(){
 }
 
 function volver(categ){
+    state="1";
     const categRef = db.collection(categ);
     categRef.get().then((results) => {
         const data = results.docs.map((doc) => ({
