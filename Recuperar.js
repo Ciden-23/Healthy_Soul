@@ -70,10 +70,10 @@ function msg(errorCode) {
     let msg;
     switch (errorCode) {
         case "1":
-            msg = "El campo no puede estar vacio.";
+            msg = "El campo no puede estar vacío.";
             break;
         case "2":
-           msg ="No se puede restablecer un correo de administrador.";
+           msg ="No se puede restablecer una cuenta de administrador.";
         break;
         case "auth/invalid-email":
             msg = "Error por favor ingrese un correo existente";

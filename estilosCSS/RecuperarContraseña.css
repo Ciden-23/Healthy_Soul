@@ -53,11 +53,12 @@ body{
 }
 .SirCuad2{
     border-left: 1px solid black;
+    
     padding-top: 40%;
     padding-left: 14%;
     max-height: 342px;
     max-width: 293px;
-    background-color: #F9E4D4;
+    background-color: #EDCFA9;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -97,18 +98,19 @@ body{
     color: red;
 }
 .botonEn{
-    margin-top: 15px;
-    margin-left: 60px;
+    position:relative;
+    left: 25% ; 
     width: 75px;
     color: white;
     background-color: #DA723C;
     border: none;
     cursor: pointer;
     transition: 100ms transform;
-    
     border-radius: 19%;
     height: 39px;
     z-index: 1;
+    font-family: 'Roboto', serif;
+    font-size: 20px;
 }
 .envi{
    color: white;
@@ -174,7 +176,14 @@ body{
 
 
 @media (max-width:776px ){
-   
+     .Ingrese{
+        margin-left: 70px;
+        margin-right: 100px;
+     }
+     .inputC{
+        margin-left: 70px;
+        margin-right: 100px;
+     }
     .recta{
         
         border:none;
@@ -222,8 +231,8 @@ body{
         
     }
     .botonEn{
-        margin-top: 25px;
-        margin-left: 200px;
+
+       left: 30%;
     }
     .logo{
         margin-bottom: 0;
@@ -252,6 +261,7 @@ body{
 
     }
     .botonEn{
+        left:20%;
         height:35px;
         width: 236px;
         font-size: 20px;
