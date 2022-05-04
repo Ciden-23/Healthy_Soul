@@ -53,6 +53,7 @@ body{
 }
 .SirCuad2{
     border-left: 1px solid black;
+    
     padding-top: 40%;
     padding-left: 14%;
     max-height: 342px;
@@ -97,15 +98,14 @@ body{
     color: red;
 }
 .botonEn{
-    margin-top: 15px;
-    margin-left: 60px;
+    position:relative;
+    left: 25% ; 
     width: 75px;
     color: white;
     background-color: #DA723C;
     border: none;
     cursor: pointer;
     transition: 100ms transform;
-    
     border-radius: 19%;
     height: 39px;
     z-index: 1;
@@ -222,8 +222,8 @@ body{
         
     }
     .botonEn{
-        margin-top: 25px;
-        margin-left: 200px;
+        
+       left: 30%;
     }
     .logo{
         margin-bottom: 0;
@@ -252,6 +252,7 @@ body{
 
     }
     .botonEn{
+        left:20%;
         height:35px;
         width: 236px;
         font-size: 20px;
