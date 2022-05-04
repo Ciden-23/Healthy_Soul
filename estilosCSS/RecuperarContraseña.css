@@ -176,7 +176,14 @@ body{
 
 
 @media (max-width:776px ){
-   
+     .Ingrese{
+        margin-left: 70px;
+        margin-right: 100px;
+     }
+     .inputC{
+        margin-left: 70px;
+        margin-right: 100px;
+     }
     .recta{
         
         border:none;
