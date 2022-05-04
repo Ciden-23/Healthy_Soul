@@ -627,7 +627,9 @@ a:hover{
     }
     .menu li{
         width: auto;
-        margin: 5px;
+
+        margin: 10px;
+
 
     }
     .menu li a{
@@ -674,7 +676,7 @@ a:hover{
 
     .menu li{
         width: auto;
-        margin: 5px;
+        margin: 10px;
 
     }
     .menu li a{
