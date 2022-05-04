@@ -366,6 +366,7 @@ a:hover{
     margin: 0;
     padding: 0;
     border: 0;
+    text-decoration-line: underline;
 }
 
 .copyright {
