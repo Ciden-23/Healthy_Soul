@@ -52,7 +52,9 @@ body{
     padding-left: 14%;
     max-height: 342px;
     max-width: 293px;
-    background-color: #F9E4D4;
+
+    background-color: #EDCFA9;
+
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -94,8 +96,9 @@ body{
     margin-left: 15px;
 }
 .botonEn{
-    margin-top: 10px;
-    margin-left: 60px;
+    position:relative;
+    left: 25% ; 
+
     width: 75px;
     color: white;
     background-color: #DA723C;
@@ -180,7 +183,8 @@ body{
         
     }
    .error{
-       margin-left: 85px;
+
+       margin-left: 80px;
        
    }
     .SirCuad{
@@ -221,7 +225,8 @@ body{
     .botonEn{
         
         
-        margin-left: 135px;
+
+        left: 30%;
         
     }
     .Ingrese{
@@ -254,10 +259,12 @@ body{
 
     }
     .botonEn{
+
+        left:20%;
         height:35px;
         width: 236px;
         font-size: 20px;
-        margin-left: 120px;
+
     }
     .SirCuad2{
         padding-top: 30%;
@@ -270,7 +277,9 @@ body{
      
     }
     .error{
-       margin-left: 120px;
+
+       margin-left: 110px;
+
        font-size: 20px;
 
     }

@@ -59,7 +59,7 @@ header {
 
 .nav1 {
     background: #7C3C21;
-    height: 70px;
+    /*height: 70px;------ modificado*/
     padding-right: 70px;
     width: 100%;
     display: flex;

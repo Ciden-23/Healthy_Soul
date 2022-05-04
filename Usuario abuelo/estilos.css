@@ -15,6 +15,45 @@ body {
 }
 
 
+.lds-dual-ring {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin-top: 270px;
+    margin-left: 700px;
+    margin-right: 100px;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+    
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loader{
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 /*header negrito */
 
 .nombre_empresa {
@@ -193,6 +232,7 @@ body {
 }
 
 .contenedor .tarjeta:hover {
+
     border: 2px solid #470D21;
     text-decoration-line: underline;
     text-decoration-color: #000;
@@ -215,6 +255,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 
     /* sacamos la linea de abajo del texto */
     text-decoration: none;
@@ -258,6 +299,7 @@ body {
 }
 
 
+
 @media screen and (max-width:576px) {/*agrego pao*/
     .contenedor {
         justify-content: center;
@@ -281,6 +323,7 @@ body {
         height: auto;
     }
 }
+
 
 /*footer*/
 

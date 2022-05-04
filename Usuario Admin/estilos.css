@@ -15,6 +15,46 @@ body {
 }
 
 
+.lds-dual-ring {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin-top: 270px;
+    margin-left: 700px;
+    margin-right: 100px;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+    
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loader{
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
 /*header negrito */
 
 .nombre_empresa {
@@ -243,8 +283,10 @@ body {
     opacity: 0;
     top: 0;
     /*left: 0;*/
-    height: 100vh;
-    width: 100vh;
+
+    height: 100%;
+    width: 100%;
+
 }
 .show {
     pointer-events: auto;
@@ -410,15 +452,19 @@ body {
         padding: 1rem;
         width: auto;
         min-height: auto;
-        
-    
+
+        font-size: 1.438rem;
+        margin: auto;
+
     }
     .contenedor .tarjeta img {
         max-width: 90%;
         height: auto;
     }
     .modal-container {
-        width: 80vh;
+
+        width: 100%;
+
     }
     .modal {
         width: 300px;
@@ -510,7 +556,9 @@ body {
 }
 @media screen and (max-width: 375px){
     .modal-container {
-        width: 80vh;
+
+        width: 100%;
+
         display: flex;
         align-items: center;
         justify-content: center;
@@ -556,7 +604,8 @@ body {
         margin-top: 123px;
      }
      .modal-container {
-        width: 70vh;
+
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -600,7 +649,8 @@ body {
         margin-top: 123px;
      }
      .modal-container {
-        width: 70vh;
+
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -797,4 +847,6 @@ a:hover{
     }
     
 }
+
 /*-----responsive header--------*/
+

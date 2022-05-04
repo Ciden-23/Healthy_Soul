@@ -10,11 +10,13 @@ firebase.initializeApp({
 
 //variable que se puede declarar en cada archivo que necesite la bd
 var db = firebase.firestore();
+
 var inf = document.querySelector(".Separ");
     inf.style.display = "none";
     
 
 cargar();
+
 
 //Arreglo con el nombre de las categorias
 let categorias = [
@@ -53,7 +55,6 @@ for (let i = 0; i < categorias.length; i++) {
     })
 }
 
-
 function cargar(){
     loader.innerHTML += `<div class="lds-dual-ring" id="loader"></div>`;
     baa();
@@ -82,3 +83,4 @@ function baa(){
     
     setTimeout(bb, 1000);
 }
+

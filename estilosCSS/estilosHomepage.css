@@ -15,6 +15,7 @@ body {
 body {
     /*Anchura, ocupamos el 100%*/
     min-height: 100vh;
+
     /*Especificar la fuente */
     font-family: 'Roboto', sans-serif;
     /*Espacio entre las letras*/
@@ -22,8 +23,10 @@ body {
     /*Establecer el interlineado de las lineas de texto*/
     line-height: 1.6;
     text-align:center;
+
  /**/
     background-image: url("../Assets/madera.jpg");
+
     background-color:#fff ;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -31,6 +34,7 @@ body {
 
     
 }
+
 
 
 .lds-dual-ring {
@@ -71,6 +75,7 @@ body {
     align-items: center;
   }
 
+
 /*header negrito */
 
 .nombre_empresa {
@@ -105,6 +110,7 @@ header {
     margin-right: 10px;
 }
 
+
 .Separ .textoInferior{
     
     font-size: 20px;
@@ -118,7 +124,7 @@ header {
 
 .nav1 {
     background: #7C3C21;
-    height: 70px;
+    /*height: 70px;------ corregido*/
     padding-right: 70px;
     width: 100%;
     display: flex;
@@ -157,16 +163,15 @@ header {
 }
 
 .ali{
-    
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
 
-
 .botonVerMas {
     display: none;
+
     background-color: #DA723C;
     width: 250px;
     height: 40px;
@@ -297,6 +302,7 @@ background: radial-gradient(circle, hsla(98, 65%, 81%, 0.774) 0%, hsla(186, 20%,
     /*transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);*/ 
     border: 2px solid #470D21;
+
     text-decoration-line: underline;
     text-decoration-color: #000;
     color:#000;
@@ -344,11 +350,13 @@ footer {
     font-size: 20px;
     margin-top: 60px;
     /*position: relative;*/
+
     height: 136px;
     line-height: 1.2;
     right: 0;
     bottom: 0;
     width: 101%;
+
 }
 
 
@@ -376,6 +384,7 @@ a {
 }
 
 a:link {
+
     color: #fff;
 }
 
@@ -385,6 +394,7 @@ a:active {
 
 a:visited {
     color: #fff;
+
 }
 a:hover{
     text-decoration-line: underline;
@@ -402,6 +412,7 @@ a:hover{
     display: flex;
     justify-content: end;
     cursor: default;
+
     color: white;
     text-shadow: none;
     margin: 0;
@@ -427,11 +438,13 @@ a:hover{
 
 @media screen and (max-width:1200px) {
 
+
     .contenedorIMG{
         justify-content: center;
         height: auto;
         width: 100%;
     }
+
 
     .imgHome {
         justify-content: center;
@@ -439,11 +452,13 @@ a:hover{
         width: 100%;
     }
 
+
     .Separ .textoInferior{
         font-size: 16px;
     }
 
     .contenedorIMG  .imgHome .textoHomepage h1{
+
         font-weight: bolder;
     }
     .contenedor {
@@ -485,12 +500,14 @@ a:hover{
     }
 
     .Separ .textoInferior{
+
         font-size: 14px;
     }
 
 }
 
 @media screen and (max-width:600px) {
+
 
     .contenedorIMG{
         justify-content: center;
@@ -505,6 +522,7 @@ a:hover{
        height: auto;
        
     }
+
 
     .menu li a {
         font-size: 14px;
@@ -528,7 +546,9 @@ a:hover{
         
     }
 
+
     .contenedorIMG .imgHome .textoHomepage h1{
+
         font-weight: bolder;
         /*Aca cambia la letra a 25 px */
         /* font-size: 1.563rem; */
@@ -571,5 +591,19 @@ a:hover{
         align-items: center;
         align-content: center;
         margin-top: 18.75rem;
+
+    }
+}
+@media screen and (max-width:400px) {
+    .logo2{
+        padding-left: 0px;
+        margin-left: 0px;
+    }
+
+    .logo img {
+        padding-left: 0px;
+        height: 32.5px;
+        padding-right: 5px;
+        margin-left: 0px;
     }
 }
