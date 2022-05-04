@@ -92,10 +92,11 @@ body{
 }
 .error{
     margin-left: 15px;
+   
 }
 .botonEn{
-    margin-top: 10px;
-    margin-left: 60px;
+    position:relative;
+    left: 25% ; 
     width: 75px;
     color: white;
     background-color: #DA723C;
@@ -180,7 +181,7 @@ body{
         
     }
    .error{
-       margin-left: 85px;
+       margin-left: 80px;
        
    }
     .SirCuad{
@@ -221,7 +222,7 @@ body{
     .botonEn{
         
         
-        margin-left: 135px;
+        left: 30%;
         
     }
     .Ingrese{
@@ -254,10 +255,10 @@ body{
 
     }
     .botonEn{
+        left:20%;
         height:35px;
         width: 236px;
         font-size: 20px;
-        margin-left: 120px;
     }
     .SirCuad2{
         padding-top: 30%;
@@ -270,7 +271,7 @@ body{
      
     }
     .error{
-       margin-left: 120px;
+       margin-left: 110px;
        font-size: 20px;
 
     }
