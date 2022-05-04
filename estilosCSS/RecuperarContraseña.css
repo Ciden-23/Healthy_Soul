@@ -109,6 +109,8 @@ body{
     border-radius: 19%;
     height: 39px;
     z-index: 1;
+  
+    font-size: 20px;
 }
 .envi{
    color: white;
@@ -222,7 +224,7 @@ body{
         
     }
     .botonEn{
-        
+
        left: 30%;
     }
     .logo{
