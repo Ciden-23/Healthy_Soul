@@ -146,6 +146,7 @@ function volver(categ){
 }
 
 function clasificarCat(categ){
+    cargar();
     var container = document.getElementById('imagen');
     let tarj = Array.prototype.slice.call(document.getElementsByClassName("tarjeta"), 0);
     for(element of tarj){
@@ -171,6 +172,34 @@ function clasificarCat(categ){
 
 }
 
+function cargar(){
+    loader.innerHTML += `<div class="lds-dual-ring" id="loader"></div>`;
+    baa();
+}
+
+function baa(){
+    var no = document.querySelector(".lds-dual-ring");
+    no.style.display = "block";
+    var fo = document.querySelector(".fo");
+    fo.style.display = "none";
+    var x = document.querySelector(".contenedor");
+    x.style.display = "none";
+    disableS();
+    
+    setTimeout(bb, 800);
+}
+
+function bb() {
+    var no = document.querySelector(".lds-dual-ring");
+    no.style.display = "none";
+    var x = document.querySelector(".contenedor");
+    x.style.display = "block";
+    var fo = document.querySelector(".fo");
+    fo.style.display = "block";
+    enableS();
+    document.body.style.overflow = "scroll";
+    document.body.style.overflowX="hidden";
+}
 
 function aa() {
     const no = document.querySelector(".iconProfile");
