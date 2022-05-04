@@ -44,24 +44,40 @@ function acceso() {
             alert(msg("2"));
         }
     } else {
-        if (pass === '') {
+        let t;
+        t = verf(email);
+        if (t == "-1") {
             alert(msg("3"));
         } else {
-            firebase.auth().signInWithEmailAndPassword(email, pass)
-                .then((userCredential) => {
-                    // Signed in
-                    let user = userCredential.user;
-                    // ...
-                })
-                .catch(function(error) {
-                    let errorCode = error.code;
-                    console.log(errorCode);
-                    let errorMessage = msg(errorCode);
-                    console.log(errorMessage);
-                    alert(errorMessage);
-                });
+            if (pass === '') {
+                alert(msg("4"));
+            } else {
+                firebase.auth().signInWithEmailAndPassword(email, pass)
+                    .then((userCredential) => {
+                        // Signed in
+                        let user = userCredential.user;
+                        // ...
+                    })
+                    .catch(function(error) {
+                        let errorCode = error.code;
+                        console.log(errorCode);
+                        let errorMessage = msg(errorCode);
+                        console.log(errorMessage);
+                        alert(errorMessage);
+                    });
+            }
         }
     }
+}
+
+function verf(email) {
+    let t;
+    t = email.search(/(@healthysoul.com|@gmail.com|@outlook.com|@yahoo.com|@hotmail.com)/i);
+    if (t == "0") {
+        t = "-1";
+    }
+    console.log(t);
+    return t;
 }
 
 function msg(errorCode) {
@@ -74,10 +90,13 @@ function msg(errorCode) {
             msg = "El campo de correo no puede estar vacío";
             break;
         case "3":
+            msg = "El correo electrónico es inválido";
+            break;
+        case "4":
             msg = 'La contraseña es obligatoria';
             break;
         case "auth/invalid-email":
-            msg = "Error: Correo invalido o no registrado";
+            msg = "Error: Correo no registrado";
             break;
         case "auth/wrong-password":
             msg = "Error: Contraseña incorrecta."
