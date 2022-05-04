@@ -88,7 +88,19 @@ function alerta(){
     alert("Funciona");
 }
 
+  function disableScroll(){  
+    var x = window.scrollX;
+    var y = window.scrollY;
+    window.onscroll = function(){ window.scrollTo(x, y) };
+}
+
+function enableScroll(){  
+    window.onscroll = function() {};
+}
+
 function borrar(ide, categor,nomm) {
+    //window.addEventListener('scroll', disableScroll);
+    disableScroll();
     ideBorrar=ide;
     categBorrar=categor; 
     nom=nomm;
@@ -97,15 +109,19 @@ function borrar(ide, categor,nomm) {
         modalContainer.classList.add('show');
    }
 function cancelar(){
+   // window.addEventListener('scroll', enableScroll);
+   enableScroll();
     const modalContainer = document.getElementById("modal-container");
     modalContainer.classList.remove('show');
     ideBorrar="";
-    categBorrar="";
+    categBorrar=""; 
     nom="";
     //console.log(ideBorrar,categBorrar,nom, "eliminadas")
 }
 
 function borrarReceta(){
+    //window.addEventListener('scroll', enableScroll);  
+    enableScroll();
     const modalContainer = document.getElementById("modal-container");
    // alert("Borrar")
    db.collection(categBorrar).doc(ideBorrar).delete().then(() => {
@@ -122,6 +138,7 @@ function borrarReceta(){
 }
 
 function volver(categ){
+    state="1";
     const categRef = db.collection(categ);
     categRef.get().then((results) => {
         const data = results.docs.map((doc) => ({
@@ -145,6 +162,7 @@ function volver(categ){
 }
 
 function clasificarCat(categ){
+    cargar();
     var container = document.getElementById('imagen');
     let tarj = Array.prototype.slice.call(document.getElementsByClassName("tarjeta"), 0);
     for(element of tarj){
@@ -174,6 +192,34 @@ function clasificarCat(categ){
 
 }
 
+function cargar(){
+    loader.innerHTML += `<div class="lds-dual-ring" id="loader"></div>`;
+    baa();
+}
+
+function baa(){
+    var no = document.querySelector(".lds-dual-ring");
+    no.style.display = "block";
+    var fo = document.querySelector(".fo");
+    fo.style.display = "none";
+    var x = document.querySelector(".contenedor");
+    x.style.display = "none";
+    disableS();
+    
+    setTimeout(bb, 800);
+}
+
+function bb() {
+    var no = document.querySelector(".lds-dual-ring");
+    no.style.display = "none";
+    var x = document.querySelector(".contenedor");
+    x.style.display = "block";
+    var fo = document.querySelector(".fo");
+    fo.style.display = "block";
+    enableS();
+    document.body.style.overflow = "scroll";
+    document.body.style.overflowX="hidden";
+}
 
 function aa() {
     const no = document.querySelector(".iconProfile");
