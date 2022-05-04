@@ -126,6 +126,7 @@ function borrarReceta(){
 }
 
 function volver(categ){
+
     state="1";
     const categRef = db.collection(categ);
     categRef.get().then((results) => {
@@ -146,6 +147,7 @@ function volver(categ){
 }
 
 function clasificarCat(categ){
+
     cargar();
     var container = document.getElementById('imagen');
     let tarj = Array.prototype.slice.call(document.getElementsByClassName("tarjeta"), 0);
@@ -171,6 +173,7 @@ function clasificarCat(categ){
     })
 
 }
+
 
 function cargar(){
     loader.innerHTML += `<div class="lds-dual-ring" id="loader"></div>`;
@@ -200,6 +203,7 @@ function bb() {
     document.body.style.overflow = "scroll";
     document.body.style.overflowX="hidden";
 }
+
 
 function aa() {
     const no = document.querySelector(".iconProfile");
@@ -270,5 +274,6 @@ function logout() {
     }).catch((error) => {
         // An error happened.
     });
+
 
 }

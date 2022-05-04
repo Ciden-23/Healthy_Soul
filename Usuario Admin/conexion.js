@@ -88,6 +88,7 @@ function alerta(){
     alert("Funciona");
 }
 
+
   function disableScroll(){  
     var x = window.scrollX;
     var y = window.scrollY;
@@ -101,6 +102,7 @@ function enableScroll(){
 function borrar(ide, categor,nomm) {
     //window.addEventListener('scroll', disableScroll);
     disableScroll();
+
     ideBorrar=ide;
     categBorrar=categor; 
     nom=nomm;
@@ -109,17 +111,20 @@ function borrar(ide, categor,nomm) {
         modalContainer.classList.add('show');
    }
 function cancelar(){
+
    // window.addEventListener('scroll', enableScroll);
    enableScroll();
     const modalContainer = document.getElementById("modal-container");
     modalContainer.classList.remove('show');
     ideBorrar="";
     categBorrar=""; 
+
     nom="";
     //console.log(ideBorrar,categBorrar,nom, "eliminadas")
 }
 
 function borrarReceta(){
+
     //window.addEventListener('scroll', enableScroll);  
     enableScroll();
     const modalContainer = document.getElementById("modal-container");
@@ -138,7 +143,9 @@ function borrarReceta(){
 }
 
 function volver(categ){
+
     state="1";
+
     const categRef = db.collection(categ);
     categRef.get().then((results) => {
         const data = results.docs.map((doc) => ({
@@ -162,7 +169,9 @@ function volver(categ){
 }
 
 function clasificarCat(categ){
+
     cargar();
+
     var container = document.getElementById('imagen');
     let tarj = Array.prototype.slice.call(document.getElementsByClassName("tarjeta"), 0);
     for(element of tarj){
@@ -191,6 +200,7 @@ function clasificarCat(categ){
     })
 
 }
+
 
 function cargar(){
     loader.innerHTML += `<div class="lds-dual-ring" id="loader"></div>`;
@@ -221,6 +231,7 @@ function bb() {
     document.body.style.overflowX="hidden";
 }
 
+
 function aa() {
     const no = document.querySelector(".iconProfile");
     no.style.display = "none";
@@ -249,4 +260,6 @@ setTimeout(aa, 3000);
 function remplaaa( parama){
     history.pushState({}, null, "ListaRecetas.html?state=1&clase="+parama);
 
+
 }
+

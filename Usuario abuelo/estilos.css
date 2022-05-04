@@ -14,6 +14,7 @@ body {
     background-size: 100% 100%;
 }
 
+
 .lds-dual-ring {
     display: inline-block;
     width: 100px;
@@ -231,7 +232,8 @@ body {
 }
 
 .contenedor .tarjeta:hover {
-    border: 6px solid #470D21;
+
+    border: 2px solid #470D21;
     text-decoration-line: underline;
     text-decoration-color: #000;
     color:#000;
@@ -253,6 +255,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+
     /* sacamos la linea de abajo del texto */
     text-decoration: none;
     /* Color de texxto */
@@ -287,6 +291,32 @@ body {
     }
     .contenedor .tarjeta h3 {
         padding: 1rem;
+    }
+    .contenedor .tarjeta img {
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+
+
+@media screen and (max-width:576px) {/*agrego pao*/
+    .contenedor {
+        justify-content: center;
+        display: block;
+        height: auto;
+
+    }
+    .contenedor .tarjeta{
+        max-width: 50%;
+        /*Verificar el alto despues del responsive*/
+        height: auto;
+    }
+    .contenedor .tarjeta h3 {
+        padding: 1rem;
+        width: auto;
+        min-height: auto;
+    
     }
     .contenedor .tarjeta img {
         max-width: 90%;

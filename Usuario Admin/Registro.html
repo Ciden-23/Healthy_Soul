@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +24,6 @@
                 <h2 class="nombre_empresa">HEALTHY SOUL</h2>
             </div>
             <ul class="menu">
-
                 <li><a href="ListaRecetas.html">Recetas</a></li>
                 <li><a href="Registro.html">Registrar Receta</a></li>
                 <li onclick="logout()"><a href="../index.html">Cerrar Sesión</a></li>
@@ -54,7 +55,9 @@
                 <div class="cent2">
                     <div class="eti">Porciones<br></div>
                 </div>
+
                 <input class="porciones" id="porciones" onkeydown="filtro()" placeholder="#" type="number" min="1" max="30" />
+
                 <script>
                     function filtro() {
                         var tecla = event.key;
@@ -93,6 +96,7 @@
                 <div class="contBoton">
                     <input type="button" class="botonAdd" onclick="aniadirIngredientes();" value="Añadir ingrediente" />
                     <input type="button" class="botonAdd" onclick="eliminarIngrediente();" value="Eliminar ingrediente" />
+
                 </div>
             </div>
         </div>
@@ -149,7 +153,10 @@
                             </i>
                             <div class="text">Sube una fotografía de la receta</div>
 
-                        </label> (Subir imagen mayor o igual a 600x600px, de dimensiones iguales)
+
+                        </label>
+                        (Subir imagen mayor o igual a 600x600px, de dimensiones iguales)
+
                     </div>
                 </div>
                 <img id="img" src="" width="" height="">
@@ -195,7 +202,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
     <!--Scripts para el funcionamiento-->
     <script src="base.js"></script>
     <script src="guardarRegistro.js"></script>

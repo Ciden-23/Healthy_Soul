@@ -627,7 +627,9 @@ a:hover{
     }
     .menu li{
         width: auto;
+
         margin: 10px;
+
 
     }
     .menu li a{

@@ -69,9 +69,11 @@ function acceso() {
                         }
                     });
             }
+
         }
     }
 }
+
 
 function verf(email) {
     let t;
@@ -83,6 +85,7 @@ function verf(email) {
     return t;
 }
 
+
 function msg(errorCode) {
     let msg;
     switch (errorCode) {
@@ -93,6 +96,7 @@ function msg(errorCode) {
             msg = "El campo de correo no puede estar vacío";
             break;
         case "3":
+
             msg = "Error: El correo electrónico es inválido";
             break;
         case "4":

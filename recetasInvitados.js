@@ -11,6 +11,13 @@ firebase.initializeApp({
 //variable que se puede declarar en cada archivo que necesite la bd
 var db = firebase.firestore();
 
+var inf = document.querySelector(".Separ");
+    inf.style.display = "none";
+    
+
+cargar();
+
+
 //Arreglo con el nombre de las categorias
 let categorias = [
     "Desayunos",
@@ -48,4 +55,32 @@ for (let i = 0; i < categorias.length; i++) {
     })
 }
 
+function cargar(){
+    loader.innerHTML += `<div class="lds-dual-ring" id="loader"></div>`;
+    baa();
+}
+
+
+function bb() {
+
+    var fo = document.querySelector(".contenedor");
+    fo.style.display = "block";
+    var otro = document.querySelector(".lds-dual-ring");
+    otro.style.display = "none";
+    var inf = document.querySelector(".Separ");
+    inf.style.display = "block";
+    
+    
+}
+
+function baa(){
+
+    var fo = document.querySelector(".contenedor");
+    fo.style.display = "none";
+    var otro = document.querySelector(".lds-dual-ring");
+    otro.style.display = "block";
+    
+    
+    setTimeout(bb, 1000);
+}
 

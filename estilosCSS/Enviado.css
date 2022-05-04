@@ -52,7 +52,9 @@ body{
     padding-left: 14%;
     max-height: 342px;
     max-width: 293px;
+
     background-color: #EDCFA9;
+
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -92,11 +94,11 @@ body{
 }
 .error{
     margin-left: 15px;
-   
 }
 .botonEn{
     position:relative;
     left: 25% ; 
+
     width: 75px;
     color: white;
     background-color: #DA723C;
@@ -181,6 +183,7 @@ body{
         
     }
    .error{
+
        margin-left: 80px;
        
    }
@@ -222,6 +225,7 @@ body{
     .botonEn{
         
         
+
         left: 30%;
         
     }
@@ -255,10 +259,12 @@ body{
 
     }
     .botonEn{
+
         left:20%;
         height:35px;
         width: 236px;
         font-size: 20px;
+
     }
     .SirCuad2{
         padding-top: 30%;
@@ -271,7 +277,9 @@ body{
      
     }
     .error{
+
        margin-left: 110px;
+
        font-size: 20px;
 
     }
