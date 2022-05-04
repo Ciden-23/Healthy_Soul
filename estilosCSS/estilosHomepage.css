@@ -533,3 +533,17 @@ a:hover{
         margin-top: 18.75rem;
     }
 }
+
+@media screen and (max-width:400px) {
+    .logo2{
+        padding-left: 0px;
+        margin-left: 0px;
+    }
+
+    .logo img {
+        padding-left: 0px;
+        height: 32.5px;
+        padding-right: 5px;
+        margin-left: 0px;
+    }
+}
