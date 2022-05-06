@@ -486,14 +486,6 @@ a:hover{
 }
 
 @media screen and (max-width:900px) {
-    /* .botonVerMas {
-        width: 160px;
-        height: 30px;
-        margin-top: 3px;
-        margin-bottom: 10px;
-        font-size: 14px;
-    } */
-
     .Separ .textoInferior{
 
         font-size: 14px;
