@@ -416,11 +416,10 @@ a:visited {
     color: #F9E4D4;
 }
 a:hover{
-    text-decoration-line: underline;
-    text-decoration-color: #000;
-    color:#000;
- }
-
+   text-decoration-line: underline;
+   text-decoration-color: #000;
+   color:#000;
+}
 .contacto {
     display: flex;
     justify-content: end;
@@ -704,7 +703,9 @@ a:hover{
     .nav1{
         padding-right: 10px;
     }
-
+    .menu1{
+        width: auto;
+    }
     .nombre_empresa{
         display: none;
     }
@@ -718,8 +719,6 @@ a:hover{
     }
 
     .menu{
-        max-width: 375px;
-        min-width: 200px;
         width: auto;
     }
     .menu li{
@@ -728,7 +727,7 @@ a:hover{
 
     }
     .menu li a{
-        font-size: 80%;
+        font-size: 11px;
     }
     .menu li a:hover {
         padding: 0.5px 1.5px;
