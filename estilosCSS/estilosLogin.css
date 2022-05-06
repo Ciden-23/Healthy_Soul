@@ -89,7 +89,7 @@ body {
 .cont_login input {
     font-size: 100%;
     display: block;
-    width: 96%;
+    width: 97%;
     height: 25px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -107,7 +107,7 @@ body {
     background-color: #DA723C;
     border: none;
     height: 35px;
-    border-radius: 20px;
+    border-radius: 5px;
     width: 50%;
 }
 
@@ -131,7 +131,8 @@ body {
 }
 
 .cont_login a:hover {
-    color: #fff;
+
+    color: #470D21;
     text-decoration: underline;
 
 }
@@ -215,4 +216,17 @@ body {
     .cab_izquierda {
         margin: 0;
     }
+
 }
+
+@media (max-width: 400px) and (max-height:730px) {
+ .butt{
+    top: 20px;
+    position: relative;
+ }
+}
+@media (max-width: 534px) and (max-height:550px) {
+    .butt{
+      display: none;
+    }
+   }

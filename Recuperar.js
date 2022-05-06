@@ -70,6 +70,7 @@ function msg(errorCode) {
     let msg;
     switch (errorCode) {
         case "1":
+
             msg = "El campo no puede estar vacío.";
             break;
         case "2":
