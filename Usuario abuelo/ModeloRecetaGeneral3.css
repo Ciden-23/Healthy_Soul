@@ -701,7 +701,7 @@ a:hover{
 @media all and (max-width: 623px){
     
     .nav1{
-        padding-right: 10px;
+        padding-right: 5px;
     }
     .menu1{
         width: auto;
