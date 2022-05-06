@@ -124,8 +124,8 @@ header {
 
 .nav1 {
     background: #7C3C21;
-    /*height: 70px;------ corregido*/
-    padding-right: 70px;
+    height: 70px;
+    /*padding-right: 70px;*/
     width: 100%;
     display: flex;
     align-items: center;
