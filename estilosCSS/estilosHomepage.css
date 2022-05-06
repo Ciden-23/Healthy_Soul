@@ -104,10 +104,15 @@ header {
 }
 
 .logo img {
+    /*
     margin-left: 20px;
     width: 79px;
     height: 43px;
-    margin-right: 10px;
+    margin-right: 10px;*/
+    padding-left: 20px;
+    height: 42.5px;
+    padding-right: 10px;
+
 }
 
 
@@ -134,7 +139,7 @@ header {
 }
 
 .scrol {
-    height: 70px;
+    height: 50px;
 }
 
 /*header negrito */
@@ -542,8 +547,11 @@ a:hover{
     }
 
     .nombre_empresa {
-        font-size: 20.5px;
-        
+        /*font-size: 18px;*/
+        font-size: 100%;
+        max-width: 18px;
+        /*width: 100%;*/
+        width: auto;
     }
 
 
@@ -594,16 +602,54 @@ a:hover{
 
     }
 }
+
+
+/*-----responsive header--------*/
+
+@media all and (max-width: 1020px){
+
+    .nav1{
+        /*padding-right: 30px;*/
+       height: 50px;
+    }
+    .logo{
+        width: 100%;
+        max-width: 205px;
+        min-width: 70px;
+        
+    }
+
+    .logo img{
+        width: 25%;
+        height: auto;
+        padding-left: 10px;
+        padding-right: 5px;
+    }
+    .nombre_empresa{
+        font-size: 100%;
+        max-width: 133.42px;
+        width: 100%;
+    }
+   
+}
+
+
+/*-----responsive header--------*/
 @media screen and (max-width:400px) {
     .logo2{
         padding-left: 0px;
         margin-left: 0px;
     }
 
-    .logo img {
+   /* .logo img {
         padding-left: 0px;
         height: 32.5px;
         padding-right: 5px;
         margin-left: 0px;
+    }*/
+    
+    .logo img{
+       height: 27px;
+       width: auto;
     }
 }
