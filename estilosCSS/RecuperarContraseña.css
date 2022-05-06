@@ -231,6 +231,7 @@ body{
         min-width: 406px;
         border-right: 1px solid black;
         border-bottom: 1px solid black;
+        border-top:1px solid black;
         padding-top:  16%;
         height: 200px;
         margin-right: 25px;
