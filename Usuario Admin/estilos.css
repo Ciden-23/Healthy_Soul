@@ -14,6 +14,7 @@ body {
     background-size: 100% 100%;
 }
 
+
 .lds-dual-ring {
     display: inline-block;
     width: 100px;
@@ -53,6 +54,7 @@ body {
     align-items: center;
   }
   
+
 /*header negrito */
 
 .nombre_empresa {
@@ -281,8 +283,10 @@ body {
     opacity: 0;
     top: 0;
     /*left: 0;*/
+
     height: 100%;
     width: 100%;
+
 }
 .show {
     pointer-events: auto;
@@ -448,15 +452,19 @@ body {
         padding: 1rem;
         width: auto;
         min-height: auto;
+
         font-size: 1.438rem;
         margin: auto;
+
     }
     .contenedor .tarjeta img {
         max-width: 90%;
         height: auto;
     }
     .modal-container {
+
         width: 100%;
+
     }
     .modal {
         width: 300px;
@@ -548,7 +556,9 @@ body {
 }
 @media screen and (max-width: 375px){
     .modal-container {
+
         width: 100%;
+
         display: flex;
         align-items: center;
         justify-content: center;
@@ -594,6 +604,7 @@ body {
         margin-top: 123px;
      }
      .modal-container {
+
         width: 100%;
         display: flex;
         align-items: center;
@@ -638,6 +649,7 @@ body {
         margin-top: 123px;
      }
      .modal-container {
+
         width: 100%;
         display: flex;
         align-items: center;
@@ -835,4 +847,6 @@ a:hover{
     }
     
 }
+
 /*-----responsive header--------*/
+
