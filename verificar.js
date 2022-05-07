@@ -7,7 +7,18 @@ firebase.initializeApp({
     messagingSenderId: "368826998840",
     appId: "1:368826998840:web:d97a765e96b27dfeb106cd",
 });
+var val=obtenerValor('tipo');
+  
+  console.log(val);
+  
+  var val2=obtenerValor('id');
 
+  console.log(val2);
+  
+  var val3=obtenerValor('bandera');
+
+  console.log(val3);
+  mov();
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         let displayName = user.displayName;
@@ -138,3 +149,28 @@ function msg(errorCode) {
     }
     return msg;
 }
+/* codigo kiri eres muy bueno*/
+
+function obtenerValor(sParametroNombre){
+    var sPaginaURL=window.location.search.substring(1);
+    var sURLVariables= sPaginaURL.split('&');
+    for(var i = 0;i<sURLVariables.length ;i++){
+        var sParametro=sURLVariables[i].split('=');
+
+        if(sParametro[0]==sParametroNombre){
+          return sParametro[1];
+        }
+    }
+    return null;
+  }
+
+  function mov(){
+      console.log("Aqui");
+    if(val3==1){
+    
+     let xxx =document.querySelector(".x");
+     xxx.href="detalleRecetas.html?bandera=%271%27&tipo=%27"+val+"%27&id=%27"+val2+"%27";
+    }
+    
+   }
+    /* codigo kiri eres muy bueno*/
