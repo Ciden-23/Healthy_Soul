@@ -298,7 +298,7 @@ function contar_palabras_titulo(titulo){
                             if(textoTroceado[i].length > 12){
                                 console.log(textoTroceado[i]);
                                  console.log(textoTroceado[i].length);
-                                alert("La cantidad máxima de caracteres por palabra es de 12.");
+                                alert("La cantidad máxima de caracteres por palabra en el nombre es de 12.");
                                 controlar=false;
                                 i = textoTroceado.length
                             }
