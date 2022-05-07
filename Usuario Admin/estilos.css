@@ -445,7 +445,7 @@ body {
 
     }
     .contenedor .tarjeta{
-        max-width: 50%;
+        max-width: 55%;
         /*Verificar el alto despues del responsive*/
         /*height: auto;*/
     }
