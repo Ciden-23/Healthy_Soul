@@ -276,34 +276,20 @@ function contar_palabras_titulo(titulo){
         titulo = titulo.replace (/ $/,"");
         //Troceamos el texto por los espacios
         var textoTroceado = titulo.split (" ");
-        console.log(textoTroceado);
-        
         //Contamos todos los trozos de cadenas que existen
         tituloAniadido = titulo
-        var numeroPalabras = textoTroceado.length; 
-                if(numeroPalabras>10){
-                    alert("La cantidad máxima de palabras aceptadas para el nombre es de 15.");
-                    controlar=false;
-                }else{
-                    
-                            if(textoTroceado[0] == ""){
-                                alert("No se permiten solo espacios como nombre");
-                                controlar=false;
-                            }
-                        }
-                        for(i = 0; i < textoTroceado.length; i++){
-                            console.log(i);
-                            console.log(textoTroceado);
+        var numeroPalabras = textoTroceado.length;
+        if(numeroPalabras>15){
+            alert("La cantidad máxima de palabras aceptadas para el nombre es de 15.");
+            return controlar=false;
+        }else{
+            if(textoTroceado[0] == ""){
+                alert("No se permiten solo espacios como nombre");
+                controlar=false;
+            }
+            return controlar;
+        }
     
-                            if(textoTroceado[i].length > 12){
-                                console.log(textoTroceado[i]);
-                                 console.log(textoTroceado[i].length);
-                                alert("La cantidad máxima de caracteres por palabra es de 12.");
-                                controlar=false;
-                                i = textoTroceado.length
-                            }
-                         } 
-                return controlar;
 }
 
 /*

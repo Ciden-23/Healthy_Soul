@@ -169,7 +169,7 @@ function volver(categ){
 }
 
 function clasificarCat(categ){
-    ocultar()
+    ocultar();
     cargar();
 
     var container = document.getElementById('imagen');
