@@ -665,10 +665,10 @@ a:hover{
        height: 27px;
        width: auto;
     }
-
+    .menu1{
+        width: auto;
+    }
     .menu{
-        max-width: 270px;
-        min-width: 200px;
         width: 100%;
         margin-top: 5px;
         margin-bottom: 5px;
@@ -676,11 +676,11 @@ a:hover{
 
     .menu li{
         width: auto;
-        margin: 10px;
+        margin: 5px;
 
     }
     .menu li a{
-        font-size: 90%;
+        font-size: 11px;
     }
     .menu li a:hover {
         padding: 0.5px 1.5px;

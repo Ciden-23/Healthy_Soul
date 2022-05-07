@@ -32,44 +32,54 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.log("No logeado")
     }
 });
+let err;
+err = 0
 
 function acceso() {
-    let email = document.getElementById("1").value;
-    let pass = document.getElementById("2").value;
-    email = email.trim();
-    if (email === '') {
-        if (pass === '') {
-            alert(msg("1"));
-        } else {
-            alert(msg("2"));
-        }
+    console.log(err);
+    if (err == 5) {
+        console.log("Alcanzado");
+        console.log(err);
+        alert(msg("auth/too-many-requests"))
+        setTimeout(rec, 15000);
     } else {
-        let t;
-        t = verf(email);
-        if (t == "-1") {
-            alert(msg("3"));
-        } else {
+        let email = document.getElementById("1").value;
+        let pass = document.getElementById("2").value;
+        email = email.trim();
+        if (email === '') {
             if (pass === '') {
-                alert(msg("4"));
+                alert(msg("1"));
             } else {
-                firebase.auth().signInWithEmailAndPassword(email, pass)
-                    .then((userCredential) => {
-                        // Signed in
-                        let user = userCredential.user;
-                        // ...
-                    })
-                    .catch(function(error) {
-                        let errorCode = error.code;
-                        console.log(errorCode);
-                        let errorMessage = msg(errorCode);
-                        console.log(errorMessage);
-                        alert(errorMessage);
-                        if (errorCode == "auth/wrong-password") {
-                            document.getElementById("2").value = "";;
-                        }
-                    });
+                alert(msg("2"));
             }
+        } else {
+            let t;
+            t = verf(email);
+            if (t == "-1") {
+                alert(msg("3"));
+            } else {
+                if (pass === '') {
+                    alert(msg("4"));
+                } else {
+                    firebase.auth().signInWithEmailAndPassword(email, pass)
+                        .then((userCredential) => {
+                            // Signed in
+                            let user = userCredential.user;
+                            // ...
+                        })
+                        .catch(function(error) {
+                            let errorCode = error.code;
+                            console.log(errorCode);
+                            let errorMessage = msg(errorCode);
+                            console.log(errorMessage);
+                            alert(errorMessage);
+                            if (errorCode == "auth/wrong-password") {
+                                document.getElementById("2").value = "";;
+                            }
+                        });
+                }
 
+            }
         }
     }
 }
@@ -85,6 +95,13 @@ function verf(email) {
     return t;
 }
 
+function rec() {
+    location.reload;
+    console.log("Reiniciando");
+    err = 0;
+    console.log(err);
+}
+
 
 function msg(errorCode) {
     let msg;
@@ -96,14 +113,15 @@ function msg(errorCode) {
             msg = "El campo de correo no puede estar vacío";
             break;
         case "3":
-
             msg = "Error: El correo electrónico es inválido";
+            err++;
             break;
         case "4":
             msg = 'La contraseña es obligatoria';
             break;
         case "auth/invalid-email":
             msg = "Error: Correo no registrado";
+            err++;
             break;
         case "auth/wrong-password":
             msg = "Error: Contraseña incorrecta."
