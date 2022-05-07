@@ -83,3 +83,7 @@ firebase.initializeApp({
        if(letra == '-')
          return valorNut.replace(letra, '<br/>-')
         }*/
+   function remplaaa(){
+    let xxx =document.querySelector(".poste");
+    xxx.href="Login.html?bandera=1&tipo="+vvv+"&id="+v222;
+   }
