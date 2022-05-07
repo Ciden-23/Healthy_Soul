@@ -16,7 +16,7 @@ var inf = document.querySelector(".Separ");
     
 
 cargar();
-
+remplaaa();
 
 //Arreglo con el nombre de las categorias
 let categorias = [
@@ -47,7 +47,7 @@ for (let i = 0; i < categorias.length; i++) {
             console.log("id de la receta", ide);
             console.log("imga", img);
             console.log("categoria", categ);
-            imagen.innerHTML += `<a href="detalleRecetas.html?tipo='${categ}'&id='${ide}'"><div class="tarjeta">
+            imagen.innerHTML += `<a href="detalleRecetas.html?bandera=1&tipo='${categ}'&id='${ide}'"><div class="tarjeta">
                       <img src="${img}">
                       <h3>${nom} </h3>
                   </div></a>`;
@@ -83,4 +83,7 @@ function baa(){
     
     setTimeout(bb, 1000);
 }
-
+function remplaaa(){
+    let xxx =document.querySelector(".poste");
+    xxx.href="Login.html?bandera=0";
+   }
