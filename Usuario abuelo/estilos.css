@@ -475,7 +475,7 @@ a:hover{
 
     }
     .menu li a{
-        font-size: 78%;
+        font-size: 12px;
     }
     .menu li a:hover {
         padding: 0.5px 1.5px;
