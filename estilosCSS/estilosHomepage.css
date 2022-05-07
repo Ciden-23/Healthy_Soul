@@ -1,51 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,400;1,800&display=swap');
-
 html,
 body {
     margin: 0;
     padding: 0;
-    /*Descomentar  para el responsive*/
     max-width: 100% !important;
     overflow-x: hidden !important;
 }
-
-
 body {
-    /*Anchura, ocupamos el 100%*/
-    min-height: 100vh;
-
-    /*Especificar la fuente */
     font-family: 'Roboto', sans-serif;
-    /*Espacio entre las letras*/
     letter-spacing: 0.05em;
-    /*Establecer el interlineado de las lineas de texto*/
     line-height: 1.6;
     text-align:center;
-
- /**/
     background-image: url("../Assets/madera.jpg");
-
     background-color:#fff ;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
-
-    
 }
-
-
-
 .lds-dual-ring {
     display: inline-block;
     width: 100px;
     height: 100px;
-    /*position: absolute;*/
     margin-left: 45%;
     margin-right: 50%;
-  }
-  .lds-dual-ring:after {
+}
+.lds-dual-ring:after {
     content: " ";
     display: block;
     width: 64px;
@@ -55,29 +36,22 @@ body {
     border: 6px solid #fff;
     border-color: #fff transparent #fff transparent;
     animation: lds-dual-ring 1.2s linear infinite;
-    
-  }
-  @keyframes lds-dual-ring {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
+}
+@keyframes lds-dual-ring {
+0% {
+    transform: rotate(0deg);
+}
+100%{
       transform: rotate(360deg);
-    }
-  }
-
-  .loader{
-
+}
+}
+.loader{
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-
-/*header negrito */
-
+}
 .nombre_empresa {
     font-family: 'Roboto', sans-serif;
     font-size: 26.5px;
@@ -86,7 +60,6 @@ body {
     height: auto;
     width: auto;
 }
-
 header {
     top: 0;
     left: 0;
@@ -97,55 +70,41 @@ header {
     z-index: 1;
     letter-spacing: 0;
 }
-
 .logo {
     display: flex;
     align-items: center;
 }
-
 .logo img {
-    margin-left: 20px;
-    width: 79px;
-    height: 43px;
-    margin-right: 10px;
+    padding-left: 20px;
+    height: 42.5px;
+    padding-right: 10px;
+
 }
-
-
 .Separ .textoInferior{
-    
     font-size: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    font-weight: bolder;
-    
+    font-weight: bolder; 
     background-color: #fff;
-
 }
-
 .nav1 {
     background: #7C3C21;
-    height: 70px;
-    /*padding-right: 70px;*/
+    height: 50px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: 1000ms transform;
 }
-
 .scrol {
-    height: 70px;
+    height: 50px;
 }
-
-/*header negrito */
-
 .menu > li {
     position: relative;
     list-style: none;
     display: inline-block;
     margin: 15px;
 }
-
 .menu li a {
     color: #2D2424;
     text-decoration: none;
@@ -154,24 +113,19 @@ header {
     font-size: 20px;
     color: #fff;
 }
-
 .menu > li > a:hover {
     padding: 3px 5px;
     background: #fff;
     border-radius: 10px;
     color: #000;
 }
-
 .ali{
     display: flex;
     justify-content: center;
     width: 100%;
 }
-
-
 .botonVerMas {
     display: none;
-
     background-color: #DA723C;
     width: 250px;
     height: 40px;
@@ -179,51 +133,34 @@ header {
     align-items: center;
     border-radius: 5px;
     border-width: 2px;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 20px;
     align-items: center;
-    
     color: rgb(255, 255, 255);
     font-size: 20px;
-
     justify-content: center;
     text-shadow: none;
 }
-
 .ali .botonVerMas:hover{
     background-color: #470D21;
 }
-
-
-
 .contenedorIMG{
     display: flex;
     width: 100% ;
-    height: 600px;
-
+    height: 500px;
 }
-
 .contenedorIMG .imgHome {
     display: flex;
     width: 100% ;
     height: auto;
     margin:0%;
-    /*
-    background: rgb(199,238,174);
-background: radial-gradient(circle, hsla(98, 65%, 81%, 0.774) 0%, hsla(186, 20%, 50%, 0.767) 100%)*/
     background: rgb(238,206,174);
     background: radial-gradient(circle, hsla(30, 74%, 75%, 0.842) 0%, hsla(191, 30%, 56%, 0.774) 100%)   ,url(../Assets/fondoSaludable4.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-
 }
-
-
-
 .contenedorIMG .imgHome .textoHomepage h1{
-     
-     font-size: 2.1875rem; 
-    /*font-size: 35px;*/
+    font-size: 2.1875rem; 
     padding: 0.5em;
     align-items: center;
     align-content: center;
@@ -231,44 +168,32 @@ background: radial-gradient(circle, hsla(98, 65%, 81%, 0.774) 0%, hsla(186, 20%,
     font-family: 'Nunito', sans-serif; color:black ;
     padding-bottom: auto;
 }
-
-
 .contenedorIMG  .imgHome .textoHomepage{
-    
     width: 100%;
     text-align: center;
     align-items: center;
     align-content: center;
-    margin-top: 25rem;
+    margin-top: 18.75rem;
 }
-
 .imgHome img{
     display: flex;
     width: 100%;
     height: 500px;
 }
-
 .iconProfile {
     position: absolute;
     width: 100%;
     height: 100vh;
     z-index: 200;
 }
-
-
 .contenedor {
-    /* z-index: -1;
-     /*flex-wrap: wrap indica que puede haber cambio de linea.  Los elementos flex aparecen colocados en varias lineas*/
     display: flex;
     flex-wrap: wrap;
     flex-flow: wrap;
-    /*para que los elementos aparezcan agrupados al centro */
     justify-content: center;
-    /* 0px de margen vertical, centrado horizontalmente */
     margin: auto;
     
 }
-
 .contenedor .tarjeta {
     display: flex;
     flex-wrap: wrap;
@@ -297,7 +222,6 @@ background: radial-gradient(circle, hsla(98, 65%, 81%, 0.774) 0%, hsla(186, 20%,
     border: 2px solid white;
     align-items: center;
 }
-
 .contenedor .tarjeta:hover {
     /*transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);*/ 
@@ -308,7 +232,6 @@ background: radial-gradient(circle, hsla(98, 65%, 81%, 0.774) 0%, hsla(186, 20%,
     color:#000;
 
 }
-
 .contenedor .tarjeta img {
     display: flex;
     /*Anchura de la imagen*/
@@ -320,78 +243,57 @@ background: radial-gradient(circle, hsla(98, 65%, 81%, 0.774) 0%, hsla(186, 20%,
     margin: 1rem auto;
     border: 5px solid white;
 }
-
-
 .contenedor .tarjeta h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* sacamos la linea de abajo del texto */
     text-decoration: none;
-    /* Color de texxto */
     color: #000;
-    /*Establecer el peso (negrita) de la fuente*/
     font-weight: 700;
-    /*Tamaño de la fuente*/
     font-size: 1.5rem;
     text-align: center;
     padding: 1rem;
     margin: 1rem 1rem;
     width: auto;
     height: auto;
-    /*Para romper una palabra*/
     word-wrap: break-word;
 }
-
 /*footer*/
-
 footer {
     background-color: #7C3C21;
     font-size: 20px;
-    margin-top: 60px;
-    /*position: relative;*/
-
+    margin-top: 20px;
     height: 136px;
     line-height: 1.2;
     right: 0;
     bottom: 0;
     width: 101%;
-
 }
-
-
 .container-logo {
     align-items: center;
     justify-content: center;
     padding-top: 20px;
 }
-
 .logo2 {
     width: 79px;
     height: 43px;
 }
-
 .container-body {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
-
 a {
     text-decoration: none;
     text-shadow: none;
 }
-
 a:link {
-
     color: #fff;
 }
-
 a:active {
     color: #fff;
 }
-
 a:visited {
     color: #fff;
 
@@ -400,14 +302,13 @@ a:hover{
     text-decoration-line: underline;
     text-decoration-color: #000;
     color:#000;
- }
- .botonVerMas:hover{
+}
+.botonVerMas:hover{
     text-decoration-line: underline;
     text-decoration-color: white;
     color:white;
 
- }
-
+}
 .contacto {
     display: flex;
     justify-content: end;
@@ -419,7 +320,6 @@ a:hover{
     padding: 0;
     border: 0;
 }
-
 .copyright {
     display: flex;
     justify-content: center;
@@ -431,34 +331,19 @@ a:hover{
     border: 0;
 }
 
-
-/*medias*/
-
-/*media queries*/
-
 @media screen and (max-width:1200px) {
-
-
     .contenedorIMG{
-        justify-content: center;
-        height: auto;
-        width: 100%;
+        height: 400px;
     }
-
-
     .imgHome {
         justify-content: center;
         max-height: auto;
         width: 100%;
     }
-
-
     .Separ .textoInferior{
         font-size: 16px;
     }
-
     .contenedorIMG  .imgHome .textoHomepage h1{
-
         font-weight: bolder;
     }
     .contenedor {
@@ -471,58 +356,50 @@ a:hover{
     }
     .contenedor .tarjeta h3 {
         padding: 1rem;
-
     }
     .contenedor .tarjeta img {
         max-width: 90%;
         height: auto;
-    }
-    
-}
-
-@media screen and (max-width:1160px) {
-    .botonVerMas {
-        width: 200px;
-        height: 40px;
-        margin-top: 3px;
-        margin-bottom: 10px;
-        font-size: 16px;
+    }    
+    .contenedorIMG  .imgHome .textoHomepage{
+        margin-top: 12.75rem;
     }
 }
-
-@media screen and (max-width:900px) {
-    .botonVerMas {
-        width: 160px;
-        height: 30px;
-        margin-top: 3px;
-        margin-bottom: 10px;
-        font-size: 14px;
+@media all and (max-width: 1020px){
+    .nav1{
+        height: 50px;
     }
-
-    .Separ .textoInferior{
-
-        font-size: 14px;
+    .logo{
+        width: 100%;
+        max-width: 205px;
+        min-width: 70px;
+        
     }
-
-}
-
-@media screen and (max-width:600px) {
-
-
-    .contenedorIMG{
-        justify-content: center;
-        max-height: 30%;
+    .logo img{
+        width: 25%;
+        height: auto;
+        padding-left: 10px;
+        padding-right: 5px;
+    }
+    .nombre_empresa{
+        font-size: 100%;
+        max-width: 133.42px;
         width: 100%;
     }
-
-    .imgHome {
-        max-width: 100%;
-        justify-content: center;
-        /*max-height: auto;*/
-       height: auto;
-       
+}
+@media screen and (max-width:900px) {
+    .Separ .textoInferior{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:600px) {
+    .contenedorIMG  .imgHome .textoHomepage{
+        margin-top: 15.75rem;
     }
 
+    .contenedorIMG{
+        height: 400px;
+    }
 
     .menu li a {
         font-size: 14px;
@@ -530,7 +407,7 @@ a:hover{
 
     .nav1 {
         background: #7C3C21;
-        height: 70px;
+        height: 50px;
         padding-right: 10px;
         width: 100%;
     }
@@ -542,20 +419,16 @@ a:hover{
     }
 
     .nombre_empresa {
-        font-size: 20.5px;
-        
+        /*font-size: 18px;*/
+        font-size: 100%;
+        /*width: 100%;*/
+        width: auto;
     }
-
 
     .contenedorIMG .imgHome .textoHomepage h1{
-
         font-weight: bolder;
-        /*Aca cambia la letra a 25 px */
-        /* font-size: 1.563rem; */
-        font-size: 30px;
-        
+        font-size: 25px;
     }
-
     .contenedor {
         justify-content: center;
         align-items: center;
@@ -577,33 +450,75 @@ a:hover{
         height: auto;
     }
 }
-    
-@media screen and (max-width:600px) {
-    .contenedorIMG .imgHome .textoHomepage h1{
-        font-size: 1.75rem;
-        padding-bottom: auto;
-    }
+@media screen and (max-width:480px) {
 
     .contenedorIMG  .imgHome .textoHomepage{
-    
-        width: 100%;
-        text-align: center;
-        align-items: center;
-        align-content: center;
-        margin-top: 18.75rem;
+        margin-top: 15.75rem;
+    }
 
+    .contenedorIMG .imgHome .textoHomepage{
+        font-size: 20px;
     }
 }
+
+@media screen and (max-width:410px) {
+
+    .contenedorIMG  .imgHome .textoHomepage{
+        margin-top: 13.75rem;
+    }
+}
+
 @media screen and (max-width:400px) {
     .logo2{
         padding-left: 0px;
         margin-left: 0px;
     }
 
-    .logo img {
+   /* .logo img {
         padding-left: 0px;
         height: 32.5px;
         padding-right: 5px;
         margin-left: 0px;
+    }*/
+    
+    .logo img{
+       height: 27px;
+       width: auto;
+    }
+
+    .contenedorIMG .imgHome .textoHomepage h1{
+        font-weight: bolder;
+        font-size: 25px;
+    }
+}
+@media screen and (max-height:580px) {
+    .contenedorIMG{
+        height: 400px;
+    }
+    .contenedorIMG  .imgHome .textoHomepage{
+        margin-top: 12.75rem;
+    }
+}
+
+@media screen and (max-height:480px) {
+    .contenedorIMG{
+        height: 300px;
+    }
+    .contenedorIMG  .imgHome .textoHomepage{
+        margin-top: 6.75rem;
+    }
+}
+
+@media screen and (max-height:380px) {
+    .contenedorIMG{
+        height: 200px;
+    }
+    .contenedorIMG  .imgHome .textoHomepage{
+        margin-top: 2.75rem;
+    }
+
+    .contenedorIMG .imgHome .textoHomepage h1{
+        font-weight: bolder;
+        font-size: 25px;
     }
 }
