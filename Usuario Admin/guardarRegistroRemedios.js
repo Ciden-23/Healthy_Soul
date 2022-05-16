@@ -1,3 +1,14 @@
+
+firebase.initializeApp({
+    apiKey: "AIzaSyBzY-rlrKAJpdWXV68IK67nwwZ20zhkuks",
+    authDomain: "proyecto2-fa7d9.firebaseapp.com",
+    projectId: "proyecto2-fa7d9",
+    storageBucket: "proyecto2-fa7d9.appspot.com",
+    messagingSenderId: "837574816721",
+    appId: "1:837574816721:web:98eca74c05299d0ebbe6f0"
+});
+
+
 //Conexion con la base de datos
 var db = firebase.firestore();
 var storageRef = firebase.storage().ref();
@@ -543,6 +554,10 @@ function validarDescripcion(){
     return controlar;
 }
 
+
+    
+
+
 //---------VERIFICA QUE EL CAMPO CATEGORIA NO ESTE DESMARCADO----------
 /*function verificarEspacioCateg() {
     var col = document.getElementsByName('categoria');
@@ -552,7 +567,7 @@ function validarDescripcion(){
         }
     }
 }*/
-/*var tipo= document.getElementById("tipos");
+var tipo= document.getElementById("tipos");
 tipo.addEventListener('change',function(){
     let valor=tipo.value;
     console.log(valor);
@@ -582,11 +597,11 @@ function verificarCateg() {
             
         }
     }
-}*/
+}
 
 function validarImgCat() {
     var col = document.getElementsByName('tipos');
-    //String(verificarCateg());
+    String(verificarCateg());
     if (col.value==0) {
         alert("Categoria no seleccionada");
         tituloAniadido = ""
