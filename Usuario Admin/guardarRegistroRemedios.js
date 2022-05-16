@@ -1,14 +1,3 @@
-
-firebase.initializeApp({
-    apiKey: "AIzaSyBzY-rlrKAJpdWXV68IK67nwwZ20zhkuks",
-    authDomain: "proyecto2-fa7d9.firebaseapp.com",
-    projectId: "proyecto2-fa7d9",
-    storageBucket: "proyecto2-fa7d9.appspot.com",
-    messagingSenderId: "837574816721",
-    appId: "1:837574816721:web:98eca74c05299d0ebbe6f0"
-});
-
-
 //Conexion con la base de datos
 var db = firebase.firestore();
 var storageRef = firebase.storage().ref();
@@ -555,7 +544,53 @@ function validarDescripcion(){
 }
 
 
+function validar_cat(){
+    var valido = true;
+    for(i=101; i < contadorValor; i++){
+    var valorValido = document.getElementById(i).value
+    var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u0027\u003a\u003b]+$/;// ()",./""%¡!':;
     
+        if(valorValido.match(pattern)){
+            valido = true
+        }
+        else{
+            if(valorValido == ""){
+                alert("No se aceptan campos vacios en la información nutricional.")
+                i=contadorValor+1
+                return valido = false;
+            }else{
+                alert("Solo se aceptan caracteres alfanumericos en la informacion nutricional y los siguientes caracteres especiales: ( ) ,  . / % ¡ !  ' : ; \u0022")
+                i=contadorValor+1
+                valido = false;
+            }
+        }
+            var texto = valorValido.replace (/\r?\n/g," ");
+            texto = texto.replace (/^ /,"");
+            texto = texto.replace (/ $/,"");
+            var textoTroceado = texto.split (" ");
+            var numeroPalabras = textoTroceado.length;
+            if(numeroPalabras>5){
+                alert("la cantidad máxima de palabras aceptadas para info. nutricional es de 5");
+                valido=false;
+                i=contadorValor+1
+            }else{
+                if(textoTroceado[0] == ""){
+                    alert("No se permiten solo espacios como valor nutricional");
+                    valido=false;
+                    i=contadorValor+1
+                }else{
+                    if(numeroPalabras<2){
+                        alert("la cantidad mínima de palabras aceptadas para info. nutricional es de 2");
+                        valido=false;
+                        i=contadorValor+1
+                    }
+                
+                }
+            }
+   
+    }
+ return valido
+ }    
 
 
 //---------VERIFICA QUE EL CAMPO CATEGORIA NO ESTE DESMARCADO----------
