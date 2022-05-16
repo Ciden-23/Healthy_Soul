@@ -143,9 +143,7 @@ header {
     color:#000
 }
 
-.cateMenu{
-    cursor: pointer;
-}
+
 
 .scrol {
     height: 100px;
@@ -231,7 +229,6 @@ img {
     align-items: center;
     justify-content: center;
     text-shadow: none;
-    border-color: #DA723C;
 }
 
 .contBoton{
@@ -247,7 +244,6 @@ img {
     border-width: 2px;
     margin: 0 auto;
     text-shadow: none;
-    border-color: #7C3C21;
 }
 
 .ingresoTexto {
@@ -286,34 +282,13 @@ img {
 }
 .botonAdd:hover {
     background-color: #470D21;
-    border-color: #470D21;
 }
 .botonRegistrar:hover {
     background-color: #470D21;
-    border-color: #470D21;
 }
 
 .subirImagen:hover {
     background-color: #470D21;
-}
-
-
-
-.ingresoDescripcion {
-    background-color: #fbfbfb;
-    color: black;
-    width: 410px;
-    height: 180px;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
-    margin-bottom: 10px;
-    margin-top: 5px;
-}
-
-.ingresoDescripcion {
-    text-shadow: none;
 }
 
 /*footer*/
@@ -439,12 +414,7 @@ a:hover{
         margin-top: 2px;
     }
 
-    .ingresoDescripcion {
-        width: 310px;
-        height: 120px;
-        margin-bottom: 5px;
-        margin-top: 2px;
-    }
+
 
     .porciones {
         border-radius: 5px;
@@ -540,16 +510,6 @@ a:hover{
     .ingresoTexto {
         width: 310px;
         height: 35px;
-        margin-bottom: 5px;
-        margin-top: 2px;
-        margin-right: 5%;
-        margin-left: 5%;
-        /* margin: auto auto; */
-    }
-
-    .ingresoDescripcion {
-        width: 310px;
-        height: 120px;
         margin-bottom: 5px;
         margin-top: 2px;
         margin-right: 5%;
