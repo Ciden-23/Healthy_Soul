@@ -407,7 +407,7 @@ a:hover{
 
     .nav1 {
         background: #7C3C21;
-        height: 70px;
+        height: 50px;
         padding-right: 10px;
         width: 100%;
     }
@@ -421,7 +421,6 @@ a:hover{
     .nombre_empresa {
         /*font-size: 18px;*/
         font-size: 100%;
-        max-width: 18px;
         /*width: 100%;*/
         width: auto;
     }

@@ -169,7 +169,7 @@ function volver(categ){
 }
 
 function clasificarCat(categ){
-
+    ocultar();
     cargar();
 
     var container = document.getElementById('imagen');
@@ -201,6 +201,25 @@ function clasificarCat(categ){
 
 }
 
+function ocultar(){
+    var a= document.querySelector(".menu li:hover .desplegable");
+    a.style.display = "none";
+    setTimeout(mostrar, 500);
+    
+}
+
+function mostrar(){
+    var a= document.querySelector(".menu  .desplegable");
+    a.style.display= "block";
+    a.style.visibility="hidden"
+}
+
+
+const men= document.querySelector(".menu");
+men.addEventListener("click", function(){
+    var a= document.querySelector(".menu li:hover .desplegable");
+    a.style.visibility="visible"; 
+})
 
 function cargar(){
     loader.innerHTML += `<div class="lds-dual-ring" id="loader"></div>`;

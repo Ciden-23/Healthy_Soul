@@ -120,7 +120,10 @@ body {
     padding-top: 10px;
     padding-bottom: 20px;
 }
-
+.boton button {
+  cursor: pointer;
+   
+}
 .cont_login button:hover {
     background-color: #470D21;
 }
@@ -204,6 +207,9 @@ body {
         min-width: 290px;
         height: 75%;
         padding: 20px;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        border-left: 0px;
     }
     .cont_logo {
         width: 100%;
