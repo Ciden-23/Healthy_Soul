@@ -1,4 +1,3 @@
-
 //Conexion con la base de datos
 var db = firebase.firestore();
 var storageRef = firebase.storage().ref();
@@ -21,7 +20,17 @@ var imgCargada = false;
 
 //Variable que guarda la categoria escogida
 var nombreColeccion;
+window.onload = cargarSelect;
 
+function cargarSelect(){
+    var a= document.getElementById("tipos");
+    db.collection("Dolores").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            let option= `<option class="opcion" value="${doc.data().dolor}">${doc.data().Dolor}</option>`
+            a.insertAdjacentHTML("beforeend", option);
+        });
+    });
+}
 
 //---------METODOS----------
 //Añadir un nuevo input para agregar otro ingrediente
@@ -505,7 +514,8 @@ tipo.addEventListener('change',function(){
     if(valor==1){
         agregarCat();
     }else if(contadorcat==1){
-        casilla = document.getElementById(contadorcat-1);	
+        casilla = document.getElementById("nuevaCat");	
+        console.log(casilla);
         casilla.parentNode.removeChild(casilla);
         contadorcat=0;
     }
@@ -542,6 +552,7 @@ function verificarCateg() {
         }
     }else{
         nombreColeccion=col.value;
+        nombreDolor=nombreColeccion;
         ban=true;
         console.log("col ",nombreColeccion);
     }
@@ -663,9 +674,9 @@ function registarReceta(url, coleccion) {
 
     if(contadorcat==1){
         //entonces el dolor no exite
-        crearDoc(coleccion, url, tutuloAnidado, ingredienteAñadido, pasoAñadido, descripcion);
+        crearDoc(coleccion, url,  tituloAniadido , ingredienteAñadido, pasoAñadido, descripcion);
     }else{
-        db.collection("dolores").where("dolor", "==", nombreDolor).get().then((results) => {
+        db.collection("Dolores").where("Dolor", "==", nombreDolor).get().then((results) => {
             console.log("se encontro");
             const data = results.docs.map((doc) => ({
                 id: doc.id,
@@ -673,33 +684,32 @@ function registarReceta(url, coleccion) {
             }))
             var ide = data[0].id
             console.log(ide);
-            crearCol(ide);
+            aniadirCol(ide, url, tituloAniadido , ingredienteAñadido, pasoAñadido, descripcion);
         })
         .catch((error) => {
             console.error("No se encontro documento ", error);
         });
-        aniadirCol(ide, url, tutuloAnidado, ingredienteAñadido, pasoAñadido, descripcion);
+       
     }
     
 }
 
-function crearDoc(col, url, tutuloAnidado, ingredienteAñadido, pasoAñadido, descripcion){
-    coleccion.add({
-        dolor: col
+function crearDoc(col, url,  tituloAniadido, ingredienteAñadido, pasoAñadido, descripcion){
+    db.collection("Dolores").add({
+        Dolor: col
      })
      .then((docRef) => {
          console.log("Document written with ID: ", docRef.id);
-         location.reload()
-         aniadirCol(docRef.id, url, tutuloAnidado, ingredienteAñadido, pasoAñadido, descripcion);
+         aniadirCol(docRef.id, url, tituloAniadido , ingredienteAñadido, pasoAñadido, descripcion);
      })
      .catch((error) => {
          console.error("Error adding document: ", error);
      });
 }
 
-function aniadirCol(ide, url, tutuloAnidado, ingredienteAñadido, pasoAñadido, descripcion){
-    coleccion.doc(ide).collection("remedios").add({
-        Nombre:tutuloAnidado,
+function aniadirCol(ide, url,  tituloAniadido , ingredienteAñadido, pasoAñadido, descripcion){
+    db.collection("Dolores").doc(ide).collection("Remedios").add({
+        Nombre: tituloAniadido,
         Ingredientes: ingredienteAñadido,
         Preparacion: pasoAñadido,
         Descripcion: descripcion,
@@ -711,6 +721,7 @@ function aniadirCol(ide, url, tutuloAnidado, ingredienteAñadido, pasoAñadido, 
         location.reload()
     })
     .catch((error) => {
-        console.error("Error adding document: ", error);
+        console.error("Error adding document and collection: ", error);
     });  
 }
+
