@@ -1,3 +1,4 @@
+
 //Conexion con la base de datos
 var db = firebase.firestore();
 var storageRef = firebase.storage().ref();
@@ -101,47 +102,6 @@ function eliminarPaso(){
        alert("No se pueden eliminar mas casillas")
    }
 }
-//Añade un nuevo input para agregar mas info. nutricional
-/*function aniadirValor() {
-
-    if (contadorValor <= 120) {
-        const valor = document.getElementById("valor")
-        valor.insertAdjacentHTML("beforeend", '<input class="ingresoTexto" id="100" placeholder="Ingrese valor nutricional" />');
-        cambiarIDValor()
-        contadorValor += 1;
-    } else {
-        //No deja que se agregue mas de 25 campos para informacion nutricional
-        alert("No es posible añadir mas informacion nutricional.")
-    }
-}
-
-//Cambia el id de una etiqueta para la info. nutricional
-function cambiarIDValor() {
-    document.getElementById('100').id = contadorValor;
-}
-
-
-//Funcion que agarra todos los ingredientes y los une en una sola variable para guardarlo en la BD.
-function juntarValor() {
-    var contRegValor = 101;
-    while (contRegValor != contadorValor) {
-        var valorNut = document.getElementById(contRegValor).value;
-        valorAñadido = valorAñadido + "-" + valorNut + " "
-        contRegValor += 1
-    }
-}
-
-function eliminarValor(){
-   if(contadorValor > 102){
-       casilla = document.getElementById(contadorValor-1);	
-       casilla.parentNode.removeChild(casilla);
-       
-       contadorValor--;
-   }else{
-       alert("No se pueden eliminar mas casillas")
-   }
-}
-*/
 
 //Preview y validacion de la imagen antes de guardarla en la BD
 var imgActual;
@@ -444,64 +404,6 @@ function validacion_pasos(){
 return valido
 }
 
-//-----------VALIDAR CAMPOS VACIOS Y CARACTERES ALFANUMERICOS Y ESPECIALES DE INFO. NUTRICIONAL---------------
-/*function validacion_val_nutricional(){
-   var valido = true;
-   for(i=101; i < contadorValor; i++){
-   var valorValido = document.getElementById(i).value
-   var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u0027\u003a\u003b]+$/;// ()",./""%¡!':;
-   
-       if(valorValido.match(pattern)){
-           valido = true
-       }
-       else{
-           if(valorValido == ""){
-               alert("No se aceptan campos vacios en la información nutricional.")
-               i=contadorValor+1
-               return valido = false;
-           }else{
-               //Tambien acepta ""
-               alert("Solo se aceptan caracteres alfanumericos en la informacion nutricional y los siguientes caracteres especiales: ( ) ,  . / % ¡ !  ' : ; \u0022")
-               i=contadorValor+1
-               valido = false;
-           }
-       }
-       //-----CONTROLA CANTIDAD DE PALABRAS EN INFO. NUTRICIONAL------------
-           //Reemplazamos los saltos de linea por espacios
-           var texto = valorValido.replace (/\r?\n/g," ");
-           //Reemplazamos los espacios seguidos por uno solo
-           texto = texto.replace (/\s\s+/g," ");
-           //Quitarmos los espacios del principio y del final
-           texto = texto.replace (/^ /,"");
-           texto = texto.replace (/ $/,"");
-           //Troceamos el texto por los espacios
-           console.log(texto)
-           var textoTroceado = texto.split (" ");
-           //Contamos todos los trozos de cadenas que existen
-           var numeroPalabras = textoTroceado.length;
-           //Mostramos el número de palabras
-           if(numeroPalabras>5){
-               alert("La cantidad máxima de palabras aceptadas para info. nutricional es de 5");
-               valido=false;
-               i=contadorValor+1
-           }else{
-               if(textoTroceado[0] == ""){
-                   alert("No se permiten solo espacios como valor nutricional");
-                   valido=false;
-                   i=contadorValor+1
-               }else{
-                   if(numeroPalabras<2){
-                       alert("La cantidad mínima de palabras aceptadas para info. nutricional es de 2");
-                       valido=false;
-                       i=contadorValor+1
-                   }
-               
-               }
-           }
-  
-   }
-return valido
-}*/
 
 //----------VALIDACION DE DESCRIPCION--------
 function validarDescripcion(){
@@ -545,64 +447,58 @@ function validarDescripcion(){
 
 
 function validar_cat(){
-    var valido = true;
-    for(i=101; i < contadorValor; i++){
-    var valorValido = document.getElementById(i).value
-    var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u0027\u003a\u003b]+$/;// ()",./""%¡!':;
-    
-        if(valorValido.match(pattern)){
-            valido = true
-        }
-        else{
-            if(valorValido == ""){
-                alert("No se aceptan campos vacios en la información nutricional.")
-                i=contadorValor+1
-                return valido = false;
-            }else{
-                alert("Solo se aceptan caracteres alfanumericos en la informacion nutricional y los siguientes caracteres especiales: ( ) ,  . / % ¡ !  ' : ; \u0022")
-                i=contadorValor+1
-                valido = false;
-            }
-        }
-            var texto = valorValido.replace (/\r?\n/g," ");
-            texto = texto.replace (/^ /,"");
-            texto = texto.replace (/ $/,"");
-            var textoTroceado = texto.split (" ");
-            var numeroPalabras = textoTroceado.length;
-            if(numeroPalabras>5){
-                alert("la cantidad máxima de palabras aceptadas para info. nutricional es de 5");
-                valido=false;
-                i=contadorValor+1
-            }else{
-                if(textoTroceado[0] == ""){
-                    alert("No se permiten solo espacios como valor nutricional");
-                    valido=false;
-                    i=contadorValor+1
-                }else{
-                    if(numeroPalabras<2){
-                        alert("la cantidad mínima de palabras aceptadas para info. nutricional es de 2");
-                        valido=false;
-                        i=contadorValor+1
-                    }
-                
-                }
-            }
-   
-    }
- return valido
+    var controlar = true;
+    var texto = document.getElementById("nuevaCat").value;
+    console.log("validar cat", texto)
+
+    var pattern = /^[A-Za-z\s\u002c\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1]+$/;//,
+       if(texto.match(pattern)){
+           controlar = true
+       }
+       else{
+           if(texto == ""){
+               alert("No se acepta campo vacios para nueva categoría.")
+               return controlar = false;
+           }else{
+               //Tambien acepta ""
+               alert("Solo se aceptan caracteres alfabeticos en categoría.")
+                return controlar = false;
+           }
+       }
+     //Reemplazamos los saltos de linea por espacios
+     texto = texto.replace (/\r?\n/g," ");
+     //Reemplazamos los espacios seguidos por uno solo
+     texto = texto.replace (/[ ]+/g," ");
+     //Quitarmos los espacios del principio y del final
+     texto = texto.replace (/^ /,"");
+     texto = texto.replace (/ $/,"");
+     //Troceamos el texto por los espacios
+     var textoTroceado = texto.split (" ");
+     //Contamos todos los trozos de cadenas que existen
+     var numeroPalabras = textoTroceado.length;
+     //Mostramos el número de palabras
+     if(numeroPalabras>4){
+         alert("La cantidad máxima de palabras aceptadas para descripción es de 4");
+         controlar=false;
+     }else{
+         if(textoTroceado[0] == ""){
+             alert("No se permiten solo espacios como descripción");
+             valido=false;
+         }else{
+             if(numeroPalabras<1){
+                 alert("La cantidad mínima de palabras aceptadas para descripción es de 1");
+                 controlar=false;
+             }
+         }
+         
+     }
+     return controlar;
  }    
 
 
-//---------VERIFICA QUE EL CAMPO CATEGORIA NO ESTE DESMARCADO----------
-/*function verificarEspacioCateg() {
-    var col = document.getElementsByName('categoria');
-    for (i = 0; i < col.length; i++) {
-        if (col[i].checked) {
-            nombreColeccion = col[i].value;
-        }
-    }
-}*/
+//---------VERIFICAR CAMPO CATEGORIA----------
 var tipo= document.getElementById("tipos");
+
 tipo.addEventListener('change',function(){
     let valor=tipo.value;
     console.log(valor);
@@ -614,38 +510,57 @@ tipo.addEventListener('change',function(){
         contadorcat=0;
     }
 })
-contadorcat=0;
+
+var contadorcat=0;
+
 function agregarCat(){
     if(contadorcat==0){
         const aniadir = document.getElementById("tipos")
-        aniadir.insertAdjacentHTML("afterend", '<br><input class="ingresarCat" id="0" placeholder="Ingrese categoría"/>');
+        aniadir.insertAdjacentHTML("afterend", '<br><input class="ingresarCat" id="nuevaCat" placeholder="Ingrese categoría"/>');
         contadorcat=1;
     }
 }
 
+var nombreDolor;
 function verificarCateg() {
-    var col = document.getElementsByName('tipos');
+    var ban;
+    var col = document.getElementById('tipos');
+    console.log("vlor cat ",col.value);
     if (col.value==0) {
-        alert("Categoria no seleccionada");
+        alert("Categoría no seleccionada");
+        ban=false;
     }else if(col.value == 1){
-        if(validar_cat){
-            
+        if(validar_cat()){
+            nombreDolor= document.getElementById("nuevaCat").value;
+            nombreDolor = nombreDolor.toLowerCase();
+            nombreDolor = nombreDolor[0].toUpperCase()+nombreDolor.slice(1);
+            nombreDolor = nombreDolor.replace (/,,+/g,",");
+            nombreColeccion=nombreDolor;
+            ban=true;
+            console.log("nombrecol", nombreColeccion);
+            console.log("DOLOR ", nombreDolor);
         }
+    }else{
+        nombreColeccion=col.value;
+        ban=true;
+        console.log("col ",nombreColeccion);
     }
+    return ban;
 }
 
 function validarImgCat() {
-    var col = document.getElementsByName('tipos');
-    String(verificarCateg());
-    if (col.value==0) {
-        alert("Categoria no seleccionada");
+    if (!verificarCateg()) {
+        //alert("Categoría no valida");
+        //alert("Categoría no seleccionada");
         tituloAniadido = ""
         ingredienteAñadido = ""
         pasoAñadido = ""
         descripcion = ""
+        console.log("algo anda mal")
     } else if (imgCargada) {
         //aqui es posible guardar en la BD
-        subirImagen(nombreColeccion);
+       subirImagen(nombreColeccion);
+       console.log("llego aqui00000");
     } else {
         alert("Es necesario subir una imagen")
         tituloAniadido = ""
@@ -656,12 +571,10 @@ function validarImgCat() {
 }
 
 function subirImagen(carpeta) {
-   var imagenASubir = imagenPintada;
-   //var fl= file.files[0]
-  var uploadTask = storageRef.child(carpeta + '/' +imagenASubir.name).put(imagenASubir);
-
+    var imagenASubir = imagenPintada;
+    var uploadTask = storageRef.child('Dolores/'+carpeta + '/' +imagenASubir.name).put(imagenASubir);
   // Listen for state changes, errors, and completion of the upload.
-   uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
        (snapshot) => {
            console.log("cargando")
            document.getElementById("botonReg").disabled = "true"
@@ -686,6 +599,8 @@ function subirImagen(carpeta) {
            // Upload completed successfully, now we can get the download URL
            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
                console.log('File available at', downloadURL);
+               
+               console.log("se subio imagen correctamente")
                registarReceta(downloadURL, carpeta);
            });
        }
@@ -698,7 +613,6 @@ function registrar() {
     //var porcionAniadido = document.getElementById("porciones").value;
     //Cambio de tipo string a numero del dato porciones
    // porcionAniadido = parseInt(porcionAniadido, 10)
-
 
     if (controlar == true) {
         if (validacion_titulo(tituloAniadido) == true &&
@@ -746,27 +660,57 @@ function registarReceta(url, coleccion) {
     descripcion = descripcion.toLowerCase();
     descripcion = descripcion[0].toUpperCase()+descripcion.slice(1);
     descripcion = descripcion.replace (/,,+/g,",");
-   // var porcionAniadido = document.getElementById("porciones").value;
 
-    //Cambio de tipo string a numero del dato porciones
-    //porcionAniadido = parseInt(porcionAniadido, 10)
-
-    // Añadir datos a los campos de la BD
-    db.collection("Dolor de cabeza").add({
-            Nombre: tituloAniadido,
-            //Porciones: porcionAniadido,
-            Ingredientes: ingredienteAñadido,
-            Preparacion: pasoAñadido,
-            Descripcion: descripcion,
-            Imagen: url
-        })
-        .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
-            alert("Se realizo el registro correctamente!!!")
-            location.reload()
-                //location='registro.html'
+    if(contadorcat==1){
+        //entonces el dolor no exite
+        crearDoc(coleccion, url, tutuloAnidado, ingredienteAñadido, pasoAñadido, descripcion);
+    }else{
+        db.collection("dolores").where("dolor", "==", nombreDolor).get().then((results) => {
+            console.log("se encontro");
+            const data = results.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }))
+            var ide = data[0].id
+            console.log(ide);
+            crearCol(ide);
         })
         .catch((error) => {
-            console.error("Error adding document: ", error);
+            console.error("No se encontro documento ", error);
         });
+        aniadirCol(ide, url, tutuloAnidado, ingredienteAñadido, pasoAñadido, descripcion);
+    }
+    
+}
+
+function crearDoc(col, url, tutuloAnidado, ingredienteAñadido, pasoAñadido, descripcion){
+    coleccion.add({
+        dolor: col
+     })
+     .then((docRef) => {
+         console.log("Document written with ID: ", docRef.id);
+         location.reload()
+         aniadirCol(docRef.id, url, tutuloAnidado, ingredienteAñadido, pasoAñadido, descripcion);
+     })
+     .catch((error) => {
+         console.error("Error adding document: ", error);
+     });
+}
+
+function aniadirCol(ide, url, tutuloAnidado, ingredienteAñadido, pasoAñadido, descripcion){
+    coleccion.doc(ide).collection("remedios").add({
+        Nombre:tutuloAnidado,
+        Ingredientes: ingredienteAñadido,
+        Preparacion: pasoAñadido,
+        Descripcion: descripcion,
+        Imagen: url
+    })
+    .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+        alert("Se realizo el registro correctamente!!!")
+        location.reload()
+    })
+    .catch((error) => {
+        console.error("Error adding document: ", error);
+    });  
 }
