@@ -26,7 +26,7 @@ function cargarSelect(){
     var a= document.getElementById("tipos");
     db.collection("Dolores").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            let option= `<option class="opcion" value="${doc.data().dolor}">${doc.data().Dolor}</option>`
+            let option= `<option class="opcion" value="${doc.data().Dolor}">${doc.data().Dolor}</option>`
             a.insertAdjacentHTML("beforeend", option);
         });
     });
@@ -458,8 +458,6 @@ function validarDescripcion(){
 function validar_cat(){
     var controlar = true;
     var texto = document.getElementById("nuevaCat").value;
-    console.log("validar cat", texto)
-
     var pattern = /^[A-Za-z\s\u002c\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1]+$/;//,
        if(texto.match(pattern)){
            controlar = true
@@ -510,12 +508,10 @@ var tipo= document.getElementById("tipos");
 
 tipo.addEventListener('change',function(){
     let valor=tipo.value;
-    console.log(valor);
     if(valor==1){
         agregarCat();
     }else if(contadorcat==1){
         casilla = document.getElementById("nuevaCat");	
-        console.log(casilla);
         casilla.parentNode.removeChild(casilla);
         contadorcat=0;
     }
@@ -535,7 +531,6 @@ var nombreDolor;
 function verificarCateg() {
     var ban;
     var col = document.getElementById('tipos');
-    console.log("vlor cat ",col.value);
     if (col.value==0) {
         alert("Categoría no seleccionada");
         ban=false;
@@ -547,31 +542,24 @@ function verificarCateg() {
             nombreDolor = nombreDolor.replace (/,,+/g,",");
             nombreColeccion=nombreDolor;
             ban=true;
-            console.log("nombrecol", nombreColeccion);
-            console.log("DOLOR ", nombreDolor);
         }
     }else{
         nombreColeccion=col.value;
         nombreDolor=nombreColeccion;
         ban=true;
-        console.log("col ",nombreColeccion);
     }
     return ban;
 }
 
 function validarImgCat() {
     if (!verificarCateg()) {
-        //alert("Categoría no valida");
-        //alert("Categoría no seleccionada");
         tituloAniadido = ""
         ingredienteAñadido = ""
         pasoAñadido = ""
         descripcion = ""
-        console.log("algo anda mal")
     } else if (imgCargada) {
         //aqui es posible guardar en la BD
        subirImagen(nombreColeccion);
-       console.log("llego aqui00000");
     } else {
         alert("Es necesario subir una imagen")
         tituloAniadido = ""
@@ -588,7 +576,7 @@ function subirImagen(carpeta) {
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
        (snapshot) => {
            console.log("cargando")
-           document.getElementById("botonReg").disabled = "true"
+           document.getElementById("botonReg").disabled = true;
   
        },
        (error) => {
@@ -609,8 +597,7 @@ function subirImagen(carpeta) {
        () => {
            // Upload completed successfully, now we can get the download URL
            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-               console.log('File available at', downloadURL);
-               
+               //console.log('File available at', downloadURL);
                console.log("se subio imagen correctamente")
                registarReceta(downloadURL, carpeta);
            });
@@ -619,11 +606,7 @@ function subirImagen(carpeta) {
 }
 
 function registrar() {
-    //PARA REGISTRAR TITULO Y PORCIONES
     var tituloAniadido = document.getElementById("titulo").value;
-    //var porcionAniadido = document.getElementById("porciones").value;
-    //Cambio de tipo string a numero del dato porciones
-   // porcionAniadido = parseInt(porcionAniadido, 10)
 
     if (controlar == true) {
         if (validacion_titulo(tituloAniadido) == true &&
@@ -632,14 +615,12 @@ function registrar() {
 
             juntarIngredientes()
             juntarPasos()
-            //juntarValor()
             
             validarImgCat()
 
 
         } else {
             tituloAniadido = ""
-            //porcionAniadido = ""
             ingredienteAñadido = ""
             pasoAñadido = ""
             descripcion = ""
@@ -648,13 +629,11 @@ function registrar() {
         controlar = true;
         alert("La receta ya se encuentra registrada en la base de datos.")
         tituloAniadido = ""
-        //porcionAniadido = ""
         ingredienteAñadido = ""
         pasoAñadido = ""
         descripcion = ""
     }
 }
-
 
 function registarReceta(url, coleccion) {
     //Variables que recuperan el titulo y la porcion
@@ -673,8 +652,8 @@ function registarReceta(url, coleccion) {
     descripcion = descripcion.replace (/,,+/g,",");
 
     if(contadorcat==1){
-        //entonces el dolor no exite
         crearDoc(coleccion, url,  tituloAniadido , ingredienteAñadido, pasoAñadido, descripcion);
+      
     }else{
         db.collection("Dolores").where("Dolor", "==", nombreDolor).get().then((results) => {
             console.log("se encontro");
@@ -695,16 +674,29 @@ function registarReceta(url, coleccion) {
 }
 
 function crearDoc(col, url,  tituloAniadido, ingredienteAñadido, pasoAñadido, descripcion){
-    db.collection("Dolores").add({
-        Dolor: col
-     })
-     .then((docRef) => {
-         console.log("Document written with ID: ", docRef.id);
-         aniadirCol(docRef.id, url, tituloAniadido , ingredienteAñadido, pasoAñadido, descripcion);
-     })
-     .catch((error) => {
-         console.error("Error adding document: ", error);
-     });
+    db.collection("Dolores").where("Dolor", "==", col).get().then((results) => {
+        const data = results.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+        }))
+        var dolexiste = data[0].id
+        console.log("dolexiste", dolexiste)
+        aniadirCol(dolexiste, url, tituloAniadido , ingredienteAñadido, pasoAñadido, descripcion);
+    })
+    .catch((error) => {
+        //console.error("No se encontro documento ", error);;
+        db.collection("Dolores").add({
+            Dolor: col
+         })
+         .then((docRef) => {
+             console.log("Document written with ID: ", docRef.id);
+             aniadirCol(docRef.id, url, tituloAniadido , ingredienteAñadido, pasoAñadido, descripcion);
+         })
+         .catch((error) => {
+             console.error("Error adding document: ", error);
+         });
+    });
+
 }
 
 function aniadirCol(ide, url,  tituloAniadido , ingredienteAñadido, pasoAñadido, descripcion){
@@ -724,4 +716,5 @@ function aniadirCol(ide, url,  tituloAniadido , ingredienteAñadido, pasoAñadid
         console.error("Error adding document and collection: ", error);
     });  
 }
+
 
