@@ -3,7 +3,7 @@ var db = firebase.firestore();
 var storageRef = firebase.storage().ref();
 //Variable que controla titulos repetidos
 var controlar = true;
-var titulos = nombres();
+var titulos = [];
 //Variables que controlan el id dinamico de la etiqueta
 var contadorIngredientes = 2;
 var contadorPasos = 52;
@@ -173,15 +173,15 @@ function pintarImagen(imagen) {
 //---------VALIDACIONES------------
 
 //----------VALIDACION RECETAS REPETIDAS----------
-function testTitulo() {
+/*function testTitulo() {
     var titulo = document.getElementById("titulo").value;
-   // console.log(titulos.length)
-    for (j = 0; j < titulos.length; j++) {
+   console.log(titulos.length)
+   for (j = 0; j < titulos.length; j++) {
         if (titulo.toLowerCase() == titulos[j].toLowerCase()) {
             console.log(titulo, titulos[j])
             controlar = false;
             j = titulos.length + 1
-            alert("La receta ya esta registrada en la base de datos.")
+            alert("El remedio ya esta registrado en la base de datos.")
             location.reload()
             //document.getElementById("botonReg").disabled = "false"
         }
@@ -190,9 +190,79 @@ function testTitulo() {
     if (controlar == true) {
         registrar();
     }
+}*/
+
+function testTitulo() {
+    
+    //document.getElementById("botonReg").disabled = true;
+    var titulo = document.getElementById("titulo").value;
+    console.log(titulos.length)
+    for (j = 0; j < titulos.length; j++) {
+         if (titulo.toLowerCase() == titulos[j].toLowerCase()) {
+             console.log(titulo, titulos[j])
+             controlar = false;
+             j = titulos.length + 1
+            //alert("El remedio ya esta registrado en la base de datos.")
+             //location.reload()
+             //document.getElementById("botonReg").disabled = "false"
+         }
+ 
+     }
 }
 
-function nombres() {
+function repetido(id){
+    /*var remedio = document.getElementById("titulo").value;
+    console.log(remedio);
+    let cateRemedio = tipo.value;
+    console.log(cateRemedio, "aqui");
+    var id = buscarId(cateRemedio);*/
+    console.log(id);
+    db.collection("Dolores").doc(id).collection("Remedios").get().then((snapshot) => {
+        console.log("se encontro")
+            snapshot.forEach(doc => {
+                console.log("entro");
+                titulos.push(doc.data().Nombre)
+                console.log(titulos)
+                testTitulo();
+                console.log(controlar,"antes");
+                
+            });
+            if (controlar == true) {
+                console.log("si llamo");
+                setTimeout(registrar,500);
+            }else{
+                alert("El remedio ya esta registrado en la base de datos.")
+                location.reload()
+            }
+    });
+}
+
+function buscarId(){
+    var ide = "";
+    var remedio = document.getElementById("titulo").value;
+    console.log(remedio);
+    let cateRemedio = tipo.value;
+    console.log(cateRemedio, "aqui");
+   // document.getElementById("botonReg").disabled = true;
+    if(cateRemedio != "1" && cateRemedio != "0"){
+        db.collection("Dolores").where("Dolor", "==", cateRemedio).get().then((results) => {
+            //console.log("se encontro");
+            const data = results.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }))
+            ide = data[0].id
+            //ideRem = ide;
+            repetido(ide);
+            //console.log(ideRem, "saa"); 
+        })
+    }else{
+        setTimeout(registrar, 500);
+    }
+}
+
+
+/*function nombres() {
     var titulos = [];
     var colecciones = ["Almuerzos", "Cenas", "Desayunos", "Ensaladas", "Jugos", "Meriendas"]
     for (i = 0; i < colecciones.length; i++) {
@@ -204,7 +274,7 @@ function nombres() {
     }
    // console.log(titulos, " nombres")
     return titulos
-}
+}*/
 
 //-----------------VALIDA CAMPO TITULO VACIO Y CARACTERES ALFABETICOS-----------------
 
@@ -243,9 +313,10 @@ function contar_palabras_titulo(titulo){
        //Quitarmos los espacios del principio y del final
        titulo = titulo.replace (/^ /,"");
        titulo = titulo.replace (/ $/,"");
+       console.log(titulo, "salida");
        //Troceamos el texto por los espacios
        var textoTroceado = titulo.split (" ");
-       console.log(textoTroceado);
+       //console.log(textoTroceado);
        
        //Contamos todos los trozos de cadenas que existen
        tituloAniadido = titulo
@@ -261,12 +332,12 @@ function contar_palabras_titulo(titulo){
                            }
                        }
                        for(i = 0; i < textoTroceado.length; i++){
-                           console.log(i);
-                           console.log(textoTroceado);
+                           //console.log(i);
+                           //console.log(textoTroceado);
    
                            if(textoTroceado[i].length > 12){
-                               console.log(textoTroceado[i]);
-                                console.log(textoTroceado[i].length);
+                              // console.log(textoTroceado[i]);
+                               // console.log(textoTroceado[i].length);
                                alert("La cantidad máxima de caracteres por palabra en el nombre es de 12.");
                                controlar=false;
                                i = textoTroceado.length
@@ -441,7 +512,7 @@ function validarDescripcion(){
     }else{
         if(textoTroceado[0] == ""){
             alert("No se permiten solo espacios como descripción");
-            valido=false;
+            controlar=false;
             i=contadorValor+1
         }else{
             if(numeroPalabras<15){
@@ -514,7 +585,7 @@ tipo.addEventListener('change',function(){
         casilla = document.getElementById("nuevaCat");	
         casilla.parentNode.removeChild(casilla);
         contadorcat=0;
-    }
+    } 
 })
 
 var contadorcat=0;
@@ -605,9 +676,12 @@ function subirImagen(carpeta) {
    );
 }
 
+
+
 function registrar() {
     var tituloAniadido = document.getElementById("titulo").value;
-
+    console.log(controlar, "final");
+    console.log(tituloAniadido,"fina");
     if (controlar == true) {
         if (validacion_titulo(tituloAniadido) == true &&
             contar_palabras_titulo(tituloAniadido) == true && validacion_ingredientes() == true &&
@@ -617,7 +691,7 @@ function registrar() {
             juntarPasos()
             
             validarImgCat()
-
+            console.log(tituloAniadido,"finalista");
 
         } else {
             tituloAniadido = ""
@@ -632,6 +706,7 @@ function registrar() {
         ingredienteAñadido = ""
         pasoAñadido = ""
         descripcion = ""
+        location.reload()
     }
 }
 
