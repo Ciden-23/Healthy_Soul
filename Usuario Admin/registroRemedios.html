@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="registroEstilos.css">
+    <link rel="stylesheet" href="estilosRegistroRemedios.css">
     <title>Healthy Soul</title>
     <!-- para el icono de subir imagen -->
     <link rel="icon" href="Assets/logo7.png">
@@ -26,7 +26,12 @@
             <div class="menu1">
                 <ul class="menu">
                     <li><a href="ListaRecetas.html">Recetas</a></li>
-                    <li><a href="Registro.html">Registrar Receta</a></li>
+                    <li><a href="#">Registrar ▾</a>
+                        <ul class="desplegable">
+                            <li class="cateMenu"><a href="Registro.html">Receta</a></li>
+                            <li class="cateMenu"><a href="registroRemedios.html">Remedio</a></li>
+                        </ul>
+                    </li>
                     <li onclick="logout()"><a href="../index.html">Cerrar Sesión</a></li>
                 </ul>
             </div>
@@ -37,9 +42,8 @@
     <div class="scrol"></div>
     <!-- ---------- -->
 
-    <div class="titulo">Registrar Receta</div>
-
-
+    <div class="titulo">Registrar Remedios</div>
+<br>
 
 
 
@@ -48,42 +52,22 @@
             <div class="cent">
                 <div class="eti">Nombre<br></div>
             </div>
-            <input class="ingresoTexto" id="titulo" placeholder="Título de la receta" />
+            <input class="ingresoTexto" id="titulo" placeholder="Nombre del remedio" />
         </div>
 
-        <div class="bloque">
-
+        <div class="bloque"> 
             <div>
-                <div class="cent2">
-                    <div class="eti">Porciones<br></div>
+               <div class="cent2">
+                    <div class="eti" id="categor">Categoría<br></div> 
+                    <select name="" class="categoria" id="tipos">
+                        <option value="0" class="opcion" selected disabled>--Selecionar--</option>
+                        <option value="1" class="opcion">Agregar nuevo</option>
+                    </select>
                 </div>
-
-                <input class="porciones" id="porciones" onkeydown="filtro()" placeholder="#" type="number" min="1" max="30" />
-
-                <script>
-                    function filtro() {
-                        var tecla = event.key;
-                        if (['.', 'e', '+', ',', '-', 'E'].includes(tecla))
-                            event.preventDefault()
-                    }
-                </script>
             </div>
         </div>
     </div>
 
-    <div class="fila">
-        <div class="categoria">
-            <div class="cent2">
-                <div class="eti2">Categoría </div>
-                <label class="espacio"><input type="radio" name="categoria" value="Desayunos"> Desayuno</label>
-                <label class="espacio"><input type="radio" name="categoria" value="Almuerzos"> Almuerzo</label>
-                <label class="espacio"><input type="radio" name="categoria" value="Cenas"> Cena</label>
-                <label class="espacio"><input type="radio" name="categoria" value="Ensaladas"> Ensalada</label>
-                <label class="espacio"><input type="radio" name="categoria" value="Meriendas"> Merienda</label>
-                <label class="espacio"><input type="radio" name="categoria" value="Jugos"> Bebida</label>
-            </div>
-        </div>
-    </div>
 
     <div class="fila">
         <div class="bloque">
@@ -92,7 +76,6 @@
                     <div class="eti">Ingredientes<br></div>
                 </div>
                 <input class="ingresoTexto" id="1" placeholder="Ingrese ingrediente" />
-                <input class="ingresoTexto" id="2" placeholder="Ingrese ingrediente" />
             </div>
             <div class="cent">
                 <div class="contBoton">
@@ -110,7 +93,6 @@
                 </div>
                 <div id="preparacion">
                     <input class="ingresoTexto" id="51" placeholder="Ingrese paso" />
-                    <input class="ingresoTexto" id="52" placeholder="Ingrese paso" />
                 </div>
                 <div class="cent">
                     <div class="contBoton">
@@ -129,22 +111,16 @@
 
         <div class="bloque">
             <div class="cent">
-                <div class="eti">Valor Nutricional<br></div>
+                <div class="eti">Descripción<br></div>
             </div>
             <div id="valor">
-                <input class="ingresoTexto" id="101" placeholder="Ingrese valor nutricional" />
-                <input class="ingresoTexto" id="102" placeholder="Ingrese valor nutricional" />
+                <textarea class="ingresoDescripcion" id="descripcion" placeholder="¿Cómo ayuda el remedio a tratar o aliviar la dolencia?"></textarea>
             </div>
-            <div class="cent">
-                <div class="contBoton">
-                    <input type="button" class="botonAdd" onclick="aniadirValor();" value="Añadir valor nutricional" />
-                    <input type="button" class="botonAdd" onclick="eliminarValor();" value="Eliminar valor" />
-                </div>
-            </div>
+           
         </div>
 
         <div class="bloque">
-
+ 
             <div>
                 <div class="cent">
                     <div class="eti">Imagen<br></div>
@@ -169,9 +145,10 @@
             </div>
         </div>
     </div>
+    <br>
 
     <div class="fila">
-        <input id="botonReg" type="button" class="botonRegistrar" onclick="testTitulo()" value="Registrar" />
+        <input id="botonReg" type="button" class="botonRegistrar" onclick="buscarId()" value="Registrar" />
     </div>
 
 
@@ -212,7 +189,7 @@
 
     <!--Scripts para el funcionamiento-->
     <script src="base.js"></script>
-    <script src="guardarRegistro.js"></script>
+    <script src="guardarRegistroRemedios.js"></script>
     <!-- <script src="menu.js"></script> -->
 
 </html>
