@@ -196,6 +196,15 @@ function testTitulo() {
     
     //document.getElementById("botonReg").disabled = true;
     var titulo = document.getElementById("titulo").value;
+    //Reemplazamos los saltos de linea por espacios
+    titulo = titulo.replace (/\r?\n/g," ");
+    //Reemplazamos los espacios seguidos por uno solo
+    titulo = titulo.replace (/[ ]+/g," ");
+    //Quitarmos los espacios del principio y del final
+    titulo = titulo.replace (/^ /,"");
+    titulo = titulo.replace (/ $/,"");
+    //comas
+    titulo = titulo.replace (/,,+/g,",");
     console.log(titulos.length)
     for (j = 0; j < titulos.length; j++) {
          if (titulo.toLowerCase() == titulos[j].toLowerCase()) {
@@ -313,6 +322,8 @@ function contar_palabras_titulo(titulo){
        //Quitarmos los espacios del principio y del final
        titulo = titulo.replace (/^ /,"");
        titulo = titulo.replace (/ $/,"");
+       //comas
+       titulo = titulo.replace (/,,+/g,",");
        console.log(titulo, "salida");
        //Troceamos el texto por los espacios
        var textoTroceado = titulo.split (" ");
@@ -680,6 +691,7 @@ function subirImagen(carpeta) {
 
 function registrar() {
     var tituloAniadido = document.getElementById("titulo").value;
+    
     console.log(controlar, "final");
     console.log(tituloAniadido,"fina");
     if (controlar == true) {
@@ -713,6 +725,13 @@ function registrar() {
 function registarReceta(url, coleccion) {
     //Variables que recuperan el titulo y la porcion
     var tituloAniadido = document.getElementById("titulo").value;
+    //Reemplazamos los saltos de linea por espacios
+    tituloAniadido = tituloAniadido.replace (/\r?\n/g," ");
+    //Reemplazamos los espacios seguidos por uno solo
+    tituloAniadido = tituloAniadido.replace (/[ ]+/g," ");
+    //Quitarmos los espacios del principio y del final
+    tituloAniadido = tituloAniadido.replace (/^ /,"");
+    tituloAniadido = tituloAniadido.replace (/ $/,"");
     //Reemplazar comas
     tituloAniadido = tituloAniadido.replace (/,,+/g,",");
     //Todo a minuscula
@@ -725,7 +744,7 @@ function registarReceta(url, coleccion) {
     descripcion = descripcion.toLowerCase();
     descripcion = descripcion[0].toUpperCase()+descripcion.slice(1);
     descripcion = descripcion.replace (/,,+/g,",");
-
+console.log(tituloAniadido, "ultimo ultimito");
     if(contadorcat==1){
         crearDoc(coleccion, url,  tituloAniadido , ingredienteAñadido, pasoAñadido, descripcion);
       
