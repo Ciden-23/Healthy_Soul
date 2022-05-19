@@ -116,7 +116,7 @@ var val2=obtenerValor('id');
                             <div class="tamaño"><h3>${nom}</h3></div>
                         </a>
                         <div>
-                        <input type = "button" class="botonBorrar" id="abrir" nombre="${ide}" onclick="borrar('${ide}','${nom}');" value="Borrar" style="float: right;"/>
+                        <input type = "button" class="botonBorrar" id="abrir" nombre="${ide}" onclick="borrar('${ide}','${idRem}','${nom}');" value="Borrar" style="float: right;"/>
                    
                         </div>
                         </div>`;
@@ -166,13 +166,13 @@ function cancelar(){
     //console.log(ideBorrar,categBorrar,nom, "eliminadas")
 }
 
-function borrarReceta(){
+function borrarRemedio(){
 
     //window.addEventListener('scroll', enableScroll);  
     enableScroll();
     const modalContainer = document.getElementById("modal-container");
    // alert("Borrar")
-   db.collection(categBorrar).doc(ideBorrar).delete().then(() => {
+   db.collection("Dolores").doc(categBorrar).collection("Remedios").doc(ideBorrar).delete().then(() => {
     console.log("Documento borrado exitosamente!");
     modalContainer.classList.remove('show');
     ideBorrar="";
@@ -184,6 +184,7 @@ function borrarReceta(){
     console.error("Error removing document: ", error);
 });
 }
+
 
 function volver(categ){
 
