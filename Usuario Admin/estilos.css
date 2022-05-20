@@ -162,7 +162,7 @@ header {
 }
 
 .menu li:hover .desplegable{
-    visibility: visible;
+    visibility: hidden;
     opacity: 1;
 }
 
@@ -283,7 +283,7 @@ body {
     opacity: 0;
     top: 0;
     /*left: 0;*/
-
+    z-index: 1000;
     height: 100%;
     width: 100%;
 
@@ -307,6 +307,7 @@ body {
     background-color: #fff;
     border-color: #fff;
     border: none;
+    padding: 0;
 }
  .separador {
     height: 10px;
@@ -444,7 +445,7 @@ body {
 
     }
     .contenedor .tarjeta{
-        max-width: 50%;
+        max-width: 55%;
         /*Verificar el alto despues del responsive*/
         /*height: auto;*/
     }
@@ -534,24 +535,24 @@ body {
 
 @media screen and (max-width:576px){
     .contenedor .tarjeta .botonBorrar{
-        margin-top: 46px;
+        margin-top: 18px;
      }
 }
 
 @media screen and (max-width: 500px){
     .contenedor .tarjeta .botonBorrar{
-        margin-top: 79px;
+        margin-top: 55px;
      }
 }
 
 @media screen and (max-width: 450px){
     .contenedor .tarjeta .botonBorrar{
-        margin-top: 104px;
+        margin-top: 80px;
      }
 }
 @media screen and (max-width: 410px){
     .contenedor .tarjeta .botonBorrar{
-        margin-top: 121px;
+        margin-top: 100px;
      }
 }
 @media screen and (max-width: 375px){
@@ -593,15 +594,18 @@ body {
         padding: 0px 8px;
         padding-top: 6px;
     }
+    .Xalinear {
+        padding: 0px 8px;
+    }
 }
 @media screen and (max-width: 350px){
     .contenedor .tarjeta .botonBorrar{
-        margin-top: 123px;
+        margin-top: 115px;
      }
 }
 @media screen and (max-width: 300px){
     .contenedor .tarjeta .botonBorrar{
-        margin-top: 123px;
+        margin-top: 130px;
      }
      .modal-container {
 
@@ -641,6 +645,9 @@ body {
     .alineado{
         padding: 0px 5px;
         padding-top: 1.5px;
+    }
+    .Xalinear {
+        padding: 0px 5px;
     }
 }
 @media screen and (max-width: 200px){
@@ -789,8 +796,7 @@ a:hover{
         width: 100%;
     }
     .menu{
-        max-width: 375px;
-        min-width: 200px;
+        
         width: auto;
     }
     .menu li{
@@ -799,7 +805,7 @@ a:hover{
 
     }
     .menu li a{
-        font-size: 100%;
+        font-size: 16px;
     }
     .menu li a:hover {
         padding: 0.5px 1.5px;
