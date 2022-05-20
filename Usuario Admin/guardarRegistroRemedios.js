@@ -495,11 +495,11 @@ function validar_cat(){
        }
        else{
            if(texto == ""){
-               alert("No se acepta campo vacios para nueva categoría.")
+               alert("No se acepta campo vacio para nueva categoría.")
                return controlar = false;
            }else{
                //Tambien acepta ""
-               alert("Solo se aceptan caracteres alfabeticos en categoría.")
+               alert("Solo se aceptan caracteres alfabeticos y “,” en categoría.")
                 return controlar = false;
            }
        }
