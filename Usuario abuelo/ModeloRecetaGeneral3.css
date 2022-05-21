@@ -277,7 +277,50 @@ h1 {
 
 
 /*titulo boton*/
+/* boton favorito */
+.botonCorazon{
+  /*  
+   position: relative;
+   left: 1400px;
+   */
+   margin-left: 90%;
+  
+}
 
+.heart{
+
+   
+    
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 1ms transform;
+    place-items: center;
+    
+    border-radius: 19%;
+    height: 70px;
+    z-index: 20;
+}
+.heart:hover {
+    transform: scale(1.2);
+}
+
+.heartbutton1 {
+    filter:drop-shadow(0px 0px 1px black);
+    height: 70px;
+    position: absolute;
+    place-items: center;
+    z-index: 21;
+}
+
+.heartbutton2{
+    filter:drop-shadow(0px 0px 1px black);
+    height: 70px;
+    margin-right: auto;
+    z-index: 22;
+    place-items: center;
+}
+/* boton favorito */
 
 /*receta inferior*/
 
@@ -533,6 +576,15 @@ a:hover{
 
   }
   @media (max-width: 680px) {
+     .heartbutton1{
+        height: 50px;
+    }
+    .heartbutton2{
+        height: 50px;
+    }
+    .heart{
+        height: 50px;
+    }
     .bordero{
         margin-left: 50px;
         margin-right: 50px;
@@ -543,6 +595,9 @@ a:hover{
 
   }
   @media (max-width: 499px) { 
+       .botonCorazon{
+          margin-left: 85%;
+      }
     li{
         font-size: 15px;
       }
