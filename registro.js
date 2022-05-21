@@ -153,6 +153,11 @@ function registro() {
                                         var errorCode = error.code;
                                         var errorMessage = error.message;
                                         console.log(errorCode)
+                                        alert(msg(errorCode));
+                                        document.getElementById("1").value = "";
+                                        document.getElementById("2").value = "";
+                                        document.getElementById("3").value = "";
+                                        document.getElementById("4").value = "";
                                             // ..
                                     });
                                 break;
@@ -291,15 +296,15 @@ function msg(errorCode) {
             break;
         case "auth/invalid-email":
             msg = "Error: Correo inválido";
-            err++;
+         
             break;
         case "auth/weak-password":
             msg = "Error: La contraseña deberá contener como mínimo 6 caracteres";
-            err++;
+         
             break;
         case "auth/email-already-in-use":
             msg = "Error: Correo electrónico ya en uso";
-            err++;
+           
             break;
         case "auth/internal-error":
             msg = "Error: Hay un problema con el servidor, por favor intente más tarde";
