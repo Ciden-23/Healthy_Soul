@@ -93,7 +93,7 @@ header {
     color: #fff;
 }
 
-.menu li a:hover {
+.menu > li > a:hover {
     padding: 3px 5px;
     background: #fff;
     border-radius: 10px;
