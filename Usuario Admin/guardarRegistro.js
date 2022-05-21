@@ -206,6 +206,15 @@ var imagenPintada;
  //----------VALIDACION RECETAS REPETIDAS----------
  function testTitulo() {
      var titulo = document.getElementById("titulo").value;
+     //Reemplazamos los saltos de linea por espacios
+     titulo = titulo.replace (/\r?\n/g," ");
+     //Reemplazamos los espacios seguidos por uno solo
+     titulo = titulo.replace (/[ ]+/g," ");
+     //Quitarmos los espacios del principio y del final
+     titulo = titulo.replace (/^ /,"");
+     titulo = titulo.replace (/ $/,"");
+     //comas
+     titulo = titulo.replace (/,,+/g,",");
     // console.log(titulos.length)
      for (j = 0; j < titulos.length; j++) {
          if (titulo.toLowerCase() == titulos[j].toLowerCase()) {
@@ -274,22 +283,38 @@ function contar_palabras_titulo(titulo){
         //Quitarmos los espacios del principio y del final
         titulo = titulo.replace (/^ /,"");
         titulo = titulo.replace (/ $/,"");
+        //comas
+        titulo = titulo.replace (/,,+/g,",");
         //Troceamos el texto por los espacios
         var textoTroceado = titulo.split (" ");
+        console.log(textoTroceado);
+        
         //Contamos todos los trozos de cadenas que existen
         tituloAniadido = titulo
-        var numeroPalabras = textoTroceado.length;
-        if(numeroPalabras>15){
-            alert("La cantidad máxima de palabras aceptadas para el nombre es de 15.");
-            return controlar=false;
-        }else{
-            if(textoTroceado[0] == ""){
-                alert("No se permiten solo espacios como nombre");
-                controlar=false;
-            }
-            return controlar;
-        }
+        var numeroPalabras = textoTroceado.length; 
+                if(numeroPalabras>10){
+                    alert("La cantidad máxima de palabras aceptadas para el nombre es de 15.");
+                    controlar=false;
+                }else{
+                    
+                            if(textoTroceado[0] == ""){
+                                alert("No se permiten solo espacios como nombre");
+                                controlar=false;
+                            }
+                        }
+                        for(i = 0; i < textoTroceado.length; i++){
+                            console.log(i);
+                            console.log(textoTroceado);
     
+                            if(textoTroceado[i].length > 12){
+                                console.log(textoTroceado[i]);
+                                 console.log(textoTroceado[i].length);
+                                alert("La cantidad máxima de caracteres por palabra en el nombre es de 12.");
+                                controlar=false;
+                                i = textoTroceado.length
+                            }
+                         } 
+                return controlar;
 }
 
 /*
@@ -599,6 +624,13 @@ function validacion_val_nutricional(){
  function registarReceta(url, coleccion) {
      //Variables que recuperan el titulo y la porcion
      var tituloAniadido = document.getElementById("titulo").value;
+        //Reemplazamos los saltos de linea por espacios
+        tituloAniadido = tituloAniadido.replace (/\r?\n/g," ");
+        //Reemplazamos los espacios seguidos por uno solo
+        tituloAniadido = tituloAniadido.replace (/[ ]+/g," ");
+        //Quitarmos los espacios del principio y del final
+        tituloAniadido = tituloAniadido.replace (/^ /,"");
+        tituloAniadido = tituloAniadido.replace (/ $/,"");
      //Reemplazar comas
      tituloAniadido = tituloAniadido.replace (/,,+/g,",");
      //Todo a minuscula

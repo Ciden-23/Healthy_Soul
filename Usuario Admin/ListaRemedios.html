@@ -13,7 +13,7 @@
     <title>PRUEBA_CARDS</title>
     <!-- link a los estilos -->
     <link rel="icon" href="Assets/logo7.png">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilosRemedios.css">
 
 </head>
 
@@ -25,27 +25,22 @@
                 <img src="Assets/logo7.png" alt="Logo de la pagina">
                 <h2 class="nombre_empresa">HEALTHY SOUL</h2>
             </div>
-            <ul class="menu">
-                <li><a href="#">Menú ▾</a>
-                    <ul class="desplegable">
-                        <li class="cateMenu" onclick="clasificarCat('Almuerzos');"><a
-                                onclick="remplaaa('Almuerzos')">Almuerzos</a></li>
-                        <li class="cateMenu" onclick="clasificarCat('Cenas');"><a onclick="remplaaa('Cenas')">Cenas</a>
-                        </li>
-                        <li class="cateMenu" onclick="clasificarCat('Desayunos');"><a
-                                onclick="remplaaa('Desayunos')">Desayunos</a></li>
-                        <li class="cateMenu" onclick="clasificarCat('Ensaladas');"><a
-                                onclick="remplaaa('Ensaladas')">Ensaladas</a></li>
-                        <li class="cateMenu" onclick="clasificarCat('Jugos');"><a
-                                onclick="remplaaa('Jugos')">Bebidas</a></li>
-                        <li class="cateMenu" onclick="clasificarCat('Meriendas');"><a
-                                onclick="remplaaa('Meriendas')">Meriendas</a></li>
-                    </ul>
-                </li>
-                <li><a href="ListaRecetas.html">Recetas</a></li>
-                <li><a href="dolencias.html">Remedios</a></li>
-                <li onclick="logout()"><a href="../index.html">Cerrar Sesión</a></li>
-            </ul>
+            <div class="menu1">
+                <ul class="menu">
+                    <li><a href="ListaRecetas.html">Recetas</a></li>
+                    <li><a href="dolencias.html">Remedios</a></li>
+                    <li><a href="#">Registrar ▾</a>
+                        <ul class="desplegable">
+                            <li class="cateMenu"><a href="Registro.html">Receta</a></li>
+                            <li class="cateMenu"><a href="registroRemedios.html">Remedio</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li onclick="logout()"><a href="../index.html">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+            
+
         </nav>
     </header>
 
@@ -57,16 +52,28 @@
 
     <!-- con link -->
 
-
-
     <div id="loader">
-
+    
     </div>
+
 
     <div class="contenedor" align="center">
 
         <div id="imagen">
 
+        </div>
+        <div class="modal-container" id="modal-container">
+            <div class="modal">
+                <div class="Xalinear"><input type="button" class="equisd" id="equis" onclick="cancelar()" ; value="X" align="right" /></div>
+                <div class="separador"></div>
+                <hr class="linea">
+                <p class="pregunta">¿Esta seguro de que desea eliminar el remedio?</p>
+                <hr class="linea">
+                <div class="alineado" style="float: right;">
+                    <button class="aceptar" id="aceptar" onclick="borrarRemedio();">Aceptar</button>
+                    <button class="cancelar" id="cancelar" onclick="cancelar();">Cancelar</button>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -101,7 +108,8 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <!-- Direccion del archivo js -->
-<script src="conexion.js"></script>
+<script src="base.js"></script>
+<script src="conexionRemedios.js"></script>
 <!--<script src="menu.js"></script>-->
 
 </html>

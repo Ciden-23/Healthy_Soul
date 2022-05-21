@@ -80,9 +80,11 @@ header {
     padding-left: 0;
 }
 
-.menu li {
+.menu > li {
+    position: relative;
     list-style: none;
-    margin: 7px;
+    display: inline-block;
+    margin: 15px;
 }
 
 .menu li a {
@@ -144,7 +146,9 @@ header {
     color:#000
 }
 
-
+.cateMenu{
+    cursor: pointer;
+}
 
 .scrol {
     height: 100px;
@@ -165,8 +169,6 @@ header {
 .bloque{
     width: 33%;
 }
-
-
 .titulo {
     font-size: 44px;
     text-align: center;
@@ -184,14 +186,39 @@ header {
     width: 100px;
     display: inline-block  ;
 }
-.categoria {
-    width: 95%;
-    /* padding: 4px; */
-    /* margin-top: 15px; */
-    margin-bottom: 15px;
+.categoria{
+    color: #000;
+    text-shadow: none;
+    width: 200px;
+    height: 41px;
+    margin-bottom: 5px;
+    margin-top: 2px;
     text-align: center;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
     /* padding-left: 20px; */
 }
+.opcion{
+    color: #000;
+}
+
+.ingresarCat{
+    text-shadow: none;
+    background-color: #fbfbfb;
+    color: black;
+    width: 200px;
+    height: 41px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    margin-bottom: 10px;
+    margin-top: 5px; 
+}
+
 #file {
     display: none;
 }
@@ -232,6 +259,7 @@ img {
     align-items: center;
     justify-content: center;
     text-shadow: none;
+    border-color: #DA723C;
 }
 
 .contBoton{
@@ -247,6 +275,7 @@ img {
     border-width: 2px;
     margin: 0 auto;
     text-shadow: none;
+    border-color: #7C3C21;
 }
 
 .ingresoTexto {
@@ -285,13 +314,35 @@ img {
 }
 .botonAdd:hover {
     background-color: #470D21;
+    border-color: #470D21;
 }
 .botonRegistrar:hover {
     background-color: #470D21;
+    border-color: #470D21;
 }
 
 .subirImagen:hover {
     background-color: #470D21;
+}
+
+
+
+.ingresoDescripcion {
+    background-color: #fbfbfb;
+    color: black;
+    width: 410px;
+    height: 180px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    resize: none;
+}
+
+.ingresoDescripcion {
+    text-shadow: none;
 }
 
 /*footer*/
@@ -417,13 +468,17 @@ a:hover{
         margin-top: 2px;
     }
 
-
+    .ingresoDescripcion {
+        width: 310px;
+        height: 120px;
+        margin-bottom: 5px;
+        margin-top: 2px;
+    }
 
     .porciones {
         border-radius: 5px;
         border-style: solid;
         border: 0;
-        border:2px  solid black;
         height: 35px;
         width: 50px;
         text-shadow: none;
@@ -521,11 +576,20 @@ a:hover{
         /* margin: auto auto; */
     }
 
+    .ingresoDescripcion {
+        width: 310px;
+        height: 120px;
+        margin-bottom: 5px;
+        margin-top: 2px;
+        margin-right: 5%;
+        margin-left: 5%;
+        /* margin: auto auto; */
+    }
+
     .porciones {
         border-radius: 5px;
         border-style: solid;
         /* border: 0; */
-        border:2px  solid black;
         height: 35px;
         width: 50px;
         text-shadow: none;
