@@ -399,7 +399,7 @@ function disableS() {
 function enableS() {
     window.onscroll = function() {};
 }
-setTimeout(param, 1000);
+setTimeout(param, 2000);
 setTimeout(aa, 4000);
 
 
