@@ -86,38 +86,77 @@ function registro() {
                     if (everf != -2) {
                         if (everf == -1) {
                             alert(msg("auth/invalid-email"));
+                            document.getElementById("1").value = "";
+                            document.getElementById("2").value = "";
+                            document.getElementById("3").value = "";
+                            document.getElementById("4").value = "";
                         } else {
                             alert(msg("8"));
+                            document.getElementById("1").value = "";
+                            document.getElementById("2").value = "";
+                            document.getElementById("3").value = "";
+                            document.getElementById("4").value = "";
                         }
                     } else {
-                        firebase.auth().createUserWithEmailAndPassword(email, contraseña)
-                            .then((userCredential) => {
-                                // Signed in
-                                const user = firebase.auth().currentUser;
-                                console.log(user);
-                                let uid = user.uid;
-                                console.log(uid);
-                                user.updateProfile({
-                                    displayName: nomcomp,
-                                    photoURL: null
-                                }).then(() => {
-                                    // Update successful
-                                    // ...
-                                    const initialData = {
-                                        Nombre: nomcomp
-                                    };
-                                    db.collection('dattaUser').doc('user').collection(uid).doc('datos iniciales').set(initialData);
-                                }).catch((error) => {
-                                    // An error occurred
-                                    // ...
-                                });
-                            })
-                            .catch((error) => {
-                                var errorCode = error.code;
-                                var errorMessage = error.message;
-                                console.log(errorCode)
-                                    // ..
-                            });
+                        let cont;
+                        cont = countDat(nombre, apellido);
+                        console.log("Pre cont");
+                        console.log(cont);
+                        if (cont == 0) {
+                            cont = countEm(email, contraseña);
+                        }
+                        console.log("cont")
+                        console.log(cont);
+                        switch (cont) {
+                            case 9:
+                                alert(msg("9"));
+                                break;
+                            case 10:
+                                alert(msg("10"));
+                                break;
+                            case 11:
+                                alert(msg("11"));
+                                break;
+                            case 12:
+                                alert(msg("12"));
+                                break;
+                            case 12:
+                                alert(msg("13"));
+                                break;
+                            case 12:
+                                alert(msg("14"));
+                                break;
+                            case 0:
+                                firebase.auth().createUserWithEmailAndPassword(email, contraseña)
+                                    .then((userCredential) => {
+                                        // Signed in
+                                        const user = firebase.auth().currentUser;
+                                        console.log(user);
+                                        let uid = user.uid;
+                                        console.log(uid);
+                                        user.updateProfile({
+                                            displayName: nomcomp,
+                                            photoURL: null
+                                        }).then(() => {
+                                            // Update successful
+                                            // ...
+                                            const initialData = {
+                                                Nombre: nomcomp
+                                            };
+                                            db.collection('dattaUser').doc('user').collection(uid).doc('datos iniciales').set(initialData);
+                                        }).catch((error) => {
+                                            // An error occurred
+                                            // ...
+                                        });
+                                    })
+                                    .catch((error) => {
+                                        var errorCode = error.code;
+                                        var errorMessage = error.message;
+                                        console.log(errorCode)
+                                            // ..
+                                    });
+                                break;
+                        }
                     }
                     break;
             }
@@ -177,6 +216,34 @@ function verf(email) {
     return t;
 }
 
+function countDat(nombre, apellido) {
+    let cont;
+    if (nombre.length < 3) {
+        cont = 9;
+    } else if (nombre.length > 20) {
+        cont = 10;
+    } else if (apellido.length < 4) {
+        cont = 11;
+    } else if (apellido.length > 30) {
+        cont = 12;
+    } else {
+        cont = 0;
+    }
+    return cont;
+}
+
+function countEm(email, cont) {
+    let con;
+    if (email.length > 30) {
+        cont = 13;
+    } else if (cont.length > 15) {
+        cont = 14;
+    } else {
+        con = 0;
+    }
+    return con;
+}
+
 function msg(errorCode) {
     let msg;
     switch (errorCode) {
@@ -204,6 +271,24 @@ function msg(errorCode) {
         case "8":
             msg = "Error: Dominio de correo reservado";
             break;
+        case "9":
+            msg = "La longitud mínima es de 3 caracteres para el campo Nombre"
+            break;
+        case "10":
+            msg = "La longitud permitida es de 20 caracteres para el campo Nombre"
+            break;
+        case "11":
+            msg = "La longitud mínima es de 4 caracteres para el campo Apellido"
+            break;
+        case "12":
+            msg = "La longitud permitida es de 30 caracteres para el campo Apellido"
+            break;
+        case "13":
+            msg = "La longitud permitida es de 30 caracteres para el campo Correo"
+            break;
+        case "14":
+            msg = "La longitud permitida es de 15 caracteres para el campo Contraseña"
+            break;
         case "auth/invalid-email":
             msg = "Error: Correo inválido";
             err++;
@@ -221,6 +306,10 @@ function msg(errorCode) {
             break;
         default:
             msg = "Error: Algunos de los datos son inválidos, por favor verifica los datos";
+            document.getElementById("1").value = "";
+            document.getElementById("2").value = "";
+            document.getElementById("3").value = "";
+            document.getElementById("4").value = "";
             break;
     }
     return msg;
