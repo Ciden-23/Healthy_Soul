@@ -190,21 +190,6 @@ const uid = user.uid;
 
   
  if(val==2){
-    var con= db.collection('dattaUser').doc('user').collection(uid).doc('favoritos');
-    con.get().then((doc) => {
-       if (doc.exists) {
-           console.log("existe");
-         
-       } else {
-           let ahh=document.getElementById("imagen");
-           ahh.textContent="¡Ups!, todavia no se a añadido ningun favorito";
-           let hueco=document.querySelector(".hueco");
-          
-           console.log("No existe ");
-       }
-   }).catch((error) => {
-       console.log("Error getting document:", error);
-   });
    
     state=2;
     for (let i = 0; i < categorias.length; i++) {
@@ -220,8 +205,7 @@ const uid = user.uid;
             }))
             //console.log(data, "datos")
             for (var i = 0; i < data.length; i++) {
-                let ahh2=document.getElementById("imagen");
-                ahh2.textContent="";
+         
                 var nom = data[i].Nombre
                     //OBTIENE EL ID DE CADA RECETA DE UNA COLEECION (Aqui deberia verificarse que receta fue elegida por el nombre, y obtener su ID 
                     //para generar un HTML de la receta)
@@ -287,21 +271,6 @@ function clasificarCat(categ){
  if(categ=="Favoritos"){
     state="2";
    
-    var con= db.collection('dattaUser').doc('user').collection(uid).doc('favoritos');
-   
-    con.get().then((doc) => {
-       if (doc.exists) {
-           console.log("existe");
-         
-       } else {
-           // doc.data() will be undefined in this case
-           let ahh=document.getElementById("imagen");
-           ahh.textContent="¡Ups!, todavia no se a añadido ningun favorito";
-           console.log("No existe ");
-       }
-   }).catch((error) => {
-       console.log("Error getting document:", error);
-   });
     for (let i = 0; i < categorias.length; i++) {
         //Guardar en una variable el nombre de la categoria
         const categ = categorias[i];
@@ -315,8 +284,7 @@ function clasificarCat(categ){
             }))
             //console.log(data, "datos")
             for (var i = 0; i < data.length; i++) {
-                  let ahh2=document.getElementById("imagen");
-                ahh2.textContent="";
+                
                 var nom = data[i].Nombre
                     //OBTIENE EL ID DE CADA RECETA DE UNA COLEECION (Aqui deberia verificarse que receta fue elegida por el nombre, y obtener su ID 
                     //para generar un HTML de la receta)
@@ -333,8 +301,7 @@ function clasificarCat(categ){
 
 
  }else{
-    let ahh=document.getElementById("imagen");
-    ahh.textContent="";
+
     const categRef = db.collection(categ);
     categRef.get().then((results) => {
         const data = results.docs.map((doc) => ({
