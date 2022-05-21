@@ -82,7 +82,7 @@ var val2=obtenerValor('id');
             //console.log(ide);
             //console.log(nom);
             //OBTIENE EL ID DE CADA RECETA DE UN REMEDIO 
-            imagen.innerHTML += `<div class="tarjeta" id="tarjeta"><a class="refer" href="ModeloRecetaGeneral3.html?id='${ide}'&state='${v333}'">
+            imagen.innerHTML += `<div class="tarjeta" id="tarjeta"><a class="refer" href="ModeloRecetaGeneral3.html?id='${ide}'&id2='${v222}'">
                         <img src="${img}">
                         <div class="tamaño"><h3>${nom}</h3></div>
                     </a>
