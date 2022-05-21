@@ -38,7 +38,10 @@
                     <label for="correoElectronico">Correo Electronico</label>
                     <input type="text" id="4" placeholder="Ingrese su correo" required>
                     <label for="contraseña">Contraseña</label>
-                    <input type="password" id="2" placeholder="Ingrese su contraseña" required autocomplete="off">
+                       <div class="container">
+                           <input type="password" id="2" placeholder="Ingrese su contraseña" required autocomplete="off">
+                           <img src="Assets/Show.png"class="icon" id="Eye">
+                       </div>
                     <div class="boton">
                         <button title="Ingresar" onclick="registro()" name="Registrarse">Registrarse</button>
                     </div>
@@ -57,4 +60,5 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 <script src="registro.js"></script>
+<script src="code.js"></script>
 </html>
