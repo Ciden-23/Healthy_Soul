@@ -144,39 +144,6 @@ firebase.initializeApp({
         }
 */
 
-
-
-
-      let na;
-      firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-              let displayName = user.displayName;
-              let email = user.email;
-              let emailVerified = user.emailVerified;
-              let photoURL = user.photoURL;
-              let isAnonymous = user.isAnonymous;
-              let uid = user.uid;
-              let providerData = user.providerData;
-              console.log(user);
-              let pos;
-              let tipou;
-              pos = email.search(/@healthysoul.com/i);
-              if (pos >= 0) {
-                  tipou = "admin"
-                  window.location.href = "Usuario Admin/ListaRecetas.html";
-              }
-          } else {
-              if (na == "1") {
-                  window.location.href = "../index.html";
-              } else {
-                  window.location.href = "../login.html";
-                  console.log("No logeado")
-              }
-          }
-      });
-      
-
-
 function logout() {
     firebase.auth().signOut().then(() => {
         // Sign-out successful.
