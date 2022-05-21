@@ -129,12 +129,19 @@ firebase.initializeApp({
          return valorNut.replace(letra, '<br/>-')
         }*/
   
-       
+        
         function mov(){
            if(v333==1){
               
             let xxx =document.querySelector(".x");
             xxx.href="ListaRecetas.html?state=1&clase="+vvv;
+           }else{
+            if(v333==2){
+              let xxx =document.querySelector(".x");
+              xxx.href="ListaRecetas.html?state=2&clase=Favoritos";
+
+            }
+
            }
   
         }
@@ -142,7 +149,7 @@ firebase.initializeApp({
 
 
 
-
+      let uid;
       let na;
       firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
@@ -151,7 +158,7 @@ firebase.initializeApp({
               let emailVerified = user.emailVerified;
               let photoURL = user.photoURL;
               let isAnonymous = user.isAnonymous;
-              let uid = user.uid;
+               uid = user.uid;
               let providerData = user.providerData;
               console.log(user);
               let pos;
@@ -182,3 +189,69 @@ function logout() {
     });
 
 }
+
+var stado=false;
+	
+var cat="Cenas";
+var idd="LLKCpfc5pvwhdP3w2PBO";
+function inicio(){
+
+  
+  //const user = firebase.auth().currentUser;
+  //let uidd = user.uid;
+  //console.log(uidd);
+    var docRefa = db.collection('dattaUser').doc('user').collection(uid).doc('favoritos').collection(vvv).where("id", "==", v222);
+  
+  docRefa.get().then(function(doc){ 
+      if (!doc.empty){
+         console.log(v222);
+       console.log("existe");
+       stado=true;
+       const rojo=document.querySelector(".heartbutton1");
+       rojo.style.opacity="0";
+       }else {
+      console.log(idd);
+      console.log("No existe");
+       }
+    }).catch(function(error) {
+      console.log("Error getting document:", error);
+  });
+
+}
+
+setTimeout(inicio,1000);
+
+function anade(){
+  const nombree=document.querySelector(".tit").textContent;
+  const linkk=document.querySelector(".iconProfile").src;
+	const initialData = {
+    Nombre: nombree ,
+    Imagen: linkk ,
+		state: 'liked',
+		id:  v222
+	  };
+if( stado==false){		  		
+ /*                         /mismo/         /mismo/            /iduser/   /mismo/                  /categoria/   /IDcomida/                 /se necesita para que funcione/  */
+	var res =db.collection('dattaUser').doc('user').collection(uid).doc('favoritos').collection(vvv).doc(v222).set(initialData);	  
+	  console.log('Added document with ID: ', res.id);
+	 stado=true;
+   const rojo=document.querySelector(".heartbutton1");
+   rojo.style.opacity="0";
+}else{
+
+	if(stado==true){
+	// alert("Borrar")
+	var dd= db.collection('dattaUser').doc('user').collection(uid).doc('favoritos').collection(vvv);
+	dd.doc(v222).delete();
+	stado=false;
+  const rojo=document.querySelector(".heartbutton1");
+  rojo.style.opacity="1";
+}
+  
+
+}
+ 
+
+}
+
+
