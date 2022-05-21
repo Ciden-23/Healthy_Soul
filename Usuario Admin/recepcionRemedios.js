@@ -1,4 +1,4 @@
-// Initialize Cloud Firestore through Firebase
+/// Initialize Cloud Firestore through Firebase
 firebase.initializeApp({
     apiKey: "AIzaSyDPKylT8Mizp2qRkeHVdzdmDAdRC4vyagQ",
     authDomain: "healthy-soul-db.firebaseapp.com",
@@ -8,8 +8,8 @@ firebase.initializeApp({
     appId: "1:368826998840:web:d97a765e96b27dfeb106cd"
   });
   var db = firebase.firestore();
-  /*
-  var val=obtenerValor('tipo');
+  
+  var val=obtenerValor('id2');
   const v= val.slice(1,-1);
   const vv= v.slice(1,-1);
   const vvv= vv.slice(1,-1); 
@@ -20,10 +20,10 @@ firebase.initializeApp({
   const v22= v2.slice(1,-1);
   const v222= v22.slice(1,-1);
   console.log(v222);
-  */
+  
   //var docRef = db.collection(vvv).doc(v222);
   //                                       /codigo que recivimos en la ref                     /codigo 2 que recivimos en la ref
-  var docRef = db.collection("Dolores").doc("2VwpM3NcYrEF0ULHa5CD").collection("Remedios").doc("QysSUPzyZeGIqgsjaWw2");
+  var docRef = db.collection("Dolores").doc(vvv).collection("Remedios").doc(v222);
   /*
   var val3=obtenerValor('state');
   const v3= val3.slice(1,-1);
@@ -43,7 +43,7 @@ firebase.initializeApp({
       }
       return null;
     }
-  //  mov();
+    mov();
   //variable que se puede declarar en cada archivo que necesite la bd 
    
   
@@ -133,16 +133,20 @@ firebase.initializeApp({
          return valorNut.replace(letra, '<br/>-')
         }*/
   
-       /*
+       
         function mov(){
-           if(v333==1){
+         
               
             let xxx =document.querySelector(".x");
-            xxx.href="ListaRecetas.html?state=1&clase="+vvv;
-           }
+            xxx.href="ListaRemedios.html?tipoDolores&id=%27"+vvv+"%27&state=0";
+           
   
         }
-*/
+
+
+
+
+
 
 function logout() {
     firebase.auth().signOut().then(() => {
