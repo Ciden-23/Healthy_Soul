@@ -21,13 +21,14 @@ var imgCargada = false;
 //Variable que guarda la categoria escogida
 var nombreColeccion;
 window.onload = cargarSelect;
-
+var maxCat=0;
 function cargarSelect(){
     var a= document.getElementById("tipos");
     db.collection("Dolores").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             let option= `<option class="opcion" value="${doc.data().Dolor}">${doc.data().Dolor}</option>`
             a.insertAdjacentHTML("beforeend", option);
+            maxCat=maxCat+1;
         });
     });
 }
@@ -540,7 +541,13 @@ var tipo= document.getElementById("tipos");
 tipo.addEventListener('change',function(){
     let valor=tipo.value;
     if(valor==1){
-        agregarCat();
+        if(maxCat==20){
+            alert("No se puede registrar nueva categoría (límite máximo alcanzado)");
+            var a = document.getElementById("tipos")
+            a.selectedIndex = 0;
+        }else{
+            agregarCat();
+        }
     }else if(contadorcat==1){
         casilla = document.getElementById("nuevaCat");	
         casilla.parentNode.removeChild(casilla);
