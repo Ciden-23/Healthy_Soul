@@ -219,7 +219,7 @@ function inicio(){
 
 }
 
-setTimeout(inicio,1000);
+setTimeout(inicio,2000);
 
 function anade(){
   const nombree=document.querySelector(".tit").textContent;
