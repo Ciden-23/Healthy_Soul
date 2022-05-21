@@ -8,13 +8,11 @@ body {
     letter-spacing: 0.05em;
     /*Establecer el interlineado de las lineas de texto*/
     line-height: 1.6;
-    background-image: url("madera.jpg");
+    background-image: url("Assets/madera.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
 }
-
-
 .lds-dual-ring {
     display: inline-block;
     width: 100px;
@@ -193,42 +191,53 @@ body {
 .contenedor {
     /* z-index: -1;
      /*flex-wrap: wrap indica que puede haber cambio de linea.  Los elementos flex aparecen colocados en varias lineas*/
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* flex-flow: wrap; */
+    /* margin: auto; */
+    width: 100%;
+    
+}
+
+.refer{
     display: flex;
-    flex-wrap: wrap;
-    flex-flow: wrap;
-    /*para que los elementos aparezcan agrupados al centro */
-    justify-content: center;
-    /* 0px de margen vertical, centrado horizontalmente */
-    margin: auto;
+    width: auto;
+    height: 50px;
 }
 
 .contenedor .tarjeta {
-    display: flex; 
-    flex-wrap: wrap;
-    /*crea cajas que son de bloque y en linea de forma simultanea*/
-    display: inline-block;
-    /*Anchura de la tarjeta*/
-    width: 350px;
-    /*max-width: 28%;*/
-    /*Altura de la tarjeta*/
-    height: 510px;
-    max-height: auto;
-    /*redondear las esquinas de la tarjeta 8px*/
+    width: 70%;
+    height: 50px;
     border-radius: 0.500em;
-    /*para proyectar una sombra difuminada*/
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    /*Controla lo que sucede con el contenido que es demasiado grande, auto: agrega barras de desplazamiento solo cuando es necesario*/
-    /*para el margen*/
-    margin: 20px;
-    /*alineacion del texto*/
-    text-align: center;
-    /*Todas las propiedades obtendran un efecto de transicion*/
+    margin: 50px;
     transition: all 0.25s;
-    /*color de la tarjeta*/
     background: #EDCFA9;
-    /* borde de receta */
     border: 2px solid white;
-    align-items: center;
+}
+
+.tamaño {
+    display: inline-block;
+    width: 90%;
+    height: 50px;
+    text-align: left;
+}
+
+.tamaño2 {
+    display: inline-block;
+    width: auto;
+    height: 50px;
+}
+
+.icono {
+    padding-left: 20px;
+    width: 50px;
+    align-items: baseline;
+}
+
+.icono img {
+    padding-top: 5px;
+    height: 40px;
 }
 
 .contenedor .tarjeta:hover {
@@ -239,38 +248,14 @@ body {
     color:#000;
 }
 
-.contenedor .tarjeta img {
-    display: flex;
-    /*Anchura de la imagen*/
-    width: 300px;
-    /*Altura de la imagen*/
-    height: 300px;
-    /*Colocar en forma circular la imagen*/
-    border-radius: 50%;
-    margin: 1rem auto;
-    border: 5px solid white;
-}
-
 .contenedor .tarjeta h3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-
-    /* sacamos la linea de abajo del texto */
+    display: inline-block;
     text-decoration: none;
-    /* Color de texxto */
     color: #000;
-    /*Establecer el peso (negrita) de la fuente*/
-    font-weight: 700;
-    /*Tamaño de la fuente*/
     font-size: 1.5rem;
-    text-align: center;
-    padding: 1rem;
-    margin: 1rem 1rem;
+    margin: 0.2rem 1rem;
     width: auto;
     height: auto;
-    /*Para romper una palabra*/
     word-wrap: break-word;
 }
 
@@ -281,50 +266,54 @@ body {
     z-index: 200;
 }
 
-
-/*media queries*/
-
-@media screen and (max-width:1200px) {
-    .contenedor {
-        justify-content: center;
-        height: auto;
-    }
-    .contenedor .tarjeta h3 {
-        padding: 1rem;
-    }
-    .contenedor .tarjeta img {
-        max-width: 90%;
-        height: auto;
-    }
-}
-
-
-
-@media screen and (max-width:576px) {/*agrego pao*/
-    .contenedor {
-        justify-content: center;
-        display: block;
-        height: auto;
-
-    }
+@media screen and (max-width:1000px) {
     .contenedor .tarjeta{
-        max-width: 50%;
-        /*Verificar el alto despues del responsive*/
-        height: auto;
+       width: 60%; 
     }
     .contenedor .tarjeta h3 {
-        padding: 1rem;
-        width: auto;
-        min-height: auto;
-    
-    }
-    .contenedor .tarjeta img {
-        max-width: 90%;
-        height: auto;
+        font-size: 1.2rem;
+        margin: 0.5rem 1rem;
     }
 }
+@media screen and (max-width:600px) {/*agrego pao*/
+    
+    .separador {
+        height: 0px;
+     }
+    .alineado {
+        padding-top: 4px;
+    }
+    .contenedor .tarjeta h3 {
+        font-size: 1rem;
+        margin: 0.7rem 1rem;
+    }
+    .icono {
+        padding-left: 10px;
+        width: 40px;
+    }
+    .icono img {
+        padding-top: 8px;
+        height: 35px;
+    }
+}
+@media screen and (max-width:480px) {/*agrego pao*/
+    .contenedor .tarjeta{
+        width: 65%; 
+     }
+    .contenedor .tarjeta h3 {
+        font-size: 0.8rem;
+        margin: 0.9rem 1rem;
+    }
 
-
+    .icono {
+        padding-left: 10px;
+        width: 35px;
+    }
+    .icono img {
+        padding-top: 8px;
+        height: 30px;
+    }
+}
 /*footer*/
 
 footer {
@@ -401,7 +390,6 @@ a:hover{
 
 /*-----responsive header--------*/
 @media all and (max-width: 1020px){
-
     .nav1{
         padding-right: 30px;
         height: 50px;
@@ -447,9 +435,13 @@ a:hover{
 }
 
 @media all and (max-width: 605px){
-    
+    .nombre_empresa {
+        font-size: 16px;
+        height: auto;
+        width: 140px;
+    }
     .nav1{
-        padding-right: 3px;
+        padding-right: 10px;
     }
 
     .nombre_empresa{
@@ -457,7 +449,7 @@ a:hover{
     }
     .logo{
         width: 100%;
-        max-width: 66.25px;   
+        max-width: 220px;   
     }
     .logo img{
        height: 27px;
@@ -471,7 +463,7 @@ a:hover{
     }
     .menu li{
         width: auto;
-        margin: 2px;
+        margin: 5px;
 
     }
     .menu li a{
@@ -482,5 +474,14 @@ a:hover{
         border-radius: 5px;
     }
     
+}
+@media all and (max-width: 500px){
+    .nombre_empresa {
+        display: none;
+}
+.logo{
+    width: 100%;
+    max-width: 80px;   
+}
 }
 /*-----responsive header--------*/

@@ -53,7 +53,6 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
 
 /*header negrito */
 
@@ -187,7 +186,10 @@ body {
     margin: 0;
     padding: 0;
 }
+.cateMenu{
+    cursor:pointer;
 
+}
 .contenedor {
     /* z-index: -1;
      /*flex-wrap: wrap indica que puede haber cambio de linea.  Los elementos flex aparecen colocados en varias lineas*/
@@ -198,12 +200,10 @@ body {
     justify-content: center;
     /* 0px de margen vertical, centrado horizontalmente */
     margin: auto;
-    width: 100%;
-    
 }
 
 .contenedor .tarjeta {
-    display: flex;
+    display: flex; 
     flex-wrap: wrap;
     /*crea cajas que son de bloque y en linea de forma simultanea*/
     display: inline-block;
@@ -211,8 +211,8 @@ body {
     width: 350px;
     /*max-width: 28%;*/
     /*Altura de la tarjeta*/
-    height: 515px;
-    max-height: auto;/*comentado pao*/
+    height: 510px;
+    max-height: auto;
     /*redondear las esquinas de la tarjeta 8px*/
     border-radius: 0.500em;
     /*para proyectar una sombra difuminada*/
@@ -232,10 +232,11 @@ body {
 }
 
 .contenedor .tarjeta:hover {
-    /*transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-    */
+
     border: 2px solid #470D21;
+    text-decoration-line: underline;
+    text-decoration-color: #000;
+    color:#000;
 }
 
 .contenedor .tarjeta img {
@@ -254,6 +255,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+
     /* sacamos la linea de abajo del texto */
     text-decoration: none;
     /* Color de texxto */
@@ -271,113 +274,6 @@ body {
     word-wrap: break-word;
 }
 
-
-
-/*------------BORRAR RECETA------*/
-.modal-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    pointer-events: none;
-    opacity: 0;
-    top: 0;
-    /*left: 0;*/
-    z-index: 1000;
-    height: 100%;
-    width: 100%;
-
-}
-.show {
-    pointer-events: auto;
-    opacity: 1;
-}
- 
-.modal {
-    background-color: #fff;
-    width: 600px;
-    max-width: 100%;
-    padding: 10px 0px;
-    border-radius: 1px;
-    border: 2px solid #000;
-    text-align: center;
-}
-
-.equisd {
-    background-color: #fff;
-    border-color: #fff;
-    border: none;
-    padding: 0;
-}
- .separador {
-    height: 10px;
- }
-
-.Xalinear :hover {
-    background-color:#470D21;
-    color: #fff;
-}
-
-.Xalinear {
-    text-align: right;
-    padding: 0px 15px;
-}
-.linea {
-        border: 0.3px solid #000;
-    /* border-top: 1px solid #000;*/
-        padding: 0;
-        margin: 0;
-}
-.cateMenu{
-    cursor: pointer;
-}
-.tamaño {
-    height: 125px;
-}
-
-.pregunta  {
-    padding: 15px 0px;
-}
-.alineado {
-    text-align: center;
-    padding: 0px 15px;
-    padding-top: 10px;
-    padding-bottom: 5px;
-}
-
-.aceptar {
-    background-color: #DA723C;
-    border: 1px solid #DA723C;
-    border-radius: 3px;
-    color: #470D21;
-    width: 75px;
-    height: 25px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.aceptar:hover {
-    background-color: #7C3C21;
-    border: 1px solid #7C3C21;
-    color: #fff;
-}
-
-.cancelar {
-    background-color: #470D21;
-    border: 1px solid #470D21;
-    border-radius: 3px;
-    color: #fff;
-    width: 75px;
-    height: 25px;
-    font-family: 'Roboto', sans-serif;
-}
-
-
-.cancelar:hover {
-    background-color: #7C3C21;
-    border-color: #7C3C21;
-    color: #fff;
-}
-
 .iconProfile {
     position: absolute;
     width: 100%;
@@ -386,39 +282,13 @@ body {
 }
 
 
-.contenedor .tarjeta .botonBorrar {
-    margin-right: 15px;
-    /*border-radius: 10%;*/
-    border-radius: 5px;
-    border: 1px solid #DA723C;
-    text-align: center;
-    color: #470D21;
-    width: 80px;
-    height: 35px;
-    background: #DA723C;
-    font-family: 'Roboto', sans-serif;
-}
- 
-.contenedor .tarjeta .botonBorrar:hover {
-    background-color: #470D21;
-    border: 1px solid #470D21;
-    color: #fff;
-}
-
 /*media queries*/
 
-@media screen and (max-width:1000px) {/*combio de 1200 a 1000 pao*/
+@media screen and (max-width:1200px) {
     .contenedor {
         justify-content: center;
-        
         height: auto;
     }
-
-    .contenedor .tarjeta{/*agrego pao*/
-        max-width: 30%;
-        
-    }
-    
     .contenedor .tarjeta h3 {
         padding: 1rem;
     }
@@ -426,16 +296,9 @@ body {
         max-width: 90%;
         height: auto;
     }
-    .modal-container {
-        width: 80vh;
-    }
-    .modal {
-        width: 400px;
-    }
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 33px;
-     }
 }
+
+
 
 @media screen and (max-width:576px) {/*agrego pao*/
     .contenedor {
@@ -445,256 +308,22 @@ body {
 
     }
     .contenedor .tarjeta{
-        max-width: 55%;
+        max-width: 50%;
         /*Verificar el alto despues del responsive*/
-        /*height: auto;*/
+        height: auto;
     }
     .contenedor .tarjeta h3 {
         padding: 1rem;
         width: auto;
         min-height: auto;
-
-        font-size: 1.438rem;
-        margin: auto;
-
+    
     }
     .contenedor .tarjeta img {
         max-width: 90%;
         height: auto;
     }
-    .modal-container {
-
-        width: 100%;
-
-    }
-    .modal {
-        width: 300px;
-        height: 130px;
-        padding-top: 3px;
-    }
-    .separador {
-        height: 0px;
-     }
-     .pregunta  {
-        padding: 5px 1px;
-        margin: 5px;
-    }
-    .alineado {
-        padding-top: 4px;
-    }
-  
 }
 
-/*Boton borrar responsive*/
-
-@media screen and (max-width:940px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 52px;
-     }
-}
-
-@media screen and (max-width: 880px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 52px;
-     }
-}
-@media screen and (max-width: 830px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 72px;
-     }
-}
-
-@media screen and (max-width: 780px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 93px;
-     }
-}
-
-@media screen and (max-width: 700px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 107px;
-     }
-}
-
-@media screen and (max-width: 675px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 125px;
-     }
-}
-
-@media screen and (max-width: 645px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 122px;
-     }
-}
-@media screen and (max-width: 550px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 60px;
-     }
-}
-
-@media screen and (max-width:576px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 18px;
-     }
-}
-
-@media screen and (max-width: 500px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 55px;
-     }
-}
-
-@media screen and (max-width: 450px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 80px;
-     }
-}
-@media screen and (max-width: 410px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 100px;
-     }
-}
-@media screen and (max-width: 375px){
-    .modal-container {
-
-        width: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        text-align: center;
-    }
-    .modal {
-        width: 250px;
-        height: 110px;
-        padding-top: 3px;
-    }
-    .separador {
-        height: 0px;
-     }
-     .pregunta  {
-        width: 238px;
-        height: 40px;
-        padding: 3px 0px;
-        font-size: 13px;
-    }
-    .aceptar {
-        width: 65px;
-        height: 20px;
-        font-family: 'Roboto', sans-serif;
-    }
-    .cancelar {
-        width: 65px;
-        height: 20px;
-        font-family: 'Roboto', sans-serif;
-    }
-    .alineado{
-        padding: 0px 8px;
-        padding-top: 6px;
-    }
-    .Xalinear {
-        padding: 0px 8px;
-    }
-}
-@media screen and (max-width: 350px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 115px;
-     }
-}
-@media screen and (max-width: 300px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 130px;
-     }
-     .modal-container {
-
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        text-align: center;
-    }
-    .modal {
-        width: 190px;
-        height: 100px;
-        padding-top: 3px;
-    }
-    .separador {
-        height: 0px;
-     }
-     .pregunta  {
-        width: 185px;
-        height: 35px;
-        padding: 2px 0px;
-        font-size: 10px;
-    }
-    .aceptar {
-        width: 50px;
-        height: 17px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 10px;
-    }
-    .cancelar {
-        width: 50px;
-        height: 17px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 10px;
-    }
-    .alineado{
-        padding: 0px 5px;
-        padding-top: 1.5px;
-    }
-    .Xalinear {
-        padding: 0px 5px;
-    }
-}
-@media screen and (max-width: 200px){
-
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 123px;
-     }
-     .modal-container {
-
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        text-align: center;
-    }
-    .modal {
-        width: 190px;
-        height: 100px;
-        padding-top: 3px;
-    }
-    .separador {
-        height: 0px;
-     }
-     .pregunta  {
-        width: 185px;
-        height: 35px;
-        padding: 2px 0px;
-        font-size: 10px;
-    }
-    .aceptar {
-        width: 50px;
-        height: 17px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 10px;
-    }
-    .cancelar {
-        width: 50px;
-        height: 17px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 10px;
-    }
-    .alineado{
-        padding: 0px 5px;
-        padding-top: 1.5px;
-    }
-}
 
 /*footer*/
 
@@ -796,7 +425,8 @@ a:hover{
         width: 100%;
     }
     .menu{
-        
+        max-width: 375px;
+        min-width: 200px;
         width: auto;
     }
     .menu li{
@@ -805,7 +435,7 @@ a:hover{
 
     }
     .menu li a{
-        font-size: 16px;
+        font-size: 100%;
     }
     .menu li a:hover {
         padding: 0.5px 1.5px;
@@ -815,15 +445,13 @@ a:hover{
         height: 40px;
     }
 }
-@media all and (max-width: 664px){
+
+@media all and (max-width: 605px){
     
     .nav1{
-        padding-right: 3px;
-        
+        padding-right: 10px;
     }
-    .menu1{
-        width: auto;
-    }
+
     .nombre_empresa{
         display: none;
     }
@@ -837,24 +465,22 @@ a:hover{
     }
 
     .menu{
-        width: 100%;
+        max-width: 375px;
+        min-width: 200px;
+        width: auto;
     }
     .menu li{
         width: auto;
-        margin: 2px;
+        margin: 5px;
 
     }
     .menu li a{
-        font-size: 11px;
+        font-size: 12px;
     }
     .menu li a:hover {
         padding: 0.5px 1.5px;
         border-radius: 5px;
     }
-   
     
 }
-
-
-
 /*-----responsive header--------*/

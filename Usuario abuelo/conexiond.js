@@ -15,56 +15,14 @@ var ideBorrar;
 var categBorrar;
 var nom;
 var state="0";
-var val;
 disableS();
 //Arreglo con el nombre de las categorias
-let categorias = [
-    "Almuerzos",
-    "Cenas",
-    "Desayunos",
-    "Ensaladas",
-    "Jugos",
-    "Meriendas",
-];
 
 
-let uid;
-let na;
-let email;
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        let displayName = user.displayName;
-         email = user.email;
-        let emailVerified = user.emailVerified;
-        let photoURL = user.photoURL;
-        let isAnonymous = user.isAnonymous;
-         uid = user.uid;
-        let providerData = user.providerData;
-        console.log(user);
-        let pos;
-        let tipou;
-        pos = email.search(/@healthysoul.com/i);
-        if (pos >= 0) {
-            tipou = "admin"
-            window.location.href = "../Usuario Admin/ListaRecetas.html";
-        }
-    } else {
-        if (na == "1") {
-            window.location.href = "../index.html";
-        } else {
-            window.location.href = "../login.html";
-            console.log("No logeado")
-        }
-    }
-});
-
-
-
-
-
+window.onload = param;
 
 function param(){
-    val=obtenerValor('state');
+    var val=obtenerValor('state');
     var cat=obtenerValor('clase');
     console.log("lo que se obtiene del met", val);
     console.log(cat);
@@ -74,17 +32,8 @@ function param(){
        
         inicializar();
     }else{
-        if(val=="1"){
         console.log("estamos volviendo de una categoria");
         volver(cat);
-      }else{
-        if(val=="2"){
-            console.log("estamos llendo a favoritos");
-   
-            volver(cat);
-          }
-
-      }
     }
 
 }
@@ -103,32 +52,22 @@ function obtenerValor(sParametroNombre){
 }
 
 function inicializar(){
-    //Usar un for para recorrer los elementos de la lista
-    for (let i = 0; i < categorias.length; i++) {
-        //Guardar en una variable el nombre de la categoria
-        const categ = categorias[i];
-
-        const categRef = db.collection(categ);
-
-        categRef.get().then((results) => {
-            const data = results.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }))
-            //console.log(data, "datos")
-            for (var i = 0; i < data.length; i++) {
-                var nom = data[i].Nombre
-                    //OBTIENE EL ID DE CADA RECETA DE UNA COLEECION (Aqui deberia verificarse que receta fue elegida por el nombre, y obtener su ID 
-                    //para generar un HTML de la receta)
-                var ide = data[i].id
-                var img = data[i].Imagen
-                imagen.innerHTML += `<a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'&state='${state}'"><div class="tarjeta">
-                <img src="${img}">
-                <h3>${nom} </h3>
-            </div></a>`;
-            }
-        })
-    }
+    db.collection("Dolores").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            console.log("------------------");
+            console.log(`${doc.id} => ${doc.data().Dolor}`);
+            var ide= doc.id
+            var nom= doc.data().Dolor;
+                console.log(nom);
+                console.log(ide);
+            imagen.innerHTML += `<div class="tarjeta" id="tarjeta"><a class="refer" href="ListaRemedios.html?tipo=Dolores'&id='${ide}'&state='${state}'">
+                <div class="icono"><img src="Assets/icono.png"></div>        
+                <div class="tamaño"><h3>${nom}</h3></div>
+                <div class="tamaño2"><h3>></h3></div>        
+                    </a>
+                    </div>`;
+        });
+    });
 }
 
 
@@ -170,60 +109,7 @@ function borrarReceta(){
 }
 
 function volver(categ){
- 
 
-const user = firebase.auth().currentUser;
-
-
-if (user !== null) {
-// The user object has basic properties such as display name, email, etc.
-const displayName = user.displayName;
-const email = user.email;
-const photoURL = user.photoURL;
-const emailVerified = user.emailVerified;
-
-// The user's ID, unique to the Firebase project. Do NOT use
-// this value to authenticate with your backend server, if
-// you have one. Use User.getIdToken() instead.
-const uid = user.uid;
-}
-
-  
- if(val==2){
-   
-    state=2;
-    for (let i = 0; i < categorias.length; i++) {
-        //Guardar en una variable el nombre de la categoria
-        const categ = categorias[i];
-     
-        const categRef = db.collection('dattaUser').doc('user').collection(uid).doc('favoritos').collection(categ);
-
-        categRef.get().then((results) => {
-            const data = results.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }))
-            //console.log(data, "datos")
-            for (var i = 0; i < data.length; i++) {
-         
-                var nom = data[i].Nombre
-                    //OBTIENE EL ID DE CADA RECETA DE UNA COLEECION (Aqui deberia verificarse que receta fue elegida por el nombre, y obtener su ID 
-                    //para generar un HTML de la receta)
-                var ide = data[i].id
-                var img = data[i].Imagen
-                imagen.innerHTML += `<a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'&state='${state}'"><div class="tarjeta">
-                <img src="${img}">
-                <h3>${nom} </h3>
-            </div></a>`;
-            }
-        })
-    }
-
- 
-
-
-
-  } else{
     state="1";
     const categRef = db.collection(categ);
     categRef.get().then((results) => {
@@ -241,8 +127,6 @@ const uid = user.uid;
                   </div></a>`;
         }
     })
-
-  }
 }
 
 function clasificarCat(categ){
@@ -254,54 +138,6 @@ function clasificarCat(categ){
         element.remove();
     }
     state="1";
-    
-    const user = firebase.auth().currentUser;
-    if (user !== null) {
-      // The user object has basic properties such as display name, email, etc.
-      const displayName = user.displayName;
-      const email = user.email;
-      const photoURL = user.photoURL;
-      const emailVerified = user.emailVerified;
-    
-      // The user's ID, unique to the Firebase project. Do NOT use
-      // this value to authenticate with your backend server, if
-      // you have one. Use User.getIdToken() instead.
-      const uid = user.uid;
-    }
- if(categ=="Favoritos"){
-    state="2";
-   
-    for (let i = 0; i < categorias.length; i++) {
-        //Guardar en una variable el nombre de la categoria
-        const categ = categorias[i];
-  
-        const categRef = db.collection('dattaUser').doc('user').collection(uid).doc('favoritos').collection(categ);
-
-        categRef.get().then((results) => {
-            const data = results.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }))
-            //console.log(data, "datos")
-            for (var i = 0; i < data.length; i++) {
-                
-                var nom = data[i].Nombre
-                    //OBTIENE EL ID DE CADA RECETA DE UNA COLEECION (Aqui deberia verificarse que receta fue elegida por el nombre, y obtener su ID 
-                    //para generar un HTML de la receta)
-                var ide = data[i].id
-                var img = data[i].Imagen
-                imagen.innerHTML += `<a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'&state='${state}'"><div class="tarjeta">
-                <img src="${img}">
-                <h3>${nom} </h3>
-            </div></a>`;
-            }
-        })
-    }
-  
-
-
- }else{
-
     const categRef = db.collection(categ);
     categRef.get().then((results) => {
         const data = results.docs.map((doc) => ({
@@ -318,11 +154,6 @@ function clasificarCat(categ){
         </div></a>`;
         }
     })
-
- }
-
-
-
 
 }
 
@@ -399,23 +230,43 @@ function disableS() {
 function enableS() {
     window.onscroll = function() {};
 }
-setTimeout(param, 2000);
-setTimeout(aa, 4000);
-
+setTimeout(aa, 3000);
 
 function remplaaa( parama){
-   
-    if(parama=="Favoritos"){
-        history.pushState({}, null, "ListaRecetas.html?state=2&clase="+parama);
+    history.pushState({}, null, "ListaRecetas.html?state=1&clase="+parama);
 
-    }else{
-        history.pushState({}, null, "ListaRecetas.html?state=1&clase="+parama);
-
-    }
 }
 
 
 
+
+let na;
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        let displayName = user.displayName;
+        let email = user.email;
+        let emailVerified = user.emailVerified;
+        let photoURL = user.photoURL;
+        let isAnonymous = user.isAnonymous;
+        let uid = user.uid;
+        let providerData = user.providerData;
+        console.log(user);
+        let pos;
+        let tipou;
+        pos = email.search(/@healthysoul.com/i);
+        if (pos >= 0) {
+            tipou = "admin"
+            window.location.href = "../Usuario Admin/ListaRecetas.html";
+        }
+    } else {
+        if (na == "1") {
+            window.location.href = "../index.html";
+        } else {
+            window.location.href = "../login.html";
+            console.log("No logeado")
+        }
+    }
+});
 
 function logout() {
     firebase.auth().signOut().then(() => {
@@ -427,4 +278,3 @@ function logout() {
 
 
 }
-

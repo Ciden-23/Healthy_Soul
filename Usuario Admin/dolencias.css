@@ -8,13 +8,11 @@ body {
     letter-spacing: 0.05em;
     /*Establecer el interlineado de las lineas de texto*/
     line-height: 1.6;
-    background-image: url("madera.jpg");
+    background-image: url("Assets/madera.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
 }
-
-
 .lds-dual-ring {
     display: inline-block;
     width: 100px;
@@ -46,7 +44,6 @@ body {
   }
 
   .loader{
-
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -175,119 +172,72 @@ header {
 .scrol {
     height: 100px;
 }
-
-
-/*header negrito */
-
-
-/*Eliminar todos los padding y los margin que vienen por defecto, por eso colocamos 0*/
-
 html,
 body {
     margin: 0;
     padding: 0;
 }
-
 .contenedor {
-    /* z-index: -1;
-     /*flex-wrap: wrap indica que puede haber cambio de linea.  Los elementos flex aparecen colocados en varias lineas*/
-    display: flex;
-    flex-wrap: wrap;
-    flex-flow: wrap;
-    /*para que los elementos aparezcan agrupados al centro */
-    justify-content: center;
-    /* 0px de margen vertical, centrado horizontalmente */
-    margin: auto;
     width: 100%;
-    
+}
+
+.refer{
+    display: flex;
+    width: auto;
+    height: 50px;
 }
 
 .contenedor .tarjeta {
-    display: flex;
-    flex-wrap: wrap;
-    /*crea cajas que son de bloque y en linea de forma simultanea*/
-    display: inline-block;
-    /*Anchura de la tarjeta*/
-    width: 350px;
-    /*max-width: 28%;*/
-    /*Altura de la tarjeta*/
-    height: 515px;
-    max-height: auto;/*comentado pao*/
-    /*redondear las esquinas de la tarjeta 8px*/
+    width: 70%;
+    height: 50px;
     border-radius: 0.500em;
-    /*para proyectar una sombra difuminada*/
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    /*Controla lo que sucede con el contenido que es demasiado grande, auto: agrega barras de desplazamiento solo cuando es necesario*/
-    /*para el margen*/
-    margin: 20px;
-    /*alineacion del texto*/
-    text-align: center;
-    /*Todas las propiedades obtendran un efecto de transicion*/
+    margin: 50px;
     transition: all 0.25s;
-    /*color de la tarjeta*/
     background: #EDCFA9;
-    /* borde de receta */
     border: 2px solid white;
-    align-items: center;
+}
+
+.tamaño {
+    display: inline-block;
+    width: 90%;
+    height: 50px;
+    text-align: left;
+}
+
+.tamaño2 {
+    display: inline-block;
+    width: auto;
+    height: 50px;
+}
+
+.icono {
+    padding-left: 20px;
+    width: 50px;
+    align-items: baseline;
+}
+
+.icono img {
+    padding-top: 5px;
+    height: 40px;
 }
 
 .contenedor .tarjeta:hover {
-    /*transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-    */
     border: 2px solid #470D21;
 }
 
-.contenedor .tarjeta img {
-    display: flex;
-    /*Anchura de la imagen*/
-    width: 300px;
-    /*Altura de la imagen*/
-    height: 300px;
-    /*Colocar en forma circular la imagen*/
-    border-radius: 50%;
-    margin: 1rem auto;
-    border: 5px solid white;
-}
-
 .contenedor .tarjeta h3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* sacamos la linea de abajo del texto */
+    display: inline-block;
     text-decoration: none;
-    /* Color de texxto */
     color: #000;
-    /*Establecer el peso (negrita) de la fuente*/
-    font-weight: 700;
-    /*Tamaño de la fuente*/
     font-size: 1.5rem;
-    text-align: center;
-    padding: 1rem;
-    margin: 1rem 1rem;
+    margin: 0.2rem 1rem;
     width: auto;
     height: auto;
-    /*Para romper una palabra*/
     word-wrap: break-word;
 }
-
-
-
 /*------------BORRAR RECETA------*/
-.modal-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    pointer-events: none;
-    opacity: 0;
-    top: 0;
-    /*left: 0;*/
-    z-index: 1000;
-    height: 100%;
-    width: 100%;
 
-}
 .show {
     pointer-events: auto;
     opacity: 1;
@@ -331,9 +281,7 @@ body {
 .cateMenu{
     cursor: pointer;
 }
-.tamaño {
-    height: 125px;
-}
+
 
 .pregunta  {
     padding: 15px 0px;
@@ -345,39 +293,6 @@ body {
     padding-bottom: 5px;
 }
 
-.aceptar {
-    background-color: #DA723C;
-    border: 1px solid #DA723C;
-    border-radius: 3px;
-    color: #470D21;
-    width: 75px;
-    height: 25px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.aceptar:hover {
-    background-color: #7C3C21;
-    border: 1px solid #7C3C21;
-    color: #fff;
-}
-
-.cancelar {
-    background-color: #470D21;
-    border: 1px solid #470D21;
-    border-radius: 3px;
-    color: #fff;
-    width: 75px;
-    height: 25px;
-    font-family: 'Roboto', sans-serif;
-}
-
-
-.cancelar:hover {
-    background-color: #7C3C21;
-    border-color: #7C3C21;
-    color: #fff;
-}
-
 .iconProfile {
     position: absolute;
     width: 100%;
@@ -385,192 +300,53 @@ body {
     z-index: 200;
 }
 
-
-.contenedor .tarjeta .botonBorrar {
-    margin-right: 15px;
-    /*border-radius: 10%;*/
-    border-radius: 5px;
-    border: 1px solid #DA723C;
-    text-align: center;
-    color: #470D21;
-    width: 80px;
-    height: 35px;
-    background: #DA723C;
-    font-family: 'Roboto', sans-serif;
-}
- 
-.contenedor .tarjeta .botonBorrar:hover {
-    background-color: #470D21;
-    border: 1px solid #470D21;
-    color: #fff;
-}
-
-/*media queries*/
-
-@media screen and (max-width:1000px) {/*combio de 1200 a 1000 pao*/
-    .contenedor {
-        justify-content: center;
-        
-        height: auto;
-    }
-
-    .contenedor .tarjeta{/*agrego pao*/
-        max-width: 30%;
-        
-    }
-    
-    .contenedor .tarjeta h3 {
-        padding: 1rem;
-    }
-    .contenedor .tarjeta img {
-        max-width: 90%;
-        height: auto;
-    }
-    .modal-container {
-        width: 80vh;
-    }
-    .modal {
-        width: 400px;
-    }
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 33px;
-     }
-}
-
-@media screen and (max-width:576px) {/*agrego pao*/
-    .contenedor {
-        justify-content: center;
-        display: block;
-        height: auto;
-
-    }
+@media screen and (max-width:1000px) {
     .contenedor .tarjeta{
-        max-width: 55%;
-        /*Verificar el alto despues del responsive*/
-        /*height: auto;*/
+       width: 60%; 
     }
     .contenedor .tarjeta h3 {
-        padding: 1rem;
-        width: auto;
-        min-height: auto;
-
-        font-size: 1.438rem;
-        margin: auto;
-
+        font-size: 1.2rem;
+        margin: 0.5rem 1rem;
     }
-    .contenedor .tarjeta img {
-        max-width: 90%;
-        height: auto;
-    }
-    .modal-container {
-
-        width: 100%;
-
-    }
-    .modal {
-        width: 300px;
-        height: 130px;
-        padding-top: 3px;
-    }
+}
+@media screen and (max-width:600px) {/*agrego pao*/
+    
     .separador {
         height: 0px;
      }
-     .pregunta  {
-        padding: 5px 1px;
-        margin: 5px;
-    }
     .alineado {
         padding-top: 4px;
     }
-  
+    .contenedor .tarjeta h3 {
+        font-size: 1rem;
+        margin: 0.7rem 1rem;
+    }
+    .icono {
+        padding-left: 10px;
+        width: 40px;
+    }
+    .icono img {
+        padding-top: 8px;
+        height: 35px;
+    }
+}
+@media screen and (max-width:480px) {/*agrego pao*/
+    .contenedor .tarjeta h3 {
+        font-size: 0.8rem;
+        margin: 0.9rem 1rem;
+    }
+
+    .icono {
+        padding-left: 10px;
+        width: 35px;
+    }
+    .icono img {
+        padding-top: 8px;
+        height: 30px;
+    }
 }
 
-/*Boton borrar responsive*/
-
-@media screen and (max-width:940px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 52px;
-     }
-}
-
-@media screen and (max-width: 880px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 52px;
-     }
-}
-@media screen and (max-width: 830px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 72px;
-     }
-}
-
-@media screen and (max-width: 780px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 93px;
-     }
-}
-
-@media screen and (max-width: 700px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 107px;
-     }
-}
-
-@media screen and (max-width: 675px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 125px;
-     }
-}
-
-@media screen and (max-width: 645px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 122px;
-     }
-}
-@media screen and (max-width: 550px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 60px;
-     }
-}
-
-@media screen and (max-width:576px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 18px;
-     }
-}
-
-@media screen and (max-width: 500px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 55px;
-     }
-}
-
-@media screen and (max-width: 450px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 80px;
-     }
-}
-@media screen and (max-width: 410px){
-    .contenedor .tarjeta .botonBorrar{
-        margin-top: 100px;
-     }
-}
 @media screen and (max-width: 375px){
-    .modal-container {
-
-        width: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        text-align: center;
-    }
-    .modal {
-        width: 250px;
-        height: 110px;
-        padding-top: 3px;
-    }
     .separador {
         height: 0px;
      }
@@ -607,20 +383,6 @@ body {
     .contenedor .tarjeta .botonBorrar{
         margin-top: 130px;
      }
-     .modal-container {
-
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        text-align: center;
-    }
-    .modal {
-        width: 190px;
-        height: 100px;
-        padding-top: 3px;
-    }
     .separador {
         height: 0px;
      }
@@ -655,20 +417,6 @@ body {
     .contenedor .tarjeta .botonBorrar{
         margin-top: 123px;
      }
-     .modal-container {
-
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        text-align: center;
-    }
-    .modal {
-        width: 190px;
-        height: 100px;
-        padding-top: 3px;
-    }
     .separador {
         height: 0px;
      }
@@ -815,21 +563,24 @@ a:hover{
         height: 40px;
     }
 }
-@media all and (max-width: 664px){
-    
+
+@media all and (max-width: 605px){
+    .nombre_empresa {
+        font-size: 16px;
+        height: auto;
+        width: 140px;
+    }
     .nav1{
-        padding-right: 3px;
+        padding-right: 10px;
         
     }
     .menu1{
         width: auto;
     }
-    .nombre_empresa{
-        display: none;
-    }
+    
     .logo{
         width: 100%;
-        max-width: 66.25px;   
+        max-width: 220px;   
     }
     .logo img{
        height: 27px;
@@ -841,7 +592,7 @@ a:hover{
     }
     .menu li{
         width: auto;
-        margin: 2px;
+        margin: 5px;
 
     }
     .menu li a{
@@ -851,10 +602,15 @@ a:hover{
         padding: 0.5px 1.5px;
         border-radius: 5px;
     }
-   
     
 }
-
-
-
+@media all and (max-width: 500px){
+    .nombre_empresa {
+        display: none;
+}
+.logo{
+    width: 100%;
+    max-width: 80px;   
+}
 /*-----responsive header--------*/
+}

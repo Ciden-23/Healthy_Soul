@@ -815,10 +815,11 @@ a:hover{
         height: 40px;
     }
 }
-@media all and (max-width: 664px){
+
+@media all and (max-width: 605px){
     
     .nav1{
-        padding-right: 3px;
+        padding-right: 10px;
         
     }
     .menu1{
@@ -841,7 +842,7 @@ a:hover{
     }
     .menu li{
         width: auto;
-        margin: 2px;
+        margin: 5px;
 
     }
     .menu li a{
@@ -851,10 +852,8 @@ a:hover{
         padding: 0.5px 1.5px;
         border-radius: 5px;
     }
-   
     
 }
 
-
-
 /*-----responsive header--------*/
+
