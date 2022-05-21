@@ -144,7 +144,7 @@ function volver(categ){
             var nom = data[i].Nombre
             var ide = data[i].id
             var img = data[i].Imagen
-            imagen.innerHTML += `<a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'&state='${state}'"><div class="tarjeta">
+            imagen.innerHTML += `<a  href="ModeloRemediosGeneral3.html?id='${ide}'&id2='${v222}'"><div class="tarjeta">
                       <img src="${img}">
                       <h3>${nom} </h3>
                   </div></a>`;
@@ -171,7 +171,7 @@ function clasificarCat(categ){
             var nom = data[i].Nombre
             var ide = data[i].id
             var img = data[i].Imagen
-            imagen.innerHTML += `<a href="ModeloRecetaGeneral3.html?tipo='${categ}'&id='${ide}'&state='${state}'"><div class="tarjeta">
+            imagen.innerHTML += `<a  href="ModeloRemediosGeneral3.html?id='${ide}'&id2='${v222}'"><div class="tarjeta">
             <img src="${img}">
             <h3>${nom} </h3>
         </div></a>`;
