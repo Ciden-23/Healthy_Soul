@@ -28,14 +28,14 @@ body {
     min-width: 550px;
     max-width: 900px;
     width: 50%;
-    height: 400px;
+    height: 500px;
     border-radius: 20px;
     background: #DA723C;
     border: 1px solid #000;
 }
 
 .cab_izquierda {
-    font-size: 30px;
+    font-size: 25px;
     color: #fff;
 }
 
@@ -59,13 +59,13 @@ body {
 }
 
 .cont_login {
-    padding: 30px;
+    padding: 25px;
     background: #EDCFA9;
     width: 150%;
     min-width: 300px;
     top: 0;
     border-radius: 20px;
-    height: 400px;
+    height: 500px;
     box-sizing: border-box;
     border-left: 1px solid #000;
 }
@@ -82,8 +82,8 @@ body {
 .cont_login label {
     display: block;
     font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 .cont_login input {
@@ -114,19 +114,14 @@ body {
 .cont_login .olvido {
     text-align: center;
 }
-.cont_login .registro{
-    text-align: center;
-}
 
 .boton {
+    
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-.boton button {
-  cursor: pointer;
-   
-}
+
 .cont_login button:hover {
     background-color: #470D21;
 }
@@ -137,12 +132,32 @@ body {
 }
 
 .cont_login a:hover {
-
+    cursor: hand;
     color: #470D21;
     text-decoration: underline;
 
 }
-
+.container{
+    display: flex;
+    position: relative;
+    height: 30px;
+    justify-content:center;
+}
+/* Codigo ojito */
+.icon{
+    position:absolute;
+    height:20px;
+    right: 0;
+    top:50%;
+    transform:translateY(-50%);
+    opacity:0.3;
+    cursor:pointer;
+    padding: 5px;
+}
+.icon:hover{
+    opacity: 0.8;
+}
+/* Codigo ojito */
 
 /* Codigo del boton de retroceso */
 
@@ -202,13 +217,13 @@ body {
         display: block;
         min-width: 290px;
         max-width: 700px;
-        min-height: 500px;
-        max-height: 700px;
+        min-height: 600px;
+        max-height: 800px;
     }
     .cont_login {
         width: 100%;
         min-width: 290px;
-        height: 75%;
+        height: 80%;
         padding: 20px;
         border-top: 1px solid #000;
         border-bottom: 1px solid #000;
@@ -225,13 +240,10 @@ body {
     .cab_izquierda {
         margin: 0;
     }
-    .cabecera{
-        margin-top: 18px;
-        margin-bottom: 18px;
-    }
+
 }
 
-@media (max-width: 400px) and (max-height:730px) {
+@media (max-width: 534px) and (max-height:730px) {
  .butt{
     top: 20px;
     position: relative;
