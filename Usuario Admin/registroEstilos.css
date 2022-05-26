@@ -419,21 +419,20 @@ a:hover{
     }
 
 
-
     .porciones {
         border-radius: 5px;
         border-style: solid;
-        border: 0;
+        border-width: 2px;
         border:2px  solid black;
-        height: 35px;
-        width: 50px;
+        height: 40px;
+        width: 80px;
         text-shadow: none;
         color: #000;
         margin-bottom: 10px;
-        /* margin-top: 5px; */
-        /* padding-top: 2px; */
-        padding-bottom: 4px;
-    }
+        margin-top: 5px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        }
 
     .espacio{
         font-size: 15px;
