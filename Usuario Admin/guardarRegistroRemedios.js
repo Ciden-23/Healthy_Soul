@@ -21,13 +21,14 @@ var imgCargada = false;
 //Variable que guarda la categoria escogida
 var nombreColeccion;
 window.onload = cargarSelect;
-
+var maxCat=0;
 function cargarSelect(){
     var a= document.getElementById("tipos");
     db.collection("Dolores").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             let option= `<option class="opcion" value="${doc.data().Dolor}">${doc.data().Dolor}</option>`
             a.insertAdjacentHTML("beforeend", option);
+            maxCat=maxCat+1;
         });
     });
 }
@@ -36,13 +37,13 @@ function cargarSelect(){
 //Añadir un nuevo input para agregar otro ingrediente
 function aniadirIngredientes() {
 
-    if (contadorIngredientes <= 15) {
+    if (contadorIngredientes <= 10) {
         const aniadir = document.getElementById("añadir")
         aniadir.insertAdjacentHTML("beforeend", '<input class="ingresoTexto" id="0" placeholder="Ingrese ingrediente" />');
         cambiarIDIngrediente()
         contadorIngredientes += 1;
     } else {
-        //No deja que se agregue mas de 15 ingredientes.
+        //No deja que se agregue mas de 10 ingredientes.
         alert("No es posible añadir mas ingredientes.")
     }
 }
@@ -69,19 +70,19 @@ function eliminarIngrediente(){
        
        contadorIngredientes--;
        }else{
-           alert("No se pueden eliminar mas casillas")
+           alert("No se pueden eliminar más casillas")
        }
 }
 
 //Añade un nuevo input para agregar otro paso
 function aniadirPasos() {
-    if (contadorPasos <= 70) {
+    if (contadorPasos <= 60) {
         const preparacion = document.getElementById("preparacion")
         preparacion.insertAdjacentHTML("beforeend", '<input class="ingresoTexto" id="50" placeholder="Ingrese paso" />');
         cambiarIDPreparacion()
         contadorPasos += 1;
     } else {
-        //No deja que se agregue mas de 25 pasos.
+        //No deja que se agregue mas de 10 pasos.
         alert("No es posible añadir mas pasos.")
     }
 }
@@ -108,7 +109,7 @@ function eliminarPaso(){
        
        contadorPasos--;
    }else{
-       alert("No se pueden eliminar mas casillas")
+       alert("No se pueden eliminar más casillas")
    }
 }
 
@@ -172,25 +173,7 @@ function pintarImagen(imagen) {
 
 //---------VALIDACIONES------------
 
-//----------VALIDACION RECETAS REPETIDAS----------
-/*function testTitulo() {
-    var titulo = document.getElementById("titulo").value;
-   console.log(titulos.length)
-   for (j = 0; j < titulos.length; j++) {
-        if (titulo.toLowerCase() == titulos[j].toLowerCase()) {
-            console.log(titulo, titulos[j])
-            controlar = false;
-            j = titulos.length + 1
-            alert("El remedio ya esta registrado en la base de datos.")
-            location.reload()
-            //document.getElementById("botonReg").disabled = "false"
-        }
-
-    }
-    if (controlar == true) {
-        registrar();
-    }
-}*/
+//----------VALIDACION REMEDIOS REPETIDAS----------
 
 function testTitulo() {
     
@@ -271,32 +254,18 @@ function buscarId(){
 }
 
 
-/*function nombres() {
-    var titulos = [];
-    var colecciones = ["Almuerzos", "Cenas", "Desayunos", "Ensaladas", "Jugos", "Meriendas"]
-    for (i = 0; i < colecciones.length; i++) {
-        db.collection(colecciones[i]).get().then((snapshot) => {
-            snapshot.docs.forEach(doc => {
-                titulos.push(doc.data().Nombre)
-            });
-        });
-    }
-   // console.log(titulos, " nombres")
-    return titulos
-}*/
-
 //-----------------VALIDA CAMPO TITULO VACIO Y CARACTERES ALFABETICOS-----------------
 
 function validacion_titulo(titulo){
    var valido = true;
-   var pattern = /^[A-Za-z\s\u002c\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1]+$/;//,
+   var pattern = /^[A-Za-z\s\u002c\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00dc\u00fc]+$/;//,
    
    if(titulo.match(pattern)){
        return valido
    }
    else{
        if(titulo == ""){
-           alert("No se aceptan campos vacios en el nombre.")
+           alert("No se aceptan campos vacíos en el nombre.")
            i=contadorIngredientes+1
            valido = false;
        }else{
@@ -332,8 +301,8 @@ function contar_palabras_titulo(titulo){
        //Contamos todos los trozos de cadenas que existen
        tituloAniadido = titulo
        var numeroPalabras = textoTroceado.length; 
-               if(numeroPalabras>10){
-                   alert("La cantidad máxima de palabras aceptadas para el nombre es de 15.");
+               if(numeroPalabras>8){
+                   alert("La cantidad máxima de palabras aceptadas para el nombre es de 8.");
                    controlar=false;
                }else{
                    
@@ -357,45 +326,26 @@ function contar_palabras_titulo(titulo){
                return controlar;
 }
 
-/*
-else{
-                           if(textoTroceado[0] != /^[A-Za-z\d\s\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1]+$/){
-                               alert("El primer caracter debe ser una letra o número en ingredientes")
-                               controlar = false
-                           }
-                       }
-*/
 
-//---------VALIDAR PORCIONES----------
-function validarPorciones(porcion) {
-    var valido = false;
-    if (isNaN(porcion) == true || porcion < 1 || porcion > 30) {
-
-        alert('Porción no valida.');
-        return valido = false;
-    } else {
-        return valido = true;
-    }
-}
 
 //-----------VALIDAR CAMPOS VACIOS Y CARACTERES ALFANUMERICOS Y ESPECIALES DE INGREDIENTES---------------
 function validacion_ingredientes(){
    var valido = true;
    for(i=1; i < contadorIngredientes; i++){
    var ingredienteValido = document.getElementById(i).value
-   var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u0027\u003a\u003b]+$/;// ()",./""%¡!':;
+   var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u0027\u003a\u003b\u00dc\u00fc]+$/;// ()",./""%¡!':;
    
        if(ingredienteValido.match(pattern)){
            valido = true
        }
        else{
            if(ingredienteValido == ""){
-               alert("No se aceptan campos vacios en ingredientes.")
+               alert("No se aceptan campos vacíos en ingredientes.")
                i=contadorIngredientes+1
                return valido = false;
            }else{
                //Tambien acepta ""
-               alert("Solo se aceptan caracteres alfanumericos en los ingredientes y los siguientes caracteres especiales: ( ) ,  . / % ¡ !  ' : ; \u0022")
+               alert("Solo se aceptan caracteres alfanuméricos en los ingredientes y los siguientes caracteres especiales: ( ) ,  . / % ¡ !  ' : ; \u0022")
                i=contadorIngredientes+1
                valido = false;
             
@@ -442,19 +392,19 @@ function validacion_pasos(){
    var valido = true;
    for(i=51; i < contadorPasos; i++){
    var pasoValido = document.getElementById(i).value
-   var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u00b0\u0027\u003a\u003b]+$/;// ()",./""%¡!°':;
+   var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u00b0\u0027\u003a\u003b\u00dc\u00fc]+$/;// ()",./""%¡!°':;
    
        if(pasoValido.match(pattern)){
            valido = true
        }
        else{
            if(pasoValido == ""){
-               alert("No se aceptan campos vacios en la preparación.")
+               alert("No se aceptan campos vacíos en la preparación.")
                i=contadorPasos+1
                return valido = false;
            }else{
                //Tambien acepta ""
-               alert("Solo se aceptan caracteres alfanumericos en los pasos y los siguientes caracteres especiales: ( ) ,  . / % ¡ ! ° ' : ; \u0022")
+               alert("Solo se aceptan caracteres alfanuméricos en los pasos y los siguientes caracteres especiales: ( ) ,  . / % ¡ ! ° ' : ; \u0022")
                i=contadorPasos+1
                valido = false;
            }
@@ -502,7 +452,7 @@ function validarDescripcion(){
    var texto = document.getElementById("descripcion").value;
    descripcion = texto;
     if(texto == ""){
-        alert("No se aceptan campos vacios en descripción.")
+        alert("No se aceptan campos vacíos en descripción.")
         return controlar = false;
     }
     //Reemplazamos los saltos de linea por espacios
@@ -526,8 +476,8 @@ function validarDescripcion(){
             controlar=false;
             i=contadorValor+1
         }else{
-            if(numeroPalabras<15){
-                alert("La cantidad mínima de palabras aceptadas para descripción es de 15");
+            if(numeroPalabras<10){
+                alert("La cantidad mínima de palabras aceptadas para descripción es de 10");
                 controlar=false;
             }
         }
@@ -540,17 +490,17 @@ function validarDescripcion(){
 function validar_cat(){
     var controlar = true;
     var texto = document.getElementById("nuevaCat").value;
-    var pattern = /^[A-Za-z\s\u002c\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1]+$/;//,
+    var pattern = /^[A-Za-z\s\u002c\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00dc\u00fc]+$/;//,
        if(texto.match(pattern)){
            controlar = true
        }
        else{
            if(texto == ""){
-               alert("No se acepta campo vacios para nueva categoría.")
+               alert("No se acepta campo vacío para nueva categoría.")
                return controlar = false;
            }else{
                //Tambien acepta ""
-               alert("Solo se aceptan caracteres alfabeticos en categoría.")
+               alert("Solo se aceptan caracteres alfabeticos y “,” en categoría.")
                 return controlar = false;
            }
        }
@@ -567,15 +517,15 @@ function validar_cat(){
      var numeroPalabras = textoTroceado.length;
      //Mostramos el número de palabras
      if(numeroPalabras>4){
-         alert("La cantidad máxima de palabras aceptadas para descripción es de 4");
+         alert("La cantidad máxima de palabras aceptadas para nueva categoría es de 4");
          controlar=false;
      }else{
          if(textoTroceado[0] == ""){
-             alert("No se permiten solo espacios como descripción");
+             alert("No se permiten solo espacios como nueva categoría");
              valido=false;
          }else{
              if(numeroPalabras<1){
-                 alert("La cantidad mínima de palabras aceptadas para descripción es de 1");
+                 alert("La cantidad mínima de palabras aceptadas paranueva categoría es de 1");
                  controlar=false;
              }
          }
@@ -591,7 +541,13 @@ var tipo= document.getElementById("tipos");
 tipo.addEventListener('change',function(){
     let valor=tipo.value;
     if(valor==1){
-        agregarCat();
+        if(maxCat==20){
+            alert("No se puede registrar nueva categoría (límite máximo alcanzado)");
+            var a = document.getElementById("tipos")
+            a.selectedIndex = 0;
+        }else{
+            agregarCat();
+        }
     }else if(contadorcat==1){
         casilla = document.getElementById("nuevaCat");	
         casilla.parentNode.removeChild(casilla);
@@ -723,7 +679,7 @@ function registrar() {
 }
 
 function registarReceta(url, coleccion) {
-    //Variables que recuperan el titulo y la porcion
+    //Variables que recuperan el titulo
     var tituloAniadido = document.getElementById("titulo").value;
     //Reemplazamos los saltos de linea por espacios
     tituloAniadido = tituloAniadido.replace (/\r?\n/g," ");

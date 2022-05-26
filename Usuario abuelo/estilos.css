@@ -449,7 +449,7 @@ a:hover{
 @media all and (max-width: 605px){
     
     .nav1{
-        padding-right: 10px;
+        padding-right: 3px;
     }
 
     .nombre_empresa{
@@ -471,7 +471,7 @@ a:hover{
     }
     .menu li{
         width: auto;
-        margin: 5px;
+        margin: 2px;
 
     }
     .menu li a{

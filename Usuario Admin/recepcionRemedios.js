@@ -1,4 +1,4 @@
-// Initialize Cloud Firestore through Firebase
+/// Initialize Cloud Firestore through Firebase
 firebase.initializeApp({
     apiKey: "AIzaSyDPKylT8Mizp2qRkeHVdzdmDAdRC4vyagQ",
     authDomain: "healthy-soul-db.firebaseapp.com",
@@ -8,7 +8,8 @@ firebase.initializeApp({
     appId: "1:368826998840:web:d97a765e96b27dfeb106cd"
   });
   var db = firebase.firestore();
-  var val=obtenerValor('tipo');
+  
+  var val=obtenerValor('id2');
   const v= val.slice(1,-1);
   const vv= v.slice(1,-1);
   const vvv= vv.slice(1,-1); 
@@ -19,14 +20,17 @@ firebase.initializeApp({
   const v22= v2.slice(1,-1);
   const v222= v22.slice(1,-1);
   console.log(v222);
-  var docRef = db.collection(vvv).doc(v222);
   
+  //var docRef = db.collection(vvv).doc(v222);
+  //                                       /codigo que recivimos en la ref                     /codigo 2 que recivimos en la ref
+  var docRef = db.collection("Dolores").doc(vvv).collection("Remedios").doc(v222);
+  /*
   var val3=obtenerValor('state');
   const v3= val3.slice(1,-1);
   const v33= v3.slice(1,-1);
   const v333= v33.slice(1,-1);
   console.log(v333);
-  
+  */
   function obtenerValor(sParametroNombre){
       var sPaginaURL=window.location.search.substring(1);
       var sURLVariables= sPaginaURL.split('&');
@@ -78,7 +82,7 @@ firebase.initializeApp({
                   </p>`;
                   const nutri =document.querySelector(".nutrici");
                   nutri.innerHTML +=  `<p class="valor">  
-        ${saltoPorSeparador2(doc.data().ValorNutricional)}
+        ${saltoPorSeparador2(doc.data().Descripcion)}
         </p>`;
                   
                 } else {
@@ -129,55 +133,19 @@ firebase.initializeApp({
          return valorNut.replace(letra, '<br/>-')
         }*/
   
-        
+       
         function mov(){
-           if(v333==1){
+         
               
             let xxx =document.querySelector(".x");
-            xxx.href="ListaRecetas.html?state=1&clase="+vvv;
-           }else{
-            if(v333==2){
-              let xxx =document.querySelector(".x");
-              xxx.href="ListaRecetas.html?state=2&clase=Favoritos";
-
-            }
-
-           }
+            xxx.href="ListaRemedios.html?tipoDolores&id=%27"+vvv+"%27&state=0";
+           
   
         }
 
 
 
 
-      let uid;
-      let na;
-      firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-              let displayName = user.displayName;
-              let email = user.email;
-              let emailVerified = user.emailVerified;
-              let photoURL = user.photoURL;
-              let isAnonymous = user.isAnonymous;
-               uid = user.uid;
-              let providerData = user.providerData;
-              console.log(user);
-              let pos;
-              let tipou;
-              pos = email.search(/@healthysoul.com/i);
-              if (pos >= 0) {
-                  tipou = "admin"
-                  window.location.href = "Usuario Admin/ListaRecetas.html";
-              }
-          } else {
-              if (na == "1") {
-                  window.location.href = "../index.html";
-              } else {
-                  window.location.href = "../login.html";
-                  console.log("No logeado")
-              }
-          }
-      });
-      
 
 
 function logout() {
@@ -189,69 +157,3 @@ function logout() {
     });
 
 }
-
-var stado=false;
-	
-var cat="Cenas";
-var idd="LLKCpfc5pvwhdP3w2PBO";
-function inicio(){
-
-  
-  //const user = firebase.auth().currentUser;
-  //let uidd = user.uid;
-  //console.log(uidd);
-    var docRefa = db.collection('dattaUser').doc('user').collection(uid).doc('favoritos').collection(vvv).where("id", "==", v222);
-  
-  docRefa.get().then(function(doc){ 
-      if (!doc.empty){
-         console.log(v222);
-       console.log("existe");
-       stado=true;
-       const rojo=document.querySelector(".heartbutton1");
-       rojo.style.opacity="0";
-       }else {
-      console.log(idd);
-      console.log("No existe");
-       }
-    }).catch(function(error) {
-      console.log("Error getting document:", error);
-  });
-
-}
-
-setTimeout(inicio,2000);
-
-function anade(){
-  const nombree=document.querySelector(".tit").textContent;
-  const linkk=document.querySelector(".iconProfile").src;
-	const initialData = {
-    Nombre: nombree ,
-    Imagen: linkk ,
-		state: 'liked',
-		id:  v222
-	  };
-if( stado==false){		  		
- /*                         /mismo/         /mismo/            /iduser/   /mismo/                  /categoria/   /IDcomida/                 /se necesita para que funcione/  */
-	var res =db.collection('dattaUser').doc('user').collection(uid).doc('favoritos').collection(vvv).doc(v222).set(initialData);	  
-	  console.log('Added document with ID: ', res.id);
-	 stado=true;
-   const rojo=document.querySelector(".heartbutton1");
-   rojo.style.opacity="0";
-}else{
-
-	if(stado==true){
-	// alert("Borrar")
-	var dd= db.collection('dattaUser').doc('user').collection(uid).doc('favoritos').collection(vvv);
-	dd.doc(v222).delete();
-	stado=false;
-  const rojo=document.querySelector(".heartbutton1");
-  rojo.style.opacity="1";
-}
-  
-
-}
- 
-
-}
-
-
