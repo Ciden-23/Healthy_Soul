@@ -257,7 +257,7 @@ var imagenPintada;
     }
     else{
         if(titulo == ""){
-            alert("No se aceptan campos vacios en el nombre.")
+            alert("No se aceptan campos vacíos en el nombre.")
             i=contadorIngredientes+1
             valido = false;
         }else{
@@ -350,7 +350,7 @@ else{
         }
         else{
             if(ingredienteValido == ""){
-                alert("No se aceptan campos vacios en ingredientes.")
+                alert("No se aceptan campos vacíos en ingredientes.")
                 i=contadorIngredientes+1
                 return valido = false;
             }else{
@@ -409,7 +409,7 @@ function validacion_pasos(){
         }
         else{
             if(pasoValido == ""){
-                alert("No se aceptan campos vacios en la preparación.")
+                alert("No se aceptan campos vacíos en la preparación.")
                 i=contadorPasos+1
                 return valido = false;
             }else{
@@ -467,7 +467,7 @@ function validacion_val_nutricional(){
         }
         else{
             if(valorValido == ""){
-                alert("No se aceptan campos vacios en la información nutricional.")
+                alert("No se aceptan campos vacíos en la información nutricional.")
                 i=contadorValor+1
                 return valido = false;
             }else{

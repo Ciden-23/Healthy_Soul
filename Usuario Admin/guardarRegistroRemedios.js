@@ -265,7 +265,7 @@ function validacion_titulo(titulo){
    }
    else{
        if(titulo == ""){
-           alert("No se aceptan campos vacios en el nombre.")
+           alert("No se aceptan campos vacíos en el nombre.")
            i=contadorIngredientes+1
            valido = false;
        }else{
@@ -340,7 +340,7 @@ function validacion_ingredientes(){
        }
        else{
            if(ingredienteValido == ""){
-               alert("No se aceptan campos vacios en ingredientes.")
+               alert("No se aceptan campos vacíos en ingredientes.")
                i=contadorIngredientes+1
                return valido = false;
            }else{
@@ -399,7 +399,7 @@ function validacion_pasos(){
        }
        else{
            if(pasoValido == ""){
-               alert("No se aceptan campos vacios en la preparación.")
+               alert("No se aceptan campos vacíos en la preparación.")
                i=contadorPasos+1
                return valido = false;
            }else{
@@ -452,7 +452,7 @@ function validarDescripcion(){
    var texto = document.getElementById("descripcion").value;
    descripcion = texto;
     if(texto == ""){
-        alert("No se aceptan campos vacios en descripción.")
+        alert("No se aceptan campos vacíos en descripción.")
         return controlar = false;
     }
     //Reemplazamos los saltos de linea por espacios
@@ -496,7 +496,7 @@ function validar_cat(){
        }
        else{
            if(texto == ""){
-               alert("No se acepta campo vacio para nueva categoría.")
+               alert("No se acepta campo vacío para nueva categoría.")
                return controlar = false;
            }else{
                //Tambien acepta ""
