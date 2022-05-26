@@ -194,7 +194,7 @@ function testTitulo() {
              console.log(titulo, titulos[j])
              controlar = false;
              j = titulos.length + 1
-            //alert("El remedio ya esta registrado en la base de datos.")
+            //alert("El remedio ya está registrado en la base de datos.")
              //location.reload()
              //document.getElementById("botonReg").disabled = "false"
          }
@@ -452,7 +452,7 @@ function validarDescripcion(){
    var texto = document.getElementById("descripcion").value;
    descripcion = texto;
     if(texto == ""){
-        alert("No se aceptan campos vacios en descripción.")
+        alert("No se acepta campos vacios en descripción.")
         return controlar = false;
     }
     //Reemplazamos los saltos de linea por espacios
