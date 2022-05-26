@@ -248,6 +248,7 @@ const uid = user.uid;
 function clasificarCat(categ){
     ocultar();
     cargar();
+    apagado=true;
     var container = document.getElementById('imagen');
     let tarj = Array.prototype.slice.call(document.getElementsByClassName("tarjeta"), 0);
     for(element of tarj){
@@ -338,6 +339,20 @@ function mostrar(){
     a.style.display= "block";
     a.style.visibility="hidden"
 }
+
+var apagado=true;
+var tipo= document.getElementById("mennu");
+tipo.addEventListener('click',function(){
+    var a= document.querySelector(".menu li:hover .desplegable");
+     if(apagado){
+        a.style.display= "block";
+        a.style.visibility="hidden"
+        apagado=false;
+     }else{
+        a.style.display = "none";
+        apagado=true;
+     }
+})
 
 
 const men= document.querySelector(".menu");

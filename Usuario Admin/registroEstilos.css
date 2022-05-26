@@ -134,7 +134,7 @@ header {
 }
 
 .menu li:hover .desplegable{
-    visibility: visible;
+    visibility: hidden;
     opacity: 1;
 }
 
