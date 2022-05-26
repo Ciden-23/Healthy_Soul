@@ -452,7 +452,7 @@ function validarDescripcion(){
    var texto = document.getElementById("descripcion").value;
    descripcion = texto;
     if(texto == ""){
-        alert("No se acepta campos vacios en descripción.")
+        alert("No se acepta campo vacío en descripción.")
         return controlar = false;
     }
     //Reemplazamos los saltos de linea por espacios
