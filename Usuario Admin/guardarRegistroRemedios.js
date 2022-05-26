@@ -424,7 +424,7 @@ function validacion_pasos(){
            var numeroPalabras = textoTroceado.length;
            //Mostramos el número de palabras
            if(numeroPalabras>80){
-               alert("la cantidad máxima de palabras aceptadas para pasos es de 80");
+               alert("La cantidad máxima de palabras aceptadas para pasos es de 80");
                valido=false;
                i=contadorPasos+1
            }else{
@@ -434,8 +434,8 @@ function validacion_pasos(){
                        i=contadorPasos+1
                }else{
                
-                   if(numeroPalabras<3){
-                       alert("la cantidad mínima de palabras aceptadas para pasos es de 3");
+                   if(numeroPalabras<2){
+                       alert("La cantidad mínima de palabras aceptadas para pasos es de 2");
                        valido=false;
                        i=contadorPasos+1
                    }
