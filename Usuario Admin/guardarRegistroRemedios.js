@@ -767,4 +767,17 @@ function aniadirCol(ide, url,  tituloAniadido , ingredienteAñadido, pasoAñadid
     });  
 }
 
-
+var delRegistro=true;
+var mm= document.getElementById("mennuRegistro");
+mm.addEventListener('click',function(){
+    var a= document.querySelector(".menu li:hover .desplegable");
+    console.log(a)
+     if(delRegistro){
+        a.style.display= "block";
+        a.style.visibility="visible"
+        delRegistro=false;
+     }else{
+        a.style.display = "none";
+        delRegistro=true;
+     }
+})

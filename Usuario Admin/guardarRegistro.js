@@ -664,3 +664,17 @@ function validacion_val_nutricional(){
              console.error("Error adding document: ", error);
          });
  }
+
+ var delRegistro=true;
+var mm= document.getElementById("mennuRegistro");
+mm.addEventListener('click',function(){
+    var a= document.querySelector(".menu li:hover .desplegable");
+     if(delRegistro){
+        a.style.display= "block";
+        a.style.visibility="visible"
+        delRegistro=false;
+     }else{
+        a.style.display = "none";
+        delRegistro=true;
+     }
+})
