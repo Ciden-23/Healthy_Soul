@@ -345,7 +345,7 @@ function validacion_ingredientes(){
                return valido = false;
            }else{
                //Tambien acepta ""
-               alert("Solo se aceptan caracteres alfanumericos en los ingredientes y los siguientes caracteres especiales: ( ) ,  . / % ¡ !  ' : ; \u0022")
+               alert("Solo se aceptan caracteres alfanuméricos en los ingredientes y los siguientes caracteres especiales: ( ) ,  . / % ¡ !  ' : ; \u0022")
                i=contadorIngredientes+1
                valido = false;
             
@@ -404,7 +404,7 @@ function validacion_pasos(){
                return valido = false;
            }else{
                //Tambien acepta ""
-               alert("Solo se aceptan caracteres alfanumericos en los pasos y los siguientes caracteres especiales: ( ) ,  . / % ¡ ! ° ' : ; \u0022")
+               alert("Solo se aceptan caracteres alfanuméricos en los pasos y los siguientes caracteres especiales: ( ) ,  . / % ¡ ! ° ' : ; \u0022")
                i=contadorPasos+1
                valido = false;
            }
