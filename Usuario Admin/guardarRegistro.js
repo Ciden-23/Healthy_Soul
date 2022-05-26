@@ -59,7 +59,7 @@
         
         contadorIngredientes--;
         }else{
-            alert("No se pueden eliminar mas casillas")
+            alert("No se pueden eliminar más casillas")
         }
 }
 
@@ -98,7 +98,7 @@
         
         contadorPasos--;
     }else{
-        alert("No se pueden eliminar mas casillas")
+        alert("No se pueden eliminar más casillas")
     }
 }
  //Añade un nuevo input para agregar mas info. nutricional
@@ -138,7 +138,7 @@
         
         contadorValor--;
     }else{
-        alert("No se pueden eliminar mas casillas")
+        alert("No se pueden eliminar más casillas")
     }
 }
 
@@ -250,14 +250,14 @@ var imagenPintada;
 
  function validacion_titulo(titulo){
     var valido = true;
-    var pattern = /^[A-Za-z\s\u002c\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1]+$/;//,
+    var pattern = /^[A-Za-z\s\u002c\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00dc\u00fc]+$/;//,
     
     if(titulo.match(pattern)){
         return valido
     }
     else{
         if(titulo == ""){
-            alert("No se aceptan campos vacios en el nombre.")
+            alert("No se aceptan campos vacíos en el nombre.")
             i=contadorIngredientes+1
             valido = false;
         }else{
@@ -343,19 +343,19 @@ else{
     var valido = true;
     for(i=1; i < contadorIngredientes; i++){
     var ingredienteValido = document.getElementById(i).value
-    var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u0027\u003a\u003b]+$/;// ()",./""%¡!':;
+    var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u0027\u003a\u003b\u00dc\u00fc]+$/;// ()",./""%¡!':;
     
         if(ingredienteValido.match(pattern)){
             valido = true
         }
         else{
             if(ingredienteValido == ""){
-                alert("No se aceptan campos vacios en ingredientes.")
+                alert("No se aceptan campos vacíos en ingredientes.")
                 i=contadorIngredientes+1
                 return valido = false;
             }else{
                 //Tambien acepta ""
-                alert("Solo se aceptan caracteres alfanumericos en los ingredientes y los siguientes caracteres especiales: ( ) ,  . / % ¡ !  ' : ; \u0022")
+                alert("Solo se aceptan caracteres alfanuméricos en los ingredientes y los siguientes caracteres especiales: ( ) ,  . / % ¡ !  ' : ; \u0022")
                 i=contadorIngredientes+1
                 valido = false;
              
@@ -402,19 +402,19 @@ function validacion_pasos(){
     var valido = true;
     for(i=51; i < contadorPasos; i++){
     var pasoValido = document.getElementById(i).value
-    var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u00b0\u0027\u003a\u003b]+$/;// ()",./""%¡!°':;
+    var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u00b0\u0027\u003a\u003b\u00dc\u00fc]+$/;// ()",./""%¡!°':;
     
         if(pasoValido.match(pattern)){
             valido = true
         }
         else{
             if(pasoValido == ""){
-                alert("No se aceptan campos vacios en la preparación.")
+                alert("No se aceptan campos vacíos en la preparación.")
                 i=contadorPasos+1
                 return valido = false;
             }else{
                 //Tambien acepta ""
-                alert("Solo se aceptan caracteres alfanumericos en los pasos y los siguientes caracteres especiales: ( ) ,  . / % ¡ ! ° ' : ; \u0022")
+                alert("Solo se aceptan caracteres alfanuméricos en los pasos y los siguientes caracteres especiales: ( ) ,  . / % ¡ ! ° ' : ; \u0022")
                 i=contadorPasos+1
                 valido = false;
             }
@@ -460,19 +460,19 @@ function validacion_val_nutricional(){
     var valido = true;
     for(i=101; i < contadorValor; i++){
     var valorValido = document.getElementById(i).value
-    var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u0027\u003a\u003b]+$/;// ()",./""%¡!':;
+    var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u0027\u003a\u003b\u00dc\u00fc]+$/;// ()",./""%¡!':;
     
         if(valorValido.match(pattern)){
             valido = true
         }
         else{
             if(valorValido == ""){
-                alert("No se aceptan campos vacios en la información nutricional.")
+                alert("No se aceptan campos vacíos en la información nutricional.")
                 i=contadorValor+1
                 return valido = false;
             }else{
                 //Tambien acepta ""
-                alert("Solo se aceptan caracteres alfanumericos en la informacion nutricional y los siguientes caracteres especiales: ( ) ,  . / % ¡ !  ' : ; \u0022")
+                alert("Solo se aceptan caracteres alfanuméricos en la informacion nutricional y los siguientes caracteres especiales: ( ) ,  . / % ¡ !  ' : ; \u0022")
                 i=contadorValor+1
                 valido = false;
             }
