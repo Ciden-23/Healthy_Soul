@@ -59,7 +59,7 @@
         
         contadorIngredientes--;
         }else{
-            alert("No se pueden eliminar mas casillas")
+            alert("No se pueden eliminar más casillas")
         }
 }
 
@@ -98,7 +98,7 @@
         
         contadorPasos--;
     }else{
-        alert("No se pueden eliminar mas casillas")
+        alert("No se pueden eliminar más casillas")
     }
 }
  //Añade un nuevo input para agregar mas info. nutricional
@@ -138,7 +138,7 @@
         
         contadorValor--;
     }else{
-        alert("No se pueden eliminar mas casillas")
+        alert("No se pueden eliminar más casillas")
     }
 }
 
