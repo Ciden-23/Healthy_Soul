@@ -13,6 +13,9 @@ body {
     margin: 0;
     padding: 0;
     border: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 
@@ -351,7 +354,11 @@ footer {
     background-color: #7C3C21;
     font-size: 20px;
     margin-top: 60px;
-    height: 135.6px;
+    height: 136px;
+    bottom: 0%;
+    padding: 0%;
+    align-self: flex-end;
+    width: 100%;
 }
 
 .container-logo {
