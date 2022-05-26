@@ -12,6 +12,9 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+
 }
 
 
@@ -704,8 +707,15 @@ footer {
     margin-top: 60px;
     position: relative;
     display: none;
-    height: 135.6px;
+    height: 136px;
     line-height: 1.2;
+    width: 100%;
+    margin-bottom: 0;
+    align-self: flex-end;
+    
+    padding: 0%;
+   
+    border: 0%;
     
 }
 
