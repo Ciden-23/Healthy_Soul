@@ -134,7 +134,7 @@ header {
 }
 
 .menu li:hover .desplegable{
-    visibility: visible;
+    visibility: hidden;
     opacity: 1;
 }
 
@@ -198,6 +198,7 @@ header {
 img {
     display:block;
     margin-top: 8px;
+    margin-bottom: 8px;
     align-items: center;
     justify-content: center;
     margin-left:  8%;
@@ -418,21 +419,20 @@ a:hover{
     }
 
 
-
     .porciones {
         border-radius: 5px;
         border-style: solid;
-        border: 0;
+        border-width: 2px;
         border:2px  solid black;
-        height: 35px;
-        width: 50px;
+        height: 40px;
+        width: 80px;
         text-shadow: none;
         color: #000;
         margin-bottom: 10px;
-        /* margin-top: 5px; */
-        /* padding-top: 2px; */
-        padding-bottom: 4px;
-    }
+        margin-top: 5px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        }
 
     .espacio{
         font-size: 15px;
@@ -454,6 +454,16 @@ a:hover{
         /*margin: 0 auto;*/
         text-align: center;
         margin-top: 5px;
+    }
+    
+    img {
+        display: block;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
     }
 
 }
@@ -602,6 +612,16 @@ a:hover{
         margin-top: 0px;
         padding-top: 0px;
         padding-bottom: 0px;
+    }
+    
+    img {
+        display: block;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

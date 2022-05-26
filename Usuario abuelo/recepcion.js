@@ -220,7 +220,11 @@ function inicio(){
 }
 
 setTimeout(inicio,2000);
-
+setTimeout(active,3000);
+function active(){
+  let heart = document.querySelector(".heart") ;
+  heart.style.display= "block";
+  }	
 function anade(){
   const nombree=document.querySelector(".tit").textContent;
   const linkk=document.querySelector(".iconProfile").src;

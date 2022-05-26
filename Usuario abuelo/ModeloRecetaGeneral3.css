@@ -482,7 +482,7 @@ a:hover{
     overflow: hidden;
 
     overflow-y: auto;
-
+    padding-right:10px;
 }
 .texto2{
     height: 65%;
@@ -490,7 +490,7 @@ a:hover{
     overflow: hidden;
 
     overflow-y: auto;
-   padding-right:100px;
+   padding-right:10px;
 }
 
 /*.valor{
@@ -505,6 +505,9 @@ a:hover{
 }
 .ingredientesDer{
     height: 756px;
+}
+.heart{
+    display:none;
 }
 @media (max-width: 1083px) {/*para arreglar un bug de info nutri*/
     .texto2{

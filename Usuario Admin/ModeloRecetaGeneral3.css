@@ -438,7 +438,7 @@ a:hover{
     overflow: hidden;
 
     overflow-y: auto;
-
+   padding-right:10px;
 }
 .texto2{
     height: 65%;
@@ -446,7 +446,7 @@ a:hover{
     overflow: hidden;
 
     overflow-y: auto;
-   padding-right:100px;
+   padding-right:10px;
 }
 
 /*.valor{
