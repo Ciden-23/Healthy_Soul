@@ -198,6 +198,7 @@ header {
 img {
     display:block;
     margin-top: 8px;
+    margin-bottom: 8px;
     align-items: center;
     justify-content: center;
     margin-left:  8%;
@@ -455,6 +456,16 @@ a:hover{
         text-align: center;
         margin-top: 5px;
     }
+    
+    img {
+        display: block;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
 
 }
 @media (max-width: 914px){
@@ -602,6 +613,16 @@ a:hover{
         margin-top: 0px;
         padding-top: 0px;
         padding-bottom: 0px;
+    }
+    
+    img {
+        display: block;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
