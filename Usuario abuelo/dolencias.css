@@ -12,6 +12,9 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    
 }
 .lds-dual-ring {
     display: inline-block;
@@ -322,8 +325,12 @@ footer {
     margin-top: 60px;
     position: relative;
     display: none;
-    height: 135.6px;
+    height: 136px;
     line-height: 1.2;
+    bottom: 0%;
+    padding: 0%;
+    align-self: flex-end;
+    width: 100%;
     
 }
 
