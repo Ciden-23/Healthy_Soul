@@ -223,7 +223,7 @@ function repetido(id){
                 console.log("si llamo");
                 setTimeout(registrar,500);
             }else{
-                alert("El remedio ya esta registrado en la base de datos.")
+                alert("El remedio ya está registrado en la base de datos.")
                 location.reload()
             }
     });
