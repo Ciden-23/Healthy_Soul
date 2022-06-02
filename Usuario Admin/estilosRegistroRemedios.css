@@ -6,9 +6,6 @@
 }
 
 body {
-    
-    min-height: 100vh;
-
     background-image: url("madera.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -16,7 +13,7 @@ body {
     margin: 0;
     padding: 0;
     border: 0;
-    
+    min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
@@ -142,7 +139,7 @@ header {
 }
 
 .menu li:hover .desplegable{
-    visibility: visible;
+    visibility: hidden;
     opacity: 1;
 }
 
@@ -358,13 +355,10 @@ footer {
     font-size: 20px;
     margin-top: 60px;
     height: 136px;
-    width: 100%;
-    margin-bottom: 0;
-    align-self: flex-end;
-    
+    bottom: 0%;
     padding: 0%;
-   
-    border: 0%;
+    align-self: flex-end;
+    width: 100%;
 }
 
 .container-logo {

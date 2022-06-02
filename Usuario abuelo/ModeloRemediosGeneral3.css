@@ -293,7 +293,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
     
-    gap: 25px;
+    gap: 20px;
 
 }
 
@@ -439,7 +439,7 @@ a:hover{
     overflow: hidden;
 
     overflow-y: auto;
-
+  padding-right:10px;
 }
 .texto2{
     height: 65%;
@@ -447,7 +447,7 @@ a:hover{
     overflow: hidden;
 
     overflow-y: auto;
-   padding-right:100px;
+   padding-right:10px;
 }
 
 /*.valor{
@@ -550,7 +550,9 @@ a:hover{
       .menu li{
           font-size: 20px;
       }
-      
+          .texto2 p {
+        font-size: 15px;
+      }
       .let,.let2,.let3{
           font-size: 19px;
           padding-top: 47px;

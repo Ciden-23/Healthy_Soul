@@ -424,7 +424,7 @@ function validacion_pasos(){
            var numeroPalabras = textoTroceado.length;
            //Mostramos el número de palabras
            if(numeroPalabras>80){
-               alert("la cantidad máxima de palabras aceptadas para pasos es de 80");
+               alert("La cantidad máxima de palabras aceptadas para pasos es de 80");
                valido=false;
                i=contadorPasos+1
            }else{
@@ -434,8 +434,8 @@ function validacion_pasos(){
                        i=contadorPasos+1
                }else{
                
-                   if(numeroPalabras<3){
-                       alert("la cantidad mínima de palabras aceptadas para pasos es de 3");
+                   if(numeroPalabras<2){
+                       alert("La cantidad mínima de palabras aceptadas para pasos es de 2");
                        valido=false;
                        i=contadorPasos+1
                    }
@@ -452,7 +452,7 @@ function validarDescripcion(){
    var texto = document.getElementById("descripcion").value;
    descripcion = texto;
     if(texto == ""){
-        alert("No se aceptan campos vacíos en descripción.")
+        alert("No se acepta campo vacío en descripción.")
         return controlar = false;
     }
     //Reemplazamos los saltos de linea por espacios
@@ -559,8 +559,8 @@ var contadorcat=0;
 
 function agregarCat(){
     if(contadorcat==0){
-        const aniadir = document.getElementById("tipos")
-        aniadir.insertAdjacentHTML("afterend", '<br><input class="ingresarCat" id="nuevaCat" placeholder="Ingrese categoría"/>');
+        const aniadir = document.getElementById("aa")
+        aniadir.insertAdjacentHTML("afterend", '<input class="ingresarCat" id="nuevaCat" placeholder="Ingrese categoría"/>');
         contadorcat=1;
     }
 }
@@ -767,4 +767,17 @@ function aniadirCol(ide, url,  tituloAniadido , ingredienteAñadido, pasoAñadid
     });  
 }
 
-
+var delRegistro=true;
+var mm= document.getElementById("mennuRegistro");
+mm.addEventListener('click',function(){
+    var a= document.querySelector(".menu li:hover .desplegable");
+    console.log(a)
+     if(delRegistro){
+        a.style.display= "block";
+        a.style.visibility="visible"
+        delRegistro=false;
+     }else{
+        a.style.display = "none";
+        delRegistro=true;
+     }
+})

@@ -16,8 +16,7 @@ var recoverPass = function(){
     email = email.trim();
     if (email === '') { 
         let mensa = msg("1") ;
-        camb.textContent= mensa;
-        camb.style.display="block";
+        alert(msg("1"));
             
     }else{
         let pos;
@@ -26,8 +25,7 @@ var recoverPass = function(){
         if (pos >= 0) {
             tipou = "admin"
             let mensa = msg("2") ;
-        camb.textContent= mensa;
-        camb.style.display="block";
+            alert(msg("2"));
     
         }else{
             firebase.auth().sendPasswordResetEmail(email).then(()=> {
@@ -46,8 +44,7 @@ var recoverPass = function(){
                 console.log(errorCode);
                 let errorMessage = msg(errorCode);
                 console.log(errorMessage);
-                camb.textContent= errorMessage;
-                camb.style.display="block";
+                alert(msg(errorCode));
    
              });
              

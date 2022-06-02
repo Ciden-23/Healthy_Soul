@@ -77,9 +77,6 @@ function registro() {
                     alert(msg("7"));
                     break;
                 case -1:
-                    nombre = nombre.concat(" ");
-                    let nomcomp = nombre.concat(apellido);
-                    console.log(nomcomp);
                     let everf = verf(email);
                     console.log("everf");
                     console.log(everf)
@@ -102,6 +99,9 @@ function registro() {
                         cont = countDat(nombre, apellido);
                         console.log("Pre cont");
                         console.log(cont);
+                        nombre = nombre.concat(" ");
+                        let nomcomp = nombre.concat(apellido);
+                        console.log(nomcomp);
                         if (cont == 0) {
                             cont = countEm(email, contraseña);
                         }
@@ -120,10 +120,10 @@ function registro() {
                             case 12:
                                 alert(msg("12"));
                                 break;
-                            case 12:
+                            case 13:
                                 alert(msg("13"));
                                 break;
-                            case 12:
+                            case 14:
                                 alert(msg("14"));
                                 break;
                             case 0:
@@ -158,7 +158,7 @@ function registro() {
                                         document.getElementById("2").value = "";
                                         document.getElementById("3").value = "";
                                         document.getElementById("4").value = "";
-                                            // ..
+                                        // ..
                                     });
                                 break;
                         }
@@ -209,13 +209,20 @@ function compr(nom, apel) {
 function verf(email) {
     let t = -2;
     t = email.search(/@healthysoul.com/i);
-    if (t == -2) {
-        t = email.search(/(@gmail.com|@outlook.com|@yahoo.com|@hotmail.com)/i);
-        if (t == "0") {
-            t = "-1";
-        }
-    } else {
+    console.log("adm");
+    console.log(t);
+    if (t == -1) {
         t = -2;
+        console.log("Correo");
+        console.log(email);
+        t = email.search(/(@gmail.com|@outlook.com|@yahoo.com|@hotmail.com)/i);
+        console.log("TC");
+        console.log(t);
+        if (t <= 0) {
+            t = "-1";
+        } else {
+            t = -2
+        }
     }
     console.log(t);
     return t;
@@ -223,13 +230,16 @@ function verf(email) {
 
 function countDat(nombre, apellido) {
     let cont;
-    if (nombre.length < 3) {
+    let ver = true;
+    console.log("len");
+    console.log(nombre.length);
+    if (nombre.length < 3 && ver) {
         cont = 9;
-    } else if (nombre.length > 20) {
+    } else if (nombre.length > 20 && ver) {
         cont = 10;
-    } else if (apellido.length < 4) {
+    } else if (apellido.length < 4 && ver) {
         cont = 11;
-    } else if (apellido.length > 30) {
+    } else if (apellido.length > 30 && ver) {
         cont = 12;
     } else {
         cont = 0;
@@ -240,9 +250,9 @@ function countDat(nombre, apellido) {
 function countEm(email, cont) {
     let con;
     if (email.length > 30) {
-        cont = 13;
+        con = 13;
     } else if (cont.length > 15) {
-        cont = 14;
+        con = 14;
     } else {
         con = 0;
     }
@@ -295,16 +305,16 @@ function msg(errorCode) {
             msg = "La longitud permitida es de 15 caracteres para el campo Contraseña"
             break;
         case "auth/invalid-email":
-            msg = "Error: Correo inválido";
-         
+            msg = "Error: Correo electrónico inválido";
+
             break;
         case "auth/weak-password":
             msg = "Error: La contraseña deberá contener como mínimo 6 caracteres";
-         
+
             break;
         case "auth/email-already-in-use":
             msg = "Error: Correo electrónico ya en uso";
-           
+
             break;
         case "auth/internal-error":
             msg = "Error: Hay un problema con el servidor, por favor intente más tarde";

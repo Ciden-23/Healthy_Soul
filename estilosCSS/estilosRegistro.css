@@ -93,6 +93,7 @@ body {
     height: 25px;
     margin-bottom: 10px;
     border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .cont_login .ejemplo {

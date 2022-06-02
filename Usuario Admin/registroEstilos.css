@@ -134,7 +134,7 @@ header {
 }
 
 .menu li:hover .desplegable{
-    visibility: visible;
+    visibility: hidden;
     opacity: 1;
 }
 
@@ -273,8 +273,8 @@ img {
     color: #000;
     margin-bottom: 10px;
     margin-top: 5px;
-    padding-top: 2px;
-    padding-bottom: 4px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
 .ingresoTexto {
