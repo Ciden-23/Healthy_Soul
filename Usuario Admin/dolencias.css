@@ -339,7 +339,7 @@ body {
 @media screen and (max-width:480px) {/*agrego pao*/
     .contenedor .tarjeta h3 {
         font-size: 0.8rem;
-        margin: 0.9rem 1rem;
+        margin: 0.9rem 0.5rem;
     }
 
     .icono {
