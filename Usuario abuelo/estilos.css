@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/*Eliminar todos los padding y los margin que vienen por defecto, por eso colocamos 0*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+
 body {
     /*Anchura, ocupamos el 100%*/
     min-height: 100vh;
@@ -12,8 +22,13 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
+
+    /*
     display: grid;
     grid-template-rows: auto 1fr auto;
+    */
+    display: flex;
+    flex-direction: column;
     
 
 }
@@ -111,8 +126,9 @@ header {
 }
 
 .menu {
-    /*display: flex;*/
-    padding-left: 0;
+    width: auto;
+    /*display: flex;
+    padding-left: 0;*/
 }
 
 .menu > li {
@@ -183,13 +199,7 @@ header {
 /*header negrito */
 
 
-/*Eliminar todos los padding y los margin que vienen por defecto, por eso colocamos 0*/
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-}
 .cateMenu{
     cursor:pointer;
 
@@ -204,6 +214,7 @@ body {
     justify-content: center;
     /* 0px de margen vertical, centrado horizontalmente */
     margin: auto;
+    width: 100%;
 }
 
 .contenedor .tarjeta {
@@ -338,6 +349,7 @@ footer {
     margin-bottom: 0;
     bottom: 0%;
     padding: 0%;
+    width: 100%;
     align-self: flex-end;
     /*
     position: relative;
@@ -435,8 +447,9 @@ a:hover{
         width: 100%;
     }
     .menu{
+        /*
         max-width: 375px;
-        min-width: 200px;
+        min-width: 200px;*/
         width: auto;
     }
     .menu li{
@@ -456,7 +469,7 @@ a:hover{
     }
 }
 
-@media all and (max-width: 605px){
+@media all and (max-width: 664px){
     
     .nav1{
         padding-right: 3px;
@@ -475,9 +488,9 @@ a:hover{
     }
 
     .menu{
-        max-width: 375px;
+        /*max-width: 375px;
         min-width: 200px;
-        width: auto;
+        */width: auto;
     }
     .menu li{
         width: auto;

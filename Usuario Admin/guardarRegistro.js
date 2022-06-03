@@ -33,7 +33,7 @@
          contadorIngredientes += 1;
      } else {
          //No deja que se agregue mas de 15 ingredientes.
-         alert("No es posible añadir mas ingredientes.")
+         alert("No es posible añadir más ingredientes.")
      }
  }
 
@@ -72,7 +72,7 @@
          contadorPasos += 1;
      } else {
          //No deja que se agregue mas de 25 pasos.
-         alert("No es posible añadir mas pasos.")
+         alert("No es posible añadir más pasos.")
      }
  }
 
@@ -111,7 +111,7 @@
          contadorValor += 1;
      } else {
          //No deja que se agregue mas de 25 campos para informacion nutricional
-         alert("No es posible añadir mas informacion nutricional.")
+         alert("No es posible añadir más informacion nutricional.")
      }
  }
 
@@ -221,7 +221,7 @@ var imagenPintada;
             
              controlar = false;
              j = titulos.length + 1
-             alert("La receta ya esta registrada en la base de datos.")
+             alert("La receta ya está registrada en la base de datos.")
              location.reload()
              //document.getElementById("botonReg").disabled = "false"
          }
@@ -261,7 +261,7 @@ var imagenPintada;
             i=contadorIngredientes+1
             valido = false;
         }else{
-            alert("Solo se aceptan caracteres alfabeticos y comas en el nombre.")
+            alert("Solo se aceptan caracteres alfabéticos y comas en el nombre.")
             ingredienteAñadido = ""
             pasoAñadido = ""
             valorAñadido = ""
@@ -375,12 +375,12 @@ else{
 
             //Mostramos el número de palabras
             if(numeroPalabras>15){
-                alert("la cantidad máxima de palabras aceptadas para ingredientes es de 15");
+                alert("La cantidad máxima de palabras aceptadas para ingredientes es de 15");
                 valido=false;
                 i=contadorIngredientes+1
             }else{
                 if(numeroPalabras<1){
-                    alert("la cantidad mínima de palabras aceptadas para ingredientes es de 1");
+                    alert("La cantidad mínima de palabras aceptadas para ingredientes es de 1");
                     valido=false;
                     i=contadorIngredientes+1
                 }else{
@@ -432,7 +432,7 @@ function validacion_pasos(){
             var numeroPalabras = textoTroceado.length;
             //Mostramos el número de palabras
             if(numeroPalabras>80){
-                alert("la cantidad máxima de palabras aceptadas para pasos es de 80");
+                alert("La cantidad máxima de palabras aceptadas para pasos es de 80");
                 valido=false;
                 i=contadorPasos+1
             }else{
@@ -443,7 +443,7 @@ function validacion_pasos(){
                 }else{
                 
                     if(numeroPalabras<3){
-                        alert("la cantidad mínima de palabras aceptadas para pasos es de 3");
+                        alert("La cantidad mínima de palabras aceptadas para pasos es de 3");
                         valido=false;
                         i=contadorPasos+1
                     }
@@ -490,7 +490,7 @@ function validacion_val_nutricional(){
             var numeroPalabras = textoTroceado.length;
             //Mostramos el número de palabras
             if(numeroPalabras>5){
-                alert("la cantidad máxima de palabras aceptadas para info. nutricional es de 5");
+                alert("La cantidad máxima de palabras aceptadas para info. nutricional es de 5");
                 valido=false;
                 i=contadorValor+1
             }else{
@@ -500,7 +500,7 @@ function validacion_val_nutricional(){
                     i=contadorValor+1
                 }else{
                     if(numeroPalabras<2){
-                        alert("la cantidad mínima de palabras aceptadas para info. nutricional es de 2");
+                        alert("La cantidad mínima de palabras aceptadas para info. nutricional es de 2");
                         valido=false;
                         i=contadorValor+1
                     }
@@ -525,7 +525,7 @@ function validacion_val_nutricional(){
  function validarImgCat() {
      String(verificarEspacioCateg());
      if (typeof nombreColeccion === "undefined") {
-         alert("Categoria se encuentra vacío");
+         alert("Categoría se encuentra vacío");
          //tituloAniadido = ""
          //porcionAniadido = ""
          ingredienteAñadido = ""
