@@ -12,20 +12,20 @@ firebase.initializeApp({
   const v= val.slice(1,-1);
   const vv= v.slice(1,-1);
   const vvv= vv.slice(1,-1); 
-  console.log(vvv);
+  
   
   var val2=obtenerValor('id');
   const v2= val2.slice(1,-1);
   const v22= v2.slice(1,-1);
   const v222= v22.slice(1,-1);
-  console.log(v222);
+ 
   var docRef = db.collection(vvv).doc(v222);
   
   var val3=obtenerValor('state');
   const v3= val3.slice(1,-1);
   const v33= v3.slice(1,-1);
   const v333= v33.slice(1,-1);
-  console.log(v333);
+  
   
   function obtenerValor(sParametroNombre){
       var sPaginaURL=window.location.search.substring(1);
@@ -83,7 +83,7 @@ firebase.initializeApp({
                   
                 } else {
                     // doc.data() will be undefined in this case
-                    console.log("No such document!");
+                    
                 }
             }).catch((error) => {
                 console.log("Error getting document:", error);
@@ -160,7 +160,7 @@ firebase.initializeApp({
               let isAnonymous = user.isAnonymous;
                uid = user.uid;
               let providerData = user.providerData;
-              console.log(user);
+             
               let pos;
               let tipou;
               pos = email.search(/@healthysoul.com/i);
@@ -173,7 +173,7 @@ firebase.initializeApp({
                   window.location.href = "../index.html";
               } else {
                   window.location.href = "../login.html";
-                  console.log("No logeado")
+                 
               }
           }
       });
@@ -204,8 +204,8 @@ function inicio(){
   
   docRefa.get().then(function(doc){ 
       if (!doc.empty){
-         console.log(v222);
-       console.log("existe");
+         
+       
        stado=true;
        const rojo=document.querySelector(".heartbutton1");
        rojo.style.opacity="0";
@@ -237,7 +237,7 @@ function anade(){
 if( stado==false){		  		
  /*                         /mismo/         /mismo/            /iduser/   /mismo/                  /categoria/   /IDcomida/                 /se necesita para que funcione/  */
 	var res =db.collection('dattaUser').doc('user').collection(uid).doc('favoritos').collection(vvv).doc(v222).set(initialData);	  
-	  console.log('Added document with ID: ', res.id);
+	 
 	 stado=true;
    const rojo=document.querySelector(".heartbutton1");
    rojo.style.opacity="0";

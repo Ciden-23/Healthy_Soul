@@ -218,7 +218,7 @@ var imagenPintada;
     // console.log(titulos.length)
      for (j = 0; j < titulos.length; j++) {
          if (titulo.toLowerCase() == titulos[j].toLowerCase()) {
-             console.log(titulo, titulos[j])
+            
              controlar = false;
              j = titulos.length + 1
              alert("La receta ya está registrada en la base de datos.")
@@ -287,7 +287,7 @@ function contar_palabras_titulo(titulo){
         titulo = titulo.replace (/,,+/g,",");
         //Troceamos el texto por los espacios
         var textoTroceado = titulo.split (" ");
-        console.log(textoTroceado);
+       
         
         //Contamos todos los trozos de cadenas que existen
         tituloAniadido = titulo
@@ -303,12 +303,10 @@ function contar_palabras_titulo(titulo){
                             }
                         }
                         for(i = 0; i < textoTroceado.length; i++){
-                            console.log(i);
-                            console.log(textoTroceado);
+                           
     
                             if(textoTroceado[i].length > 12){
-                                console.log(textoTroceado[i]);
-                                 console.log(textoTroceado[i].length);
+                                
                                 alert("La cantidad máxima de caracteres por palabra en el nombre es de 12.");
                                 controlar=false;
                                 i = textoTroceado.length
@@ -428,7 +426,7 @@ function validacion_pasos(){
             texto = texto.replace (/^ /,"");
             texto = texto.replace (/ $/,"");
             //Troceamos el texto por los espacios
-            console.log(texto)
+           
             var textoTroceado = texto.split (" ");
             //Contamos todos los trozos de cadenas que existen
             var numeroPalabras = textoTroceado.length;
@@ -486,7 +484,7 @@ function validacion_val_nutricional(){
             texto = texto.replace (/^ /,"");
             texto = texto.replace (/ $/,"");
             //Troceamos el texto por los espacios
-            console.log(texto)
+           
             var textoTroceado = texto.split (" ");
             //Contamos todos los trozos de cadenas que existen
             var numeroPalabras = textoTroceado.length;
@@ -552,7 +550,7 @@ function validacion_val_nutricional(){
    // Listen for state changes, errors, and completion of the upload.
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
         (snapshot) => {
-            console.log("cargando")
+          
             document.getElementById("botonReg").disabled = "true"
    
         },

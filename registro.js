@@ -19,7 +19,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         let isAnonymous = user.isAnonymous;
         let uid = user.uid;
         let providerData = user.providerData;
-        console.log(user);
+       
         let pos;
         let tipou;
         pos = email.search(/@healthysoul.com/i);
@@ -31,7 +31,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             window.location.href = "Usuario abuelo/ListaRecetas.html";
         }
     } else {
-        console.log("No logeado")
+        
     }
 });
 
@@ -46,8 +46,7 @@ function registro() {
     contraseña = contraseña.trim();
     let aux;
     aux = compvac(nombre, apellido, email, contraseña);
-    console.log("aux");
-    console.log(aux);
+    
     switch (aux) {
         case 1:
             alert(msg("1"));
@@ -67,8 +66,7 @@ function registro() {
         case 0:
             let cod;
             cod = compr(nombre, apellido);
-            console.log("cod");
-            console.log(cod);
+            
             switch (cod) {
                 case 1:
                     alert(msg("6"));
@@ -78,8 +76,7 @@ function registro() {
                     break;
                 case -1:
                     let everf = verf(email);
-                    console.log("everf");
-                    console.log(everf)
+                    
                     if (everf != -2) {
                         if (everf == -1) {
                             alert(msg("auth/invalid-email"));
@@ -97,16 +94,14 @@ function registro() {
                     } else {
                         let cont;
                         cont = countDat(nombre, apellido);
-                        console.log("Pre cont");
-                        console.log(cont);
+                       
                         nombre = nombre.concat(" ");
                         let nomcomp = nombre.concat(apellido);
-                        console.log(nomcomp);
+                       
                         if (cont == 0) {
                             cont = countEm(email, contraseña);
                         }
-                        console.log("cont")
-                        console.log(cont);
+                       
                         switch (cont) {
                             case 9:
                                 alert(msg("9"));
@@ -131,9 +126,9 @@ function registro() {
                                     .then((userCredential) => {
                                         // Signed in
                                         const user = firebase.auth().currentUser;
-                                        console.log(user);
+                                       
                                         let uid = user.uid;
-                                        console.log(uid);
+                                        
                                         user.updateProfile({
                                             displayName: nomcomp,
                                             photoURL: null
@@ -152,7 +147,7 @@ function registro() {
                                     .catch((error) => {
                                         var errorCode = error.code;
                                         var errorMessage = error.message;
-                                        console.log(errorCode)
+                                       
                                         alert(msg(errorCode));
                                         document.getElementById("1").value = "";
                                         document.getElementById("2").value = "";
@@ -191,8 +186,7 @@ function compr(nom, apel) {
     let t;
     let pat = /^[A-Za-z\s\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1]+$/;
     t = nom.match(pat)
-    console.log("t");
-    console.log(t);
+    
     if (t == null) {
         t = 1;
     } else {
@@ -209,30 +203,26 @@ function compr(nom, apel) {
 function verf(email) {
     let t = -2;
     t = email.search(/@healthysoul.com/i);
-    console.log("adm");
-    console.log(t);
+  
     if (t == -1) {
         t = -2;
-        console.log("Correo");
-        console.log(email);
+       
         t = email.search(/(@gmail.com|@outlook.com|@yahoo.com|@hotmail.com)/i);
-        console.log("TC");
-        console.log(t);
+        
         if (t <= 0) {
             t = "-1";
         } else {
             t = -2
         }
     }
-    console.log(t);
+   
     return t;
 }
 
 function countDat(nombre, apellido) {
     let cont;
     let ver = true;
-    console.log("len");
-    console.log(nombre.length);
+    
     if (nombre.length < 3 && ver) {
         cont = 9;
     } else if (nombre.length > 20 && ver) {

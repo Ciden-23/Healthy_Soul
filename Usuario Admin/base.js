@@ -20,7 +20,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         let isAnonymous = user.isAnonymous;
         let uid = user.uid;
         let providerData = user.providerData;
-        console.log(user);
+        
         let pos;
         let tipou;
         pos = email.search(/@healthysoul.com/i);
@@ -33,7 +33,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             window.location.href = "../index.html";
         } else {
             window.location.href = "../login.html";
-            console.log("No logeado")
+            
         }
     }
 });

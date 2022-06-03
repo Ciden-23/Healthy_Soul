@@ -40,7 +40,6 @@ firebase.auth().onAuthStateChanged(function(user) {
         let isAnonymous = user.isAnonymous;
          uid = user.uid;
         let providerData = user.providerData;
-        console.log(user);
         let pos;
         let tipou;
         pos = email.search(/@healthysoul.com/i);
@@ -53,7 +52,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             window.location.href = "../index.html";
         } else {
             window.location.href = "../login.html";
-            console.log("No logeado")
+          
         }
     }
 });
@@ -66,21 +65,17 @@ firebase.auth().onAuthStateChanged(function(user) {
 function param(){
     val=obtenerValor('state');
     var cat=obtenerValor('clase');
-    console.log("lo que se obtiene del met", val);
-    console.log(cat);
-    console.log(val);
+   
     if(val == null || val == "0"){
-        console.log("estamos en el index");
-       
+      
         inicializar();
     }else{
         if(val=="1"){
-        console.log("estamos volviendo de una categoria");
+          
         volver(cat);
       }else{
         if(val=="2"){
-            console.log("estamos llendo a favoritos");
-   
+           
             volver(cat);
           }
 
@@ -115,7 +110,7 @@ function inicializar(){
                 id: doc.id,
                 ...doc.data(),
             }))
-            //console.log(data, "datos")
+            
             for (var i = 0; i < data.length; i++) {
                 var nom = data[i].Nombre
                     //OBTIENE EL ID DE CADA RECETA DE UNA COLEECION (Aqui deberia verificarse que receta fue elegida por el nombre, y obtener su ID 
@@ -140,7 +135,7 @@ function borrar(ide, categor,nomm) {
     ideBorrar=ide;
     categBorrar=categor; 
     nom=nomm;
-    //console.log(ideBorrar,categBorrar,nom)
+   
     const modalContainer = document.getElementById("modal-container");
         modalContainer.classList.add('show');
    }
@@ -150,14 +145,14 @@ function cancelar(){
     ideBorrar="";
     categBorrar="";
     nom="";
-    //console.log(ideBorrar,categBorrar,nom, "eliminadas")
+   
 }
 
 function borrarReceta(){
     const modalContainer = document.getElementById("modal-container");
    // alert("Borrar")
    db.collection(categBorrar).doc(ideBorrar).delete().then(() => {
-    console.log("Documento borrado exitosamente!");
+     
     modalContainer.classList.remove('show');
     ideBorrar="";
     categBorrar="";

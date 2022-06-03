@@ -43,10 +43,7 @@ for (let i = 0; i < categorias.length; i++) {
                 //para generar un HTML de la receta)
             var ide = data[0].id
             var img = data[0].Imagen
-            console.log("nombre de la receta", nom);
-            console.log("id de la receta", ide);
-            console.log("imga", img);
-            console.log("categoria", categ);
+           
             imagen.innerHTML += `<a href="detalleRecetas.html?bandera=1&tipo='${categ}'&id='${ide}'"><div class="tarjeta">
                       <img src="${img}">
                       <h3>${nom} </h3>

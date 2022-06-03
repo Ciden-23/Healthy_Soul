@@ -9,15 +9,15 @@ firebase.initializeApp({
 });
 var val=obtenerValor('tipo');
   
-  console.log(val);
+  
   
   var val2=obtenerValor('id');
 
-  console.log(val2);
+  
   
   var val3=obtenerValor('bandera');
 
-  console.log(val3);
+  
   mov();
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -28,7 +28,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         let isAnonymous = user.isAnonymous;
         let uid = user.uid;
         let providerData = user.providerData;
-        console.log(user);
+       
         let pos;
         let tipou;
         pos = email.search(/@healthysoul.com/i);
@@ -40,17 +40,16 @@ firebase.auth().onAuthStateChanged(function(user) {
             window.location.href = "Usuario abuelo/ListaRecetas.html";
         }
     } else {
-        console.log("No logeado")
+        
     }
 });
 let err;
 err = 0
 
 function acceso() {
-    console.log(err);
+   
     if (err == 5) {
-        console.log("Alcanzado");
-        console.log(err);
+        
         alert(msg("auth/too-many-requests"))
         setTimeout(rec, 15000);
     } else {
@@ -102,15 +101,15 @@ function verf(email) {
     if (t == "0") {
         t = "-1";
     }
-    console.log(t);
+   
     return t;
 }
 
 function rec() {
     location.reload;
-    console.log("Reiniciando");
+    
     err = 0;
-    console.log(err);
+    
 }
 
 
@@ -165,7 +164,7 @@ function obtenerValor(sParametroNombre){
   }
 
   function mov(){
-      console.log("Aqui");
+     
     if(val3==1){
     
      let xxx =document.querySelector(".x");
