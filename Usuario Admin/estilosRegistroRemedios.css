@@ -14,8 +14,13 @@ body {
     padding: 0;
     border: 0;
     min-height: 100vh;
-    display: grid;
+    
+    display: flex;
+    flex-direction: column;
+    
+    /*display: grid;
     grid-template-rows: auto 1fr auto;
+    */
 }
 
 
@@ -276,7 +281,9 @@ img {
     height: 50px;
     border-radius: 4px;
     border-width: 2px;
-    margin: 0 auto;
+    /*margin: 0 auto;padding: 10px;margin: 10px;*/ /*Revisar estooooooooooo*/
+    
+    margin-bottom: 60px; /*margen inferior*/
     text-shadow: none;
     border-color: #7C3C21;
 }
@@ -353,7 +360,10 @@ img {
 footer {
     background-color: #7C3C21;
     font-size: 20px;
-    margin-top: 60px;
+    /*margin-top: 3.75rem;
+    */
+    margin-top: auto;
+    
     height: 136px;
     bottom: 0%;
     padding: 0%;

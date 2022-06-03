@@ -13,20 +13,20 @@ firebase.initializeApp({
   const v= val.slice(1,-1);
   const vv= v.slice(1,-1);
   const vvv= vv.slice(1,-1);
-  console.log(vvv);
+  
   
   var val2=obtenerValor('id');
   const v2= val2.slice(1,-1);
   const v22= v2.slice(1,-1);
   const v222= v22.slice(1,-1);
-  console.log(v222);
+  
   var docRef = db.collection(vvv).doc(v222);
   
   var val3=obtenerValor('state');
   const v3= val3.slice(1,-1);
   const v33= v3.slice(1,-1);
   const v333= v33.slice(1,-1);
-  console.log(v333);
+ 
   
   function obtenerValor(sParametroNombre){
       var sPaginaURL=window.location.search.substring(1);
@@ -152,7 +152,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         let isAnonymous = user.isAnonymous;
         let uid = user.uid;
         let providerData = user.providerData;
-        console.log(user);
+        
         let pos;
         let tipou;
         pos = email.search(/@healthysoul.com/i);
@@ -165,7 +165,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             window.location.href = "../index.html";
         } else {
             window.location.href = "../login.html";
-            console.log("No logeado")
+            
         }
     }
 });
@@ -177,3 +177,17 @@ function logout() {
         // An error happened.
     });
 }
+
+var delRegistro=true;
+var mm= document.getElementById("mennuRegistro");
+mm.addEventListener('click',function(){
+    var a= document.querySelector(".menu li:hover .desplegable");
+     if(delRegistro){
+        a.style.display= "block";
+        a.style.visibility="visible"
+        delRegistro=false;
+     }else{
+        a.style.display = "none";
+        delRegistro=true;
+     }
+})

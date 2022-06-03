@@ -24,15 +24,13 @@ window.onload = param;
 function param(){
     var val=obtenerValor('state');
     var cat=obtenerValor('clase');
-    console.log("lo que se obtiene del met", val);
-    console.log(cat);
-    console.log(val);
+    
     if(val == null || val == "0"){
-        console.log("estamos en el index");
+        
        
         inicializar();
     }else{
-        console.log("estamos volviendo de una categoria");
+        
         volver(cat);
     }
 
@@ -54,12 +52,10 @@ function obtenerValor(sParametroNombre){
 function inicializar(){
     db.collection("Dolores").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            console.log("------------------");
-            console.log(`${doc.id} => ${doc.data().Dolor}`);
+           
             var ide= doc.id
             var nom= doc.data().Dolor;
-                console.log(nom);
-                console.log(ide);
+               
             imagen.innerHTML += `<div class="tarjeta" id="tarjeta"><a class="refer" href="ListaRemedios.html?tipo=Dolores'&id='${ide}'&state='${state}'">
                 <div class="icono"><img src="Assets/icono.png"></div>        
                 <div class="tamaño"><h3>${nom}</h3></div>
@@ -96,7 +92,7 @@ function borrarReceta(){
     const modalContainer = document.getElementById("modal-container");
    // alert("Borrar")
    db.collection(categBorrar).doc(ideBorrar).delete().then(() => {
-    console.log("Documento borrado exitosamente!");
+    
     modalContainer.classList.remove('show');
     ideBorrar="";
     categBorrar="";
@@ -250,7 +246,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         let isAnonymous = user.isAnonymous;
         let uid = user.uid;
         let providerData = user.providerData;
-        console.log(user);
+        
         let pos;
         let tipou;
         pos = email.search(/@healthysoul.com/i);
@@ -263,7 +259,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             window.location.href = "../index.html";
         } else {
             window.location.href = "../login.html";
-            console.log("No logeado")
+           
         }
     }
 });

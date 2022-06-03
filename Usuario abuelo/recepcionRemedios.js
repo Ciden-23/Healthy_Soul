@@ -13,13 +13,12 @@ firebase.initializeApp({
   const v= val.slice(1,-1);
   const vv= v.slice(1,-1);
   const vvv= vv.slice(1,-1); 
-  console.log(vvv);
   
   var val2=obtenerValor('id');
   const v2= val2.slice(1,-1);
   const v22= v2.slice(1,-1);
   const v222= v22.slice(1,-1);
-  console.log(v222);
+
   
   //var docRef = db.collection(vvv).doc(v222);
   //                                       /codigo que recivimos en la ref                     /codigo 2 que recivimos en la ref
@@ -87,7 +86,7 @@ firebase.initializeApp({
                   
                 } else {
                     // doc.data() will be undefined in this case
-                    console.log("No such document!");
+                   
                 }
             }).catch((error) => {
                 console.log("Error getting document:", error);
@@ -157,7 +156,7 @@ firebase.initializeApp({
               let isAnonymous = user.isAnonymous;
               let uid = user.uid;
               let providerData = user.providerData;
-              console.log(user);
+              
               let pos;
               let tipou;
               pos = email.search(/@healthysoul.com/i);
@@ -170,7 +169,7 @@ firebase.initializeApp({
                   window.location.href = "../index.html";
               } else {
                   window.location.href = "../login.html";
-                  console.log("No logeado")
+                 
               }
           }
       });

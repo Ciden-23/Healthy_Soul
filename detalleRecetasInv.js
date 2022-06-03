@@ -12,13 +12,13 @@ firebase.initializeApp({
   const v= val.slice(1,-1);
   const vv= v.slice(1,-1);
   const vvv= vv.slice(1,-1);
-  console.log(vvv);
+  
   
   var val2=obtenerValor('id');
   const v2= val2.slice(1,-1);
   const v22= v2.slice(1,-1);
   const v222= v22.slice(1,-1);
-  console.log(v222);
+  
   var docRef = db.collection(vvv).doc(v222);
   
   function obtenerValor(sParametroNombre){

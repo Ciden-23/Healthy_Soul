@@ -463,13 +463,6 @@ a:hover{
 .ingredientesDer{
     height: 756px;
 }
-@media (max-width: 1083px) {/*para arreglar un bug de info nutri*/
-    .texto2{
-        margin-top: -26px;
-    }
-
-}
-
 
 
 @media (max-width: 974px) {
