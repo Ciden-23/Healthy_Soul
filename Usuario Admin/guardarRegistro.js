@@ -261,7 +261,7 @@ var imagenPintada;
             i=contadorIngredientes+1
             valido = false;
         }else{
-            alert("Solo se aceptan caracteres alfabeticos y comas en el nombre.")
+            alert("Solo se aceptan caracteres alfabéticos y comas en el nombre.")
             ingredienteAñadido = ""
             pasoAñadido = ""
             valorAñadido = ""
@@ -527,7 +527,7 @@ function validacion_val_nutricional(){
  function validarImgCat() {
      String(verificarEspacioCateg());
      if (typeof nombreColeccion === "undefined") {
-         alert("Categoria se encuentra vacío");
+         alert("Categoría se encuentra vacío");
          //tituloAniadido = ""
          //porcionAniadido = ""
          ingredienteAñadido = ""
