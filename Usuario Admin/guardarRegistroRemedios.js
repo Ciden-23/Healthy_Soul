@@ -44,7 +44,7 @@ function aniadirIngredientes() {
         contadorIngredientes += 1;
     } else {
         //No deja que se agregue mas de 10 ingredientes.
-        alert("No es posible añadir mas ingredientes.")
+        alert("No es posible añadir más ingredientes.")
     }
 }
 
@@ -83,7 +83,7 @@ function aniadirPasos() {
         contadorPasos += 1;
     } else {
         //No deja que se agregue mas de 10 pasos.
-        alert("No es posible añadir mas pasos.")
+        alert("No es posible añadir más pasos.")
     }
 }
 
@@ -269,7 +269,7 @@ function validacion_titulo(titulo){
            i=contadorIngredientes+1
            valido = false;
        }else{
-           alert("Solo se aceptan caracteres alfabeticos y comas en el nombre.")
+           alert("Solo se aceptan caracteres alfabéticos y comas en el nombre.")
            ingredienteAñadido = ""
            pasoAñadido = ""
            descripcion = ""
@@ -367,12 +367,12 @@ function validacion_ingredientes(){
 
            //Mostramos el número de palabras
            if(numeroPalabras>15){
-               alert("la cantidad máxima de palabras aceptadas para ingredientes es de 15");
+               alert("La cantidad máxima de palabras aceptadas para ingredientes es de 15");
                valido=false;
                i=contadorIngredientes+1
            }else{
                if(numeroPalabras<1){
-                   alert("la cantidad mínima de palabras aceptadas para ingredientes es de 1");
+                   alert("La cantidad mínima de palabras aceptadas para ingredientes es de 1");
                    valido=false;
                    i=contadorIngredientes+1
                }else{
@@ -500,7 +500,7 @@ function validar_cat(){
                return controlar = false;
            }else{
                //Tambien acepta ""
-               alert("Solo se aceptan caracteres alfabeticos y “,” en categoría.")
+               alert("Solo se aceptan caracteres alfabéticos y “,” en categoría.")
                 return controlar = false;
            }
        }
@@ -525,7 +525,7 @@ function validar_cat(){
              valido=false;
          }else{
              if(numeroPalabras<1){
-                 alert("La cantidad mínima de palabras aceptadas paranueva categoría es de 1");
+                 alert("La cantidad mínima de palabras aceptadas para nueva categoría es de 1");
                  controlar=false;
              }
          }
@@ -636,7 +636,7 @@ function subirImagen(carpeta) {
            // Upload completed successfully, now we can get the download URL
            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
                //console.log('File available at', downloadURL);
-               console.log("se subio imagen correctamente")
+               console.log("Se subió imagen correctamente")
                registarReceta(downloadURL, carpeta);
            });
        }
