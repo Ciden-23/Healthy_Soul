@@ -50,7 +50,7 @@ var val2=obtenerValor('id');
   const v22= v2.slice(1,-1);
   const v222= v22.slice(1,-1);
   var idRem=v222;
-  console.log(idRem);
+  
    
  // var docRef = db.collection(vvv).doc(v222);
   
@@ -58,7 +58,7 @@ var val2=obtenerValor('id');
   const v3= val3.slice(1,-1);
   const v33= v3.slice(1,-1);
   const v333= v33.slice(1,-1);
-  console.log(v333);
+  
 
   function obtenerValor(sParametroNombre){
       var sPaginaURL=window.location.search.substring(1);
@@ -119,7 +119,7 @@ function borrarReceta(){
     const modalContainer = document.getElementById("modal-container");
    // alert("Borrar")
    db.collection(categBorrar).doc(ideBorrar).delete().then(() => {
-    console.log("Documento borrado exitosamente!");
+    
     modalContainer.classList.remove('show');
     ideBorrar="";
     categBorrar="";
@@ -273,7 +273,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         let isAnonymous = user.isAnonymous;
         let uid = user.uid;
         let providerData = user.providerData;
-        console.log(user);
+        
         let pos;
         let tipou;
         pos = email.search(/@healthysoul.com/i);
@@ -286,7 +286,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             window.location.href = "../index.html";
         } else {
             window.location.href = "../login.html";
-            console.log("No logeado")
+            
         }
     }
 });
