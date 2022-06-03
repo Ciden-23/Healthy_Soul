@@ -220,7 +220,7 @@ function inicio(){
 }
 
 setTimeout(inicio,2000);
-setTimeout(active,3000);
+setTimeout(active,4000);
 function active(){
   let heart = document.querySelector(".heart") ;
   heart.style.display= "block";
