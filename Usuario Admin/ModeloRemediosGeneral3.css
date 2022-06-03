@@ -99,7 +99,9 @@ header {
     border-radius: 10px;
     color: #000;
 }
-
+#mennuRegistro{
+cursor:pointer;  
+}
 /*-----SUBMENU--------*/
 
 .desplegable{

@@ -138,7 +138,12 @@ header {
     color: #000;
 }
 
-
+#mennu{
+cursor:pointer;  
+}
+#mennuRegistro{
+cursor:pointer;  
+}
 /*-----SUBMENU--------*/
 .desplegable{
     position: absolute;
