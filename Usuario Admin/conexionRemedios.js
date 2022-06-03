@@ -43,7 +43,7 @@ var val2=obtenerValor('id');
   const v22= v2.slice(1,-1);
   const v222= v22.slice(1,-1);
   var idRem=v222;
-  console.log(idRem);
+  
    
  // var docRef = db.collection(vvv).doc(v222);
   
@@ -51,7 +51,7 @@ var val2=obtenerValor('id');
   const v3= val3.slice(1,-1);
   const v33= v3.slice(1,-1);
   const v333= v33.slice(1,-1);
-  console.log(v333);
+ 
 
   function obtenerValor(sParametroNombre){
       var sPaginaURL=window.location.search.substring(1);
@@ -173,7 +173,7 @@ function borrarRemedio(){
     const modalContainer = document.getElementById("modal-container");
    // alert("Borrar")
    db.collection("Dolores").doc(categBorrar).collection("Remedios").doc(ideBorrar).delete().then(() => {
-    console.log("Documento borrado exitosamente!");
+    
     modalContainer.classList.remove('show');
     ideBorrar="";
     categBorrar="";

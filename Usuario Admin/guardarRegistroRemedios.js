@@ -188,10 +188,10 @@ function testTitulo() {
     titulo = titulo.replace (/ $/,"");
     //comas
     titulo = titulo.replace (/,,+/g,",");
-    console.log(titulos.length)
+    
     for (j = 0; j < titulos.length; j++) {
          if (titulo.toLowerCase() == titulos[j].toLowerCase()) {
-             console.log(titulo, titulos[j])
+             
              controlar = false;
              j = titulos.length + 1
             //alert("El remedio ya esta registrado en la base de datos.")
@@ -208,19 +208,19 @@ function repetido(id){
     let cateRemedio = tipo.value;
     console.log(cateRemedio, "aqui");
     var id = buscarId(cateRemedio);*/
-    console.log(id);
+   
     db.collection("Dolores").doc(id).collection("Remedios").get().then((snapshot) => {
-        console.log("se encontro")
+      
             snapshot.forEach(doc => {
-                console.log("entro");
+               
                 titulos.push(doc.data().Nombre)
-                console.log(titulos)
+               
                 testTitulo();
-                console.log(controlar,"antes");
+                
                 
             });
             if (controlar == true) {
-                console.log("si llamo");
+               
                 setTimeout(registrar,500);
             }else{
                 alert("El remedio ya esta registrado en la base de datos.")
@@ -232,9 +232,9 @@ function repetido(id){
 function buscarId(){
     var ide = "";
     var remedio = document.getElementById("titulo").value;
-    console.log(remedio);
+    
     let cateRemedio = tipo.value;
-    console.log(cateRemedio, "aqui");
+    
    // document.getElementById("botonReg").disabled = true;
     if(cateRemedio != "1" && cateRemedio != "0"){
         db.collection("Dolores").where("Dolor", "==", cateRemedio).get().then((results) => {
@@ -293,7 +293,7 @@ function contar_palabras_titulo(titulo){
        titulo = titulo.replace (/ $/,"");
        //comas
        titulo = titulo.replace (/,,+/g,",");
-       console.log(titulo, "salida");
+       
        //Troceamos el texto por los espacios
        var textoTroceado = titulo.split (" ");
        //console.log(textoTroceado);
@@ -418,7 +418,7 @@ function validacion_pasos(){
            texto = texto.replace (/^ /,"");
            texto = texto.replace (/ $/,"");
            //Troceamos el texto por los espacios
-           console.log(texto)
+          
            var textoTroceado = texto.split (" ");
            //Contamos todos los trozos de cadenas que existen
            var numeroPalabras = textoTroceado.length;
@@ -613,7 +613,7 @@ function subirImagen(carpeta) {
   // Listen for state changes, errors, and completion of the upload.
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
        (snapshot) => {
-           console.log("cargando")
+           
            document.getElementById("botonReg").disabled = true;
   
        },
@@ -636,7 +636,7 @@ function subirImagen(carpeta) {
            // Upload completed successfully, now we can get the download URL
            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
                //console.log('File available at', downloadURL);
-               console.log("se subio imagen correctamente")
+              
                registarReceta(downloadURL, carpeta);
            });
        }
@@ -648,8 +648,7 @@ function subirImagen(carpeta) {
 function registrar() {
     var tituloAniadido = document.getElementById("titulo").value;
     
-    console.log(controlar, "final");
-    console.log(tituloAniadido,"fina");
+   
     if (controlar == true) {
         if (validacion_titulo(tituloAniadido) == true &&
             contar_palabras_titulo(tituloAniadido) == true && validacion_ingredientes() == true &&
@@ -659,7 +658,7 @@ function registrar() {
             juntarPasos()
             
             validarImgCat()
-            console.log(tituloAniadido,"finalista");
+           
 
         } else {
             tituloAniadido = ""
@@ -700,19 +699,19 @@ function registarReceta(url, coleccion) {
     descripcion = descripcion.toLowerCase();
     descripcion = descripcion[0].toUpperCase()+descripcion.slice(1);
     descripcion = descripcion.replace (/,,+/g,",");
-console.log(tituloAniadido, "ultimo ultimito");
+
     if(contadorcat==1){
         crearDoc(coleccion, url,  tituloAniadido , ingredienteAñadido, pasoAñadido, descripcion);
       
     }else{
         db.collection("Dolores").where("Dolor", "==", nombreDolor).get().then((results) => {
-            console.log("se encontro");
+           
             const data = results.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data(),
             }))
             var ide = data[0].id
-            console.log(ide);
+        
             aniadirCol(ide, url, tituloAniadido , ingredienteAñadido, pasoAñadido, descripcion);
         })
         .catch((error) => {
@@ -730,7 +729,7 @@ function crearDoc(col, url,  tituloAniadido, ingredienteAñadido, pasoAñadido, 
             ...doc.data(),
         }))
         var dolexiste = data[0].id
-        console.log("dolexiste", dolexiste)
+        
         aniadirCol(dolexiste, url, tituloAniadido , ingredienteAñadido, pasoAñadido, descripcion);
     })
     .catch((error) => {
@@ -771,7 +770,7 @@ var delRegistro=true;
 var mm= document.getElementById("mennuRegistro");
 mm.addEventListener('click',function(){
     var a= document.querySelector(".menu li:hover .desplegable");
-    console.log(a)
+  
      if(delRegistro){
         a.style.display= "block";
         a.style.visibility="visible"

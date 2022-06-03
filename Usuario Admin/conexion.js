@@ -23,15 +23,13 @@ window.onload = param;
 function param(){
     var val=obtenerValor('state');
     var cat=obtenerValor('clase');
-    console.log("lo que se obtiene del met", val);
-    console.log(cat);
-    console.log(val);
+    
     if(val == null || val == "0"){
-        console.log("estamos en el index");
+        
        
         inicializar();
     }else{
-        console.log("estamos volviendo de una categoria");
+       
         volver(cat);
     }
 
@@ -130,7 +128,7 @@ function borrarReceta(){
     const modalContainer = document.getElementById("modal-container");
    // alert("Borrar")
    db.collection(categBorrar).doc(ideBorrar).delete().then(() => {
-    console.log("Documento borrado exitosamente!");
+    
     modalContainer.classList.remove('show');
     ideBorrar="";
     categBorrar="";
