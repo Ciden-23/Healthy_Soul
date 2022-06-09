@@ -90,7 +90,8 @@ body{
     margin-top: 10px;
     height: 25px;
     width: 210px;
-    border: 1px solid black;
+    border-radius: 5px;
+    border: 2px solid black;
     font-family: 'Roboto', serif;
     
 }
@@ -101,17 +102,17 @@ body{
 .botonEn{
 
     position:relative;
-    left: 25% ; 
+    left: 10% ; 
 
-    width: 75px;
+    width: 65%;
     color: white;
     background-color: #DA723C;
     border: none;
     cursor: pointer;
     transition: 100ms transform;
 
-    border-radius: 19%;
-    height: 39px;
+    border-radius: 5%;
+    height: 35px;
     z-index: 1;
     font-family: 'Roboto', serif;
     font-size: 20px;
@@ -243,7 +244,8 @@ body{
     .botonEn{
 
 
-       left: 30%;
+       left: 19%;
+       width: 50%;
 
     }
     .logo{
