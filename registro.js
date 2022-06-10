@@ -43,7 +43,6 @@ function registro() {
     let email = document.getElementById("4").value;;
     email = email.trim();
     let contraseña = document.getElementById("2").value;
-    contraseña = contraseña.trim();
     let aux;
     aux = compvac(nombre, apellido, email, contraseña);
     
