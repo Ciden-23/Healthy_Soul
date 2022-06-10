@@ -392,7 +392,7 @@ function validacion_pasos(){
    var valido = true;
    for(i=51; i < contadorPasos; i++){
    var pasoValido = document.getElementById(i).value
-   var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u00b0\u0027\u003a\u003b\u00dc\u00fc]+$/;// ()",./""%¡!°':;
+   var pattern = /^[A-Za-z\d\s\u0028\u0029\u0022\u002c\u002e\u002f\u201c\u201d\u0025\u00c1\u00c9\u00cd\u00d3\u00da\u00e1\u00e9\u00ed\u00f3\u00fa\u00d1\u00f1\u00a1\u0021\u00b0\u0027\u003a\u003b\u00dc\u00fc\u00BA\u00B0]+$/;// ()",./""%¡!°º':;
    
        if(pasoValido.match(pattern)){
            valido = true
